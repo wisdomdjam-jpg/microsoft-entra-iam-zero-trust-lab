@@ -105,11 +105,11 @@ Related Escalation ID: Not Applicable
 Related Exception ID: Not Applicable
 Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
-Resource: Helpdesk Administrator and Security Reader
+Resource: Helpdesk
 Identity or Population: Selected fictional IT support and security identities
 Description: Sanitized configuration evidence supporting the existence of the selected Helpdesk Administrator and Security Reader assignments in the Microsoft Entra lab
 Control Demonstrated: Least-privilege administrative-role assignment
-File Name: Existing sanitized administrative-role configuration evidence
+File Name:AR-2026-MONTHLY-ADMIN-001_helpdesk-
 File Format: Existing project evidence
 Capture Date: Previously captured during administrative-role configuration
 Captured By: Wisdom Kwame Djam
@@ -117,7 +117,7 @@ Source: Microsoft Entra administrative-role assignment records
 Sensitivity Classification: Public after sanitization
 Redaction Status: Sanitized for Portfolio Use
 Redaction Verified By: Wisdom Kwame Djam
-Publication Status: Approved for Public Repository
+Publication Status: Published
 Repository Location: Existing project evidence
 Version: 1.0
 Integrity Check: Supported by existing project configuration documentation
