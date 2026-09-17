@@ -356,24 +356,13 @@ The proposed Privileged Identity Management assessment is future work and does n
 
 ### Evidence Item 1
 
-```text
-Evidence ID: EVD-2026-ADMIN-001
-Evidence Type: Administrative-Role Assignment Record
-Review ID: AR-2026-MONTHLY-ADMIN-001
-Review Item ID: ARI-2026-ADMIN-001 and ARI-2026-ADMIN-002
-Escalation ID: Not Applicable
-Exception ID: Not Applicable
-Resource: Helpdesk Administrator and Security Reader
-Description: Sanitized evidence showing the selected fictional administrative-role assignments
-File Name: Existing administrative-role configuration evidence
-Capture Date: Previously captured during role configuration
+File Name: AR-2026-MONTHLY-ADMIN-001_helpdesk-administrator_assignment_2026-09-17.png; AR-2026-MONTHLY-ADMIN-001_security-reader_assignment_2026-09-17.png
+Capture Date: 2026-09-17
 Captured By: Wisdom Kwame Djam
 Sensitivity Classification: Public after sanitization
 Redaction Status: Sanitized for Portfolio Use
-Repository Location: Existing project evidence
+Repository Location: evidence/access-reviews/administrative-roles/
 Verification Status: Reviewed for this simulation
-```
-
 ### Evidence Item 2
 
 ```text
