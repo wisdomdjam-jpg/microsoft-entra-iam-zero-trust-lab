@@ -316,6 +316,70 @@ Public evidence must remove or obscure:
 Fictional names, group names, application names, settings, and licensing messages may remain visible. No secrets, passwords, access tokens, or production data are stored in this repository.
 
 See `SECURITY.md` for additional guidance.
+## Access Review Governance
+
+A risk-based access-review framework was developed for:
+
+- Helpdesk Administrator assignments
+- Security Reader assignments
+- Security-group memberships
+- Northstar Patient Records Portal assignments
+- Microsoft Entra B2B guest identities
+- `GRP-External-Vendors` membership
+- Direct user assignments
+- Temporary access exceptions
+
+The framework documents:
+
+- Monthly and quarterly review schedules
+- Resource owners and designated reviewers
+- Explicit approval, removal, modification, and escalation decisions
+- Exception-management requirements
+- Remediation deadlines
+- Post-remediation verification
+- Evidence retention and audit traceability
+- Free-tier manual review procedures
+- Licensing-aware production recommendations
+
+Because the lab uses Microsoft Entra ID Free, native Microsoft Entra Access Reviews were not deployed. A structured manual process was documented as a Free-tier governance alternative.
+
+### Manual Review Simulation
+
+A limited fictional manual review was completed for:
+
+| Fictional identity | Administrative role | Review decision |
+|---|---|---|
+| Casey IT Support | Helpdesk Administrator | Approved |
+| Morgan Security | Security Reader | Approved |
+
+Both assignments were approved because they remained aligned with the fictional responsibilities defined in the lab.
+
+The simulation included:
+
+- A defined review scope
+- An initial access-state reference
+- Explicit reviewer assessments
+- Documented approval decisions
+- Escalation and exception assessments
+- Review metrics
+- Findings and limitations
+- An active evidence register
+- Formal review closure
+
+No remediation was required because neither assignment was removed or modified.
+
+The simulation used one participant, so independent separation among the preparer, reviewer, and verifier could not be demonstrated. This limitation is disclosed in the review record.
+
+### Current Access-Review Status
+
+```text
+Access-review policy: Completed
+Reusable review templates: Completed
+Limited administrative-role review: Manually Simulated and Validated
+Evidence register: Active
+Native Microsoft Entra Access Reviews: Assessed, Not Deployed
+Privileged Identity Management: Assessed, Not Deployed
+Automated review remediation: Assessed, Not Deployed
 
 ## Repository Structure
 
