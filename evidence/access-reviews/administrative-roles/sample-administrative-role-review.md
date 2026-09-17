@@ -193,7 +193,7 @@ Closure Date: 2026-09-17
 
 ```text
 Review Item ID: ARI-2026-ADMIN-002
-Identity: Riley Security Analyst
+Identity: Morgan Security
 Identity Type: Member
 Account Status: Active Fictional Lab Identity
 Resource: Security Reader
@@ -228,7 +228,7 @@ Is the supporting evidence sufficient? Yes, for this limited fictional simulatio
 ```text
 Decision: Approve
 Decision Date: 2026-09-17
-Decision Justification: Approved because Riley Security Analyst remains the fictional identity responsible for security monitoring and governance activities. Security Reader provides read-only access to relevant security information and remains aligned with the documented least-privilege design.
+Decision Justification: Approved because Morgan Security remains the fictional identity responsible for security monitoring and governance activities. Security Reader provides read-only access to relevant security information and remains aligned with the documented least-privilege design.
 Evidence Considered: Administrative-role assignment evidence and privileged-access design
 Conditions Attached to Approval: Review monthly and remove the role if the fictional security responsibility changes
 Required Remediation: None
