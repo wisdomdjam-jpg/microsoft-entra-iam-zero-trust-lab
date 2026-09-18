@@ -211,187 +211,486 @@ Quality Review Date: 2026-09-17
 Issue Identified: Independent reviewer separation and post-remediation verification were not demonstrated.
 Corrective Action: Preserve the limitation and create a separate remediation-based simulation in a future phase if required.
 ```
-
-## 6. Review Traceability
-
-The current evidence supports the following traceability sequence:
+### 5.3 Evidence Item: Read-Only Inventory Script
 
 ```text
-Administrative-Role Configuration
-    ↓
-Initial Access Snapshot Reference
-    ↓
-Manual Reviewer Assessment
-    ↓
-Two Explicit Approval Decisions
-    ↓
-No Escalation Required
-    ↓
-No Exception Required
-    ↓
-No Remediation Required
-    ↓
-Post-Remediation Verification Not Applicable
-    ↓
-Review Closure
+Evidence ID: EVD-2026-AUTOMATION-001
+Evidence Title: Microsoft Entra Read-Only Inventory Script
+Evidence Type: Script
+Evidence Status: Partially Implemented
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: Microsoft Entra tenant inventory
+Identity or Population: Selected fictional users, guests, groups, and application resources
+Description: Locally tested PowerShell script that uses delegated read-only Microsoft Graph permissions to generate sanitized identity and access inventory exports
+Control Demonstrated: Read-only inventory automation and evidence preparation
+File Name: Get-EntraReadOnlyInventory.ps1
+File Format: PowerShell
+Capture Date: 2026-09-18
+Captured By: Wisdom Kwame Djam
+Source: Locally tested Microsoft Graph PowerShell workflow
+Sensitivity Classification: Public
+Redaction Status: Not Required
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: scripts/Get-EntraReadOnlyInventory.ps1
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-18
+Retention Review Date: 2029-09-18
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Partially Validated
+Known Limitation: The tested script did not validate Northstar service-principal discovery, administrative-role assignments, or Northstar application assignments.
+Outstanding Action: Complete the remaining read-only inventory areas during a future validation phase.
+Notes: The script retained Security Defaults, used no embedded credentials, requested no write permissions, disconnected automatically, and made no tenant changes.
 ```
 
-The related records are:
+#### Quality Review
+
+- [x] The script was tested locally.
+- [x] Interactive delegated authentication succeeded.
+- [x] Only read permissions were requested.
+- [x] No embedded credentials were used.
+- [x] Security Defaults remained enabled.
+- [x] The script disconnected automatically.
+- [x] The script generated sanitized CSV exports.
+- [x] No tenant changes were performed.
+- [x] Pending automation areas are documented.
+- [x] The script was uploaded directly from the tested local file.
 
 ```text
-Review: AR-2026-MONTHLY-ADMIN-001
-Review Item 1: ARI-2026-ADMIN-001
-Review Item 2: ARI-2026-ADMIN-002
-Configuration Evidence: EVD-2026-ADMIN-001
-Manual Review Record: EVD-2026-ADMIN-002
-Escalation: Not Applicable
-Exception: Not Applicable
-Remediation: Not Applicable
-Post-Remediation Verification: Not Applicable
+Quality Review Result: Accepted as Partially Validated
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-18
+Issue Identified: Three planned inventory areas remain unvalidated.
+Corrective Action: Complete those areas during a future controlled validation phase.
 ```
 
-## 7. Access and Publication Review
-
-### EVD-2026-ADMIN-001
-
-- [x] The evidence is associated with the fictional lab.
-- [x] The evidence supports selected administrative-role assignments.
-- [x] The evidence is not described as a native Access Review record.
-- [x] No credential or secret is intentionally included.
-- [ ] The exact evidence file has received a final publication review.
-- [ ] The exact repository path has been added to the register.
+### 5.4 Evidence Item: Public User and Guest Inventory
 
 ```text
-Publication Review Result: Provisionally Approved Pending Final File Review
+Evidence ID: EVD-2026-AUTOMATION-002
+Evidence Title: Sanitized Microsoft Entra User and Guest Inventory
+Evidence Type: Script Output
+Evidence Status: Implemented and Validated
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: Microsoft Entra users
+Identity or Population: Fictional lab identities approved for publication
+Description: Public-safe inventory of fictional user display names, user types, and account-enabled status generated through the tested read-only script
+Control Demonstrated: Automated user, guest, and account-status inventory
+File Name: entra-users-and-guests-public.csv
+File Format: CSV
+Capture Date: 2026-09-18
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Graph PowerShell
+Sensitivity Classification: Public
+Redaction Status: Verified Redacted
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/automation/entra-users-and-guests-public.csv
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-18
+Retention Review Date: 2029-09-18
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Validated
+Known Limitation: Personal administrative and guest identities were excluded from the public version.
+Outstanding Action: None
+Notes: The complete raw local export was retained locally and was not published.
+```
+
+#### Quality Review
+
+- [x] The file was generated by the tested read-only script.
+- [x] The file contains only approved fictional identities.
+- [x] User type and account-enabled status are included.
+- [x] User principal names are excluded.
+- [x] Email addresses are excluded.
+- [x] Tenant and object identifiers are excluded.
+- [x] Personal identities were removed from the public version.
+- [x] The published columns were reviewed.
+
+```text
+Quality Review Result: Approved for Public Repository
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-18
+Issue Identified: None
+Corrective Action: Not Applicable
+```
+
+### 5.5 Evidence Item: Security-Group Inventory
+
+```text
+Evidence ID: EVD-2026-AUTOMATION-003
+Evidence Title: Microsoft Entra Security-Group Inventory
+Evidence Type: Script Output
+Evidence Status: Implemented and Validated
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: Microsoft Entra security groups
+Identity or Population: Six fictional role-aligned security groups
+Description: Read-only inventory of security-group display names, security-enabled status, and group types
+Control Demonstrated: Automated security-group inventory
+File Name: entra-security-groups.csv
+File Format: CSV
+Capture Date: 2026-09-18
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Graph PowerShell
+Sensitivity Classification: Public
+Redaction Status: Not Required
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/automation/entra-security-groups.csv
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-18
+Retention Review Date: 2029-09-18
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Validated
+Known Limitation: The export records group inventory but does not demonstrate every effective access path or every group membership.
+Outstanding Action: None
+Notes: Object identifiers, tenant information, and ownership details were excluded.
+```
+
+#### Quality Review
+
+- [x] Six intended security groups were retrieved.
+- [x] Security-enabled status was included.
+- [x] Group type information was included.
+- [x] Object identifiers were excluded.
+- [x] Tenant identifiers were excluded.
+- [x] No personal account information was included.
+- [x] The file was reviewed before publication.
+- [x] The limitation concerning effective access was documented.
+
+```text
+Quality Review Result: Approved for Public Repository
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-18
+Issue Identified: None
+Corrective Action: Not Applicable
+```
+
+### 5.6 Evidence Item: Public External-Vendor Membership
+
+```text
+Evidence ID: EVD-2026-AUTOMATION-004
+Evidence Title: Sanitized External-Vendor Membership Inventory
+Evidence Type: Script Output
+Evidence Status: Implemented and Validated
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: GRP-External-Vendors
+Identity or Population: Fictional vendor identity approved for publication
+Description: Public-safe export of selected external-vendor group membership generated through the tested read-only script
+Control Demonstrated: Automated external-vendor membership inventory
+File Name: entra-external-vendor-membership-public.csv
+File Format: CSV
+Capture Date: 2026-09-18
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Graph PowerShell
+Sensitivity Classification: Public
+Redaction Status: Verified Redacted
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/automation/entra-external-vendor-membership-public.csv
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-18
+Retention Review Date: 2029-09-18
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Validated
+Known Limitation: A personal guest identity present in the complete raw local export was excluded from the public version.
+Outstanding Action: None
+Notes: The complete raw membership export was retained locally and was not published.
+```
+
+#### Quality Review
+
+- [x] The group name is recorded.
+- [x] The fictional vendor display name is recorded.
+- [x] The object type is recorded.
+- [x] The personal guest identity was excluded.
+- [x] User principal names are excluded.
+- [x] Object and tenant identifiers are excluded.
+- [x] The public version was reviewed.
+- [x] The raw local file was not published.
+
+```text
+Quality Review Result: Approved for Public Repository
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-18
+Issue Identified: None
+Corrective Action: Not Applicable
+```
+
+### 5.7 Evidence Item: Inventory Validation Summary
+
+```text
+Evidence ID: EVD-2026-AUTOMATION-005
+Evidence Title: Microsoft Entra Inventory Validation Summary
+Evidence Type: Script Output
+Evidence Status: Partially Implemented
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: Microsoft Entra inventory automation
+Identity or Population: Selected lab inventory areas
+Description: Validation-status summary generated by the tested read-only PowerShell inventory script
+Control Demonstrated: Transparent tracking of validated and pending automation areas
+File Name: entra-inventory-validation-summary.csv
+File Format: CSV
+Capture Date: 2026-09-18
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Graph PowerShell
+Sensitivity Classification: Public
+Redaction Status: Not Required
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/automation/entra-inventory-validation-summary.csv
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-18
+Retention Review Date: 2029-09-18
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Partially Validated
+Known Limitation: Northstar service-principal discovery returned Object Not Found. Administrative-role and Northstar application-assignment automation remained Not Yet Validated.
+Outstanding Action: Complete the three pending inventory areas during a future controlled validation phase.
+Notes: The summary explicitly records that no tenant modifications occurred.
+```
+
+#### Quality Review
+
+- [x] Successfully validated inventory areas are identified.
+- [x] Pending automation areas are identified.
+- [x] Northstar discovery is not incorrectly represented as successful.
+- [x] Administrative-role automation is not represented as successful.
+- [x] Northstar assignment automation is not represented as successful.
+- [x] The absence of tenant modifications is recorded.
+- [x] No personal or technical identifiers are included.
+- [x] The overall status remains Partially Validated.
+
+```text
+Quality Review Result: Accepted as Partially Validated
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-18
+Issue Identified: Three inventory areas remain pending.
+Corrective Action: Complete a future controlled validation without weakening Security Defaults.
+```
+
+## 6. Automation Evidence Summary
+
+```text
+Total Automation Evidence Items: 5
+Published Automation Evidence Items: 5
+Implemented and Validated Automation Items: 3
+Partially Implemented Automation Items: 2
+Items Pending Redaction: 0
+Items Not Approved for Publication: 0
+Sensitive Columns Detected: 0
+Tenant Modifications: None
+Overall Automation Status: Partially Validated
+```
+
+The implemented and validated automation items are:
+
+- Public user, guest, and account-status inventory
+- Security-group inventory
+- Public external-vendor membership inventory
+
+The partially implemented items are:
+
+- Read-only inventory script
+- Validation-summary output
+
+The overall automation remains partially validated because:
+
+- Northstar service-principal discovery returned `Object Not Found` in the tested short script.
+- Administrative-role assignment automation was excluded from the tested short script.
+- Northstar application-assignment automation was excluded from the tested short script.
+
+## 7. Automation Evidence Traceability
+
+```text
+Tested Local PowerShell Script
+    ↓
+Interactive Delegated Microsoft Graph Authentication
+    ↓
+Users and Guests Export
+    ↓
+Security-Group Export
+    ↓
+External-Vendor Membership Export
+    ↓
+Public-Safe Redaction
+    ↓
+Sensitive-Column Review
+    ↓
+Validation-Summary Export
+    ↓
+GitHub Publication
+```
+
+Related evidence:
+
+```text
+Inventory Script: EVD-2026-AUTOMATION-001
+Public User and Guest Inventory: EVD-2026-AUTOMATION-002
+Security-Group Inventory: EVD-2026-AUTOMATION-003
+Public External-Vendor Membership: EVD-2026-AUTOMATION-004
+Validation Summary: EVD-2026-AUTOMATION-005
+```
+
+## 8. Automation Privacy Review
+
+The published automation evidence was reviewed for the following sensitive fields:
+
+```text
+Id
+ObjectId
+TenantId
+AppId
+ClientId
+UserPrincipalName
+Mail
+Email
+IPAddress
+RequestId
+CorrelationId
+HomeAccountId
+AccessToken
+```
+
+```text
+Privacy Review Result: Passed
+Sensitive Columns Found: None
+Raw User Export Published: No
+Raw External-Vendor Membership Export Published: No
+Public-Safe Copies Created: Yes
 Reviewed By: Wisdom Kwame Djam
-Review Date: 2026-09-17
-Condition: Confirm the exact sanitized file and repository path before the final repository publication review.
+Review Date: 2026-09-18
 ```
 
-### EVD-2026-ADMIN-002
+The complete raw exports remain local and are not part of the public repository.
 
-- [x] The artifact belongs to the fictional lab.
-- [x] Fictional identities and responsibilities are clearly identified.
-- [x] No real patient information is included.
-- [x] No real employee or vendor information is included.
-- [x] No password, secret, token, or authentication code is included.
-- [x] The simulation status is clear.
-- [x] The single-participant limitation is disclosed.
-- [x] The file name follows the repository standard.
-- [x] The implementation claims are limited to the available evidence.
-
-```text
-Publication Review Result: Approved for Public Repository
-Reviewed By: Wisdom Kwame Djam
-Review Date: 2026-09-17
-Condition: Preserve the simulation notice and implementation limitations.
-```
-
-## 8. Missing or Incomplete Evidence
-
-### Incomplete Evidence Item 1
-
-```text
-Expected Evidence ID: EVD-2026-ADMIN-001
-Expected Evidence Type: Sanitized Administrative-Role Assignment Evidence
-Related Review ID: AR-2026-MONTHLY-ADMIN-001
-Resource: Helpdesk Administrator and Security Reader
-Evidence Missing: Exact file name, file format, and repository path
-Reason: The simulation referenced previously captured role-assignment evidence without recording its exact repository location
-Date Identified: 2026-09-17
-Risk: The original configuration evidence cannot yet be traced directly from this register
-Alternative Evidence: Administrative-role configuration documentation and the committed manual review record
-Reproduction Possible: Yes, by capturing a new sanitized assignment snapshot if authorized and necessary
-Action Owner: Wisdom Kwame Djam
-Target Date: During the final repository evidence review
-Current Status: Open Documentation Action
-Effect on Review Conclusion: The limited fictional simulation remains documented, but the configuration-evidence traceability is incomplete
-```
-
-This limitation must remain visible until the exact evidence file is identified or a new sanitized snapshot is created.
-
-## 9. Outstanding Actions
+## 9. Automation Outstanding Actions
 
 ### Outstanding Action 1
 
 ```text
-Action: Confirm the exact file name and repository location for EVD-2026-ADMIN-001
-Related Resource: Helpdesk Administrator and Security Reader
-Risk: Incomplete evidence traceability
+Action: Improve Northstar service-principal discovery without adding sensitive output
+Related Evidence: EVD-2026-AUTOMATION-001 and EVD-2026-AUTOMATION-005
+Risk: The short script does not currently validate Northstar service-principal discovery
 Action Owner: Wisdom Kwame Djam
-Target Date: Final repository evidence review
-Current Status: Open
-Required Evidence: Sanitized role-assignment screenshot or equivalent configuration record
-Escalation Required: No
+Target Date: Future automation phase
+Current Status: Planned
+Required Evidence: Sanitized service-principal export and updated validation summary
 ```
 
 ### Outstanding Action 2
 
 ```text
-Action: Consider a future fictional removal or modification scenario
-Related Resource: Selected administrative role, group, application assignment, or guest access
-Risk: The current simulation does not demonstrate remediation and post-remediation verification
+Action: Validate read-only administrative-role assignment inventory
+Related Evidence: EVD-2026-AUTOMATION-001 and EVD-2026-AUTOMATION-005
+Risk: Administrative-role automation remains unvalidated
 Action Owner: Wisdom Kwame Djam
-Target Date: Future project phase
+Target Date: Future automation phase
 Current Status: Planned
-Required Evidence: Review decision, remediation record, resulting access evidence, and verification record
-Escalation Required: No
+Required Evidence: Sanitized output for Helpdesk Administrator and Security Reader assignments
 ```
 
-## 10. Register Metrics
+### Outstanding Action 3
 
 ```text
-Total Evidence Items: 2
-Public Items: 2
-Internal Items: 0
-Confidential Items: 0
-Restricted Items: 0
-Items Published: 1
-Items Provisionally Approved: 1
+Action: Validate read-only Northstar application-assignment inventory
+Related Evidence: EVD-2026-AUTOMATION-001 and EVD-2026-AUTOMATION-005
+Risk: Northstar direct assignment automation remains unvalidated
+Action Owner: Wisdom Kwame Djam
+Target Date: Future automation phase
+Current Status: Planned
+Required Evidence: Sanitized output showing validated fictional application assignments
+```
+
+## 10. Automation Control Status
+
+```text
+Selected Status: Partially Validated
+Status Justification: The tested short PowerShell script successfully authenticated through Microsoft Graph, exported users, guests, account status, security groups, and external-vendor membership, generated a validation summary, disconnected automatically, and made no tenant changes. Northstar discovery and two advanced assignment-inventory areas remain pending.
+Supporting Evidence: EVD-2026-AUTOMATION-001 through EVD-2026-AUTOMATION-005
+```
+
+This status does not mean that:
+
+- Every Microsoft Entra resource was inventoried.
+- Administrative-role assignment automation was completed.
+- Northstar application-assignment automation was completed.
+- Native Microsoft Entra Access Reviews were deployed.
+- Privileged Identity Management was deployed.
+- Conditional Access was deployed.
+- Write automation was implemented.
+- Any tenant object was changed.
+
+## 11. Updated Register Totals
+
+```text
+Total Evidence Items: 7
+Implemented and Validated Items: 4
+Manually Simulated Items: 1
+Partially Implemented Items: 2
+Design Validation Items: 0
+Designed, Not Implemented Items: 0
+Assessed, Not Deployed Items: 0
+Empty Templates Included: 0
+Items Approved for Public Repository: 7
 Items Pending Redaction: 0
 Items Not Approved for Publication: 0
-Missing or Incomplete Evidence Items: 1
+Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 2
-Outstanding Documentation Actions: 1
-Future Validation Actions: 1
+Items with Known Limitations: 5
 ```
 
-These metrics apply only to the evidence currently entered in this register.
-
-## 11. Register Review Checklist
-
-- [x] Every current evidence item has a unique identifier.
-- [x] Every item has an assigned owner.
-- [x] Every item has a sensitivity classification.
-- [x] Every item has a redaction status.
-- [x] Every item has a publication status.
-- [x] Every item is linked to the related review.
-- [x] Known limitations are recorded.
-- [x] Incomplete traceability is recorded.
-- [x] Simulated evidence is clearly labeled.
-- [x] Restricted information is absent.
-- [x] Evidence status matches the current artifacts.
-- [x] Portfolio claims remain limited to the registered evidence.
-- [ ] The exact location of EVD-2026-ADMIN-001 has been confirmed.
-
-## 12. Control Status
+## 12. Register Update Record
 
 ```text
-Selected Status: Active
-Status Justification: The register contains two evidence entries supporting a limited fictional administrative-role access-review simulation. One entry has an outstanding documentation action concerning the exact location of the original sanitized role-assignment evidence.
-Supporting Evidence: EVD-2026-ADMIN-001 and EVD-2026-ADMIN-002
+Document: Access Review Evidence Register
+Updated Version: 1.1
+Status: Active
+Updated By: Wisdom Kwame Djam
+Update Date: 2026-09-18
+Change Description: Added the tested read-only inventory script and four public-safe Microsoft Graph automation outputs
+Publication Review: Completed
+Privacy Review: Passed
+Automation Status: Partially Validated
+Tenant Modifications: None
+Next Scheduled Review: 2027-09-17
 ```
 
-The active register does not prove that:
 
-- Native Microsoft Entra Access Reviews were deployed
-- Privileged Identity Management was deployed
-- A production access review occurred
-- Independent reviewer separation was achieved
-- Remediation was performed
-- Post-remediation verification was performed
-- Every administrative role in the tenant was reviewed
 
 ## 13. Register Maintenance
 
