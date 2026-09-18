@@ -12,17 +12,16 @@ All identities, organizational responsibilities, review decisions, and business 
 
 ```text
 Register ID: EVR-2026-ACCESS-REVIEW-001
-Register Title: Northstar Health Access Review Evidence Register
+Register Title: Northstar Health Access Review and Automation Evidence Register
 Related Project: Microsoft Entra IAM and Zero Trust Governance Lab
 Document Owner: Wisdom Kwame Djam
-Version: 1.0
+Version: 1.1
 Status: Active
 Created Date: 2026-09-17
-Last Updated Date: 2026-09-17
+Last Updated Date: 2026-09-18
 Review Frequency: Annual and event-driven
 Next Review Date: 2027-09-17
 Repository Location: evidence/evidence-register.md
-```
 
 ## 2. Register Purpose
 
@@ -70,28 +69,30 @@ ARI-2026-ADMIN-002
 ## 4. Evidence Summary
 
 ```text
-Total Evidence Items: 2
-Implemented and Validated Items: 1
+Total Evidence Items: 7
+Implemented and Validated Items: 4
 Manually Simulated Items: 1
+Partially Implemented Items: 2
 Design Validation Items: 0
 Designed, Not Implemented Items: 0
 Assessed, Not Deployed Items: 0
-Partially Implemented Items: 0
 Empty Templates Included: 0
-Items Approved for Public Repository: 2
+Items Approved for Public Repository: 7
 Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 2
-```
+Items with Known Limitations: 5
+`
+These totals cover the administrative-role review evidence and the partially validated read-only Microsoft Graph automation evidence registered below.
 
-These totals apply only to the limited administrative-role review evidence registered below.
-
-Empty templates are maintained separately and are not counted as evidence that the access-review process was performed.
+Empty templates are maintained separately and are not counted as evidence that a governance process or technical control was executed.
 
 ## 5. Master Evidence Register
 
+### 5.1 Evidence Item: Administrative-Role Assignment Record
+
+```text
 ### 5.1 Evidence Item: Administrative-Role Assignment Record
 
 ```text
@@ -105,30 +106,30 @@ Related Escalation ID: Not Applicable
 Related Exception ID: Not Applicable
 Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
-Resource: Helpdesk
-Identity or Population: Selected fictional IT support and security identities
-Description: Sanitized configuration evidence supporting the existence of the selected Helpdesk Administrator and Security Reader assignments in the Microsoft Entra lab
+Resource: Helpdesk Administrator and Security Reader
+Identity or Population: Casey IT Support and Morgan Security
+Description: Two sanitized screenshots supporting the selected Helpdesk Administrator and Security Reader assignments in the Microsoft Entra lab
 Control Demonstrated: Least-privilege administrative-role assignment
-File Name:AR-2026-MONTHLY-ADMIN-001_helpdesk-
-File Format: Existing project evidence
-Capture Date: Previously captured during administrative-role configuration
+File Name: AR-2026-MONTHLY-ADMIN-001_helpdesk-administrator_assignment_2026-09-17.png; AR-2026-MONTHLY-ADMIN-001_security-reader_assignment_2026-09-17.png
+File Format: PNG
+Capture Date: 2026-09-17
 Captured By: Wisdom Kwame Djam
 Source: Microsoft Entra administrative-role assignment records
 Sensitivity Classification: Public after sanitization
-Redaction Status: Sanitized for Portfolio Use
+Redaction Status: Verified Redacted
 Redaction Verified By: Wisdom Kwame Djam
 Publication Status: Published
-Repository Location: Existing project evidence
+Repository Location: evidence/access-reviews/administrative-roles/
 Version: 1.0
-Integrity Check: Supported by existing project configuration documentation
+Integrity Check: Git commit history
 Retention Start Date: 2026-09-17
 Retention Review Date: 2029-09-17
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
 Verification Status: Reviewed for the limited fictional simulation
-Known Limitation: The register does not identify a dedicated evidence file path for the original role-assignment screenshot or record. Native Privileged Identity Management and Access Review history were unavailable because those capabilities were not deployed.
-Outstanding Action: Link the exact sanitized evidence file and repository path when the final evidence-folder review is completed.
-Notes: This evidence supports the existence of the selected lab assignments. It does not prove use of Privileged Identity Management, eligible assignment, just-in-time activation, or a native Microsoft Entra access review.
+Known Limitation: The evidence demonstrates active direct role assignments but does not demonstrate Privileged Identity Management, eligible assignments, just-in-time activation, or native Microsoft Entra Access Reviews.
+Outstanding Action: None
+Notes: This evidence supports the existence of the two selected fictional role assignments. It does not prove deployment of premium privileged-access or automated access-review capabilities.
 ```
 
 #### Quality Review
@@ -136,20 +137,21 @@ Notes: This evidence supports the existence of the selected lab assignments. It 
 - [x] The evidence has a unique identifier.
 - [x] The evidence type is accurate.
 - [x] The related review and review items are identified.
-- [x] The resource is identified.
-- [x] The evidence status is limited to the implemented role assignments.
+- [x] The two affected resources are identified.
+- [x] The two fictional identities are identified correctly.
+- [x] The exact evidence filenames are recorded.
+- [x] The repository location is recorded.
 - [x] The sensitivity classification is recorded.
-- [x] The known licensing limitation is disclosed.
-- [x] The evidence is not described as a native Access Review record.
-- [ ] The exact evidence file name and repository path have been confirmed.
-- [ ] A final publication review of the original evidence file has been completed.
+- [x] The screenshots received a publication review.
+- [x] The licensing and implementation limitations are disclosed.
+- [x] The evidence is not described as a native Microsoft Entra Access Review record.
 
 ```text
-Quality Review Result: Accepted with Outstanding Documentation Action
+Quality Review Result: Accepted for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
-Quality Review Date: 2026-09-17
-Issue Identified: The exact evidence file name and repository location must be confirmed during the final repository review.
-Corrective Action: Locate the sanitized role-assignment evidence and update the file name, format, and repository location fields.
+Quality Review Date: 2026-09-18
+Issue Identified: None
+Corrective Action: Not Applicable
 ```
 
 ### 5.2 Evidence Item: Manual Administrative-Role Review Record
@@ -717,13 +719,13 @@ Toronto, Ontario, Canada
 ## Document Control
 
 ```text
-Document: Access Review Evidence Register
+Document: Access Review and Automation Evidence Register
 File: evidence/evidence-register.md
-Version: 1.0
+Version: 1.1
 Status: Active
 Owner: Wisdom Kwame Djam
 Created: 2026-09-17
-Last Updated: 2026-09-17
+Last Updated: 2026-09-18
 Review Frequency: Annual and event-driven
 Next Scheduled Review: 2027-09-17
 ```
