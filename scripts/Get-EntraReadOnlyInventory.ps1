@@ -1,608 +1,314 @@
 <#
 .SYNOPSIS
-    Produces a sanitized read-only inventory of selected Microsoft Entra
-    identities, groups, memberships, administrative roles, and enterprise
-    application assignments.
+    Exports a sanitized read-only inventory from a Microsoft Entra lab.
 
 .DESCRIPTION
-    This script supports the fictional Northstar Health Microsoft Entra IAM
-    and Zero Trust Governance Lab.
+    Retrieves selected users, guests, account status, security groups,
+    external-vendor membership, and the Northstar service principal.
 
-    The script uses delegated Microsoft Graph read permissions and exports
-    selected non-sensitive fields to CSV files. It does not create, update,
-    remove, disable, or otherwise modify Microsoft Entra resources.
+    The script requests delegated read-only Microsoft Graph permissions.
+    It does not create, update, disable, or remove Microsoft Entra resources.
 
-    Microsoft Entra Security Defaults should remain enabled. The script uses
-    interactive browser authentication because device-code authentication was
-    blocked by Security Defaults during lab validation.
-
-    The script excludes tenant IDs, object IDs, application IDs, user principal
-    names, email addresses, authentication data, tokens, and diagnostic IDs
-    from exported portfolio evidence.
+    Administrative-role assignments and Northstar application assignments
+    are excluded because those automation areas have not yet been validated.
 
 .NOTES
-    File: Get-EntraReadOnlyInventory.ps1
-    Version: 1.0
-    Status: Partially Validated
-    Owner: Wisdom Kwame Djam
     Project: Microsoft Entra IAM and Zero Trust Governance Lab
-    Environment: Fictional educational lab
-
-    Successfully validated inventory areas:
-    - Users and guests
-    - Account-enabled status
-    - Security groups
-    - GRP-External-Vendors membership
-    - Northstar service-principal discovery
-
-    Areas requiring additional validation:
-    - Administrative-role assignment inventory
-    - Northstar application-assignment inventory
-
-    No tenant changes are performed by this script.
+    Owner: Wisdom Kwame Djam
+    Status: Partially Validated
 #>
 
 [CmdletBinding()]
-param(
-    [Parameter(Mandatory = $false)]
-    [string]$TenantDomain,
+param()
 
-    [Parameter(Mandatory = $false)]
-    [string]$OutputDirectory = (Join-Path -Path $PWD -ChildPath "entra-inventory-output"),
-
-    [Parameter(Mandatory = $false)]
-    [string]$NorthstarApplicationName = "Northstar Patient Records Portal",
-
-    [Parameter(Mandatory = $false)]
-    [string]$ExternalVendorGroupName = "GRP-External-Vendors"
-)
-
-Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
+
+$OutputFolder = Join-Path $PSScriptRoot "entra-inventory-output"
 
 $RequiredScopes = @(
     "User.Read.All"
     "Group.Read.All"
-    "RoleManagement.Read.Directory"
     "Application.Read.All"
 )
 
-$ExpectedSecurityGroups = @(
-    "GRP-Clinical-Users"
-    "GRP-External-Vendors"
-    "GRP-Finance-Users"
-    "GRP-HR-Users"
-    "GRP-IT-Support"
-    "GRP-Security-Readers"
-)
+$ConnectedToGraph = $false
 
-$SelectedAdministrativeRoles = @(
-    "Helpdesk Administrator"
-    "Security Reader"
-)
-
-$Results = [ordered]@{
-    Authentication               = "Not Started"
-    UsersAndGuests               = "Not Started"
-    SecurityGroups               = "Not Started"
-    ExternalVendorMembership     = "Not Started"
-    NorthstarServicePrincipal    = "Not Started"
-    AdministrativeRoleInventory  = "Not Started"
-    NorthstarAssignmentInventory = "Not Started"
-    TenantChanges                = "None"
-}
-
-function Write-Section {
+function Export-SafeCsv {
     param(
         [Parameter(Mandatory)]
-        [string]$Title
-    )
-
-    Write-Host ""
-    Write-Host ("=" * 72) -ForegroundColor DarkCyan
-    Write-Host $Title -ForegroundColor Cyan
-    Write-Host ("=" * 72) -ForegroundColor DarkCyan
-}
-
-function Export-SanitizedCsv {
-    param(
-        [Parameter(Mandatory)]
-        [object[]]$InputData,
+        [object[]]$Data,
 
         [Parameter(Mandatory)]
         [string]$FileName
     )
 
-    $Path = Join-Path -Path $OutputDirectory -ChildPath $FileName
-
-    if ($null -eq $InputData -or @($InputData).Count -eq 0) {
-        Write-Warning "No records were available for $FileName. No CSV was created."
+    if (@($Data).Count -eq 0) {
+        Write-Warning "No records were returned for $FileName"
         return
     }
 
-    $InputData |
-        Export-Csv -Path $Path -NoTypeInformation -Encoding UTF8
+    $FilePath = Join-Path $OutputFolder $FileName
 
-    Write-Host "Created: $Path" -ForegroundColor Green
+    $Data |
+        Export-Csv `
+            -Path $FilePath `
+            -NoTypeInformation `
+            -Encoding utf8
+
+    Write-Host "Created: $FilePath" -ForegroundColor Green
 }
 
-function Get-ResponseValue {
-    param(
-        [Parameter(Mandatory)]
-        [object]$Response
+try {
+    Write-Host ""
+    Write-Host "Microsoft Entra Read-Only Inventory" -ForegroundColor Cyan
+    Write-Host "No tenant changes will be made." -ForegroundColor Yellow
+    Write-Host ""
+
+    $RequiredCommands = @(
+        "Connect-MgGraph"
+        "Get-MgContext"
+        "Get-MgUser"
+        "Get-MgGroup"
+        "Get-MgGroupMember"
+        "Get-MgServicePrincipal"
+        "Disconnect-MgGraph"
     )
 
-    if ($Response -is [System.Collections.IDictionary]) {
-        return @($Response["value"])
+    foreach ($CommandName in $RequiredCommands) {
+        $Command = Get-Command `
+            -Name $CommandName `
+            -ErrorAction SilentlyContinue
+
+        if ($null -eq $Command) {
+            throw "Required Microsoft Graph command is unavailable: $CommandName"
+        }
     }
 
-    if ($null -ne $Response.PSObject.Properties["value"]) {
-        return @($Response.value)
+    if (Test-Path $OutputFolder) {
+        Remove-Item `
+            -Path $OutputFolder `
+            -Recurse `
+            -Force
     }
 
-    return @()
-}
+    New-Item `
+        -Path $OutputFolder `
+        -ItemType Directory |
+        Out-Null
 
-function Get-GraphValue {
-    param(
-        [Parameter(Mandatory = $false)]
-        [object]$Object,
+    Write-Host "Output folder prepared." -ForegroundColor Green
 
-        [Parameter(Mandatory)]
-        [string]$PropertyName
-    )
+    $TenantDomain = Read-Host "Enter the Entra tenant primary domain"
 
-    if ($null -eq $Object) {
-        return $null
+    if ([string]::IsNullOrWhiteSpace($TenantDomain)) {
+        throw "The tenant primary domain cannot be blank."
     }
 
-    if ($Object -is [System.Collections.IDictionary]) {
-        return $Object[$PropertyName]
+    $ConnectionParameters = @{
+        TenantId     = $TenantDomain
+        Scopes       = $RequiredScopes
+        ContextScope = "Process"
+        NoWelcome    = $true
     }
 
-    $Property = $Object.PSObject.Properties[$PropertyName]
+    Connect-MgGraph @ConnectionParameters
 
-    if ($null -ne $Property) {
-        return $Property.Value
-    }
-
-    return $null
-}
-
-function Test-RequiredCommand {
-    param(
-        [Parameter(Mandatory)]
-        [string]$CommandName
-    )
-
-    $Command = Get-Command -Name $CommandName -ErrorAction SilentlyContinue
-
-    if ($null -eq $Command) {
-        throw "Required command '$CommandName' is unavailable."
-    }
-}
-
-function Test-GraphConnection {
     $Context = Get-MgContext
 
     if ($null -eq $Context) {
-        return $false
+        throw "A Microsoft Graph connection was not established."
     }
+
+    $ConnectedToGraph = $true
 
     foreach ($Scope in $RequiredScopes) {
         if ($Scope -notin $Context.Scopes) {
-            return $false
+            throw "Required read-only permission was not granted: $Scope"
         }
     }
 
-    return $true
-}
+    Write-Host "Read-only Microsoft Graph connection validated." -ForegroundColor Green
 
-function Connect-ReadOnlyGraph {
-    Write-Section "Microsoft Graph Read-Only Authentication"
+    Write-Host ""
+    Write-Host "Retrieving users and guests..." -ForegroundColor Cyan
 
-    if ([string]::IsNullOrWhiteSpace($TenantDomain)) {
-        $script:TenantDomain = Read-Host "Enter the Microsoft Entra tenant primary domain"
-    }
+    $Users = Get-MgUser `
+        -All `
+        -Property DisplayName,UserType,AccountEnabled |
+        Select-Object `
+            DisplayName,
+            UserType,
+            AccountEnabled |
+        Sort-Object DisplayName
 
-    if ([string]::IsNullOrWhiteSpace($TenantDomain)) {
-        throw "A tenant primary domain is required."
-    }
+    Export-SafeCsv `
+        -Data @($Users) `
+        -FileName "entra-users-and-guests.csv"
 
-    Write-Host "Connecting with delegated read-only permissions..." -ForegroundColor Yellow
-    Write-Host "Security Defaults must remain enabled." -ForegroundColor Yellow
-    Write-Host "Do not approve any permission containing ReadWrite." -ForegroundColor Yellow
+    Write-Host ""
+    Write-Host "Retrieving security groups..." -ForegroundColor Cyan
 
-    Connect-MgGraph `
-        -TenantId $TenantDomain `
-        -Scopes $RequiredScopes `
-        -ContextScope Process `
-        -NoWelcome
-
-    if (-not (Test-GraphConnection)) {
-        throw "The Microsoft Graph connection does not contain all required read-only scopes."
-    }
-
-    $Context = Get-MgContext
-
-    $SafeContext = [pscustomobject]@{
-        AuthenticationType = $Context.AuthType
-        ContextScope       = $Context.ContextScope
-        RequiredScopes     = ($RequiredScopes -join ", ")
-        TenantIdentifiers  = "Excluded from public output"
-        AccountIdentifiers = "Excluded from public output"
-    }
-
-    $SafeContext | Format-List
-
-    $Results.Authentication = "Validated"
-}
-
-function Get-SanitizedUserInventory {
-    Write-Section "Users and Guests"
-
-    try {
-        $Inventory = Get-MgUser `
-            -All `
-            -Property DisplayName,UserType,AccountEnabled |
-            Select-Object `
-                DisplayName,
-                UserType,
-                AccountEnabled |
-            Sort-Object DisplayName
-
-        $Inventory | Format-Table -AutoSize
-
-        Export-SanitizedCsv `
-            -InputData @($Inventory) `
-            -FileName "entra-users-and-guests.csv"
-
-        $Results.UsersAndGuests = "Validated"
-    }
-    catch {
-        $Results.UsersAndGuests = "Not Validated"
-        Write-Warning "User and guest inventory failed: $($_.Exception.Message)"
-    }
-}
-
-function Get-SanitizedSecurityGroupInventory {
-    Write-Section "Security Groups"
-
-    try {
-        $Inventory = Get-MgGroup `
-            -All `
-            -Property DisplayName,SecurityEnabled,GroupTypes |
-            Where-Object {
-                $_.SecurityEnabled -eq $true
-            } |
-            Select-Object `
-                DisplayName,
-                SecurityEnabled,
-                @{
-                    Name = "GroupTypes"
-                    Expression = {
-                        $_.GroupTypes -join ","
-                    }
-                },
-                @{
-                    Name = "ExpectedLabGroup"
-                    Expression = {
-                        $_.DisplayName -in $ExpectedSecurityGroups
-                    }
-                } |
-            Sort-Object DisplayName
-
-        $Inventory | Format-Table -AutoSize
-
-        Export-SanitizedCsv `
-            -InputData @($Inventory) `
-            -FileName "entra-security-groups.csv"
-
-        $Results.SecurityGroups = "Validated"
-    }
-    catch {
-        $Results.SecurityGroups = "Not Validated"
-        Write-Warning "Security-group inventory failed: $($_.Exception.Message)"
-    }
-}
-
-function Get-SanitizedExternalVendorMembership {
-    Write-Section "External-Vendor Group Membership"
-
-    try {
-        $VendorGroup = Get-MgGroup `
-            -All `
-            -Property Id,DisplayName |
-            Where-Object {
-                $_.DisplayName -eq $ExternalVendorGroupName
-            } |
-            Select-Object -First 1
-
-        if ($null -eq $VendorGroup) {
-            $Results.ExternalVendorMembership = "Object Not Found"
-            Write-Warning "The group '$ExternalVendorGroupName' was not found."
-            return
-        }
-
-        $Inventory = Get-MgGroupMember `
-            -GroupId $VendorGroup.Id `
-            -All |
-            ForEach-Object {
-                [pscustomobject]@{
-                    GroupName   = $ExternalVendorGroupName
-                    DisplayName = $_.AdditionalProperties.displayName
-                    ObjectType  = (
-                        $_.AdditionalProperties.'@odata.type' `
-                            -replace "#microsoft.graph.", ""
-                    )
+    $Groups = Get-MgGroup `
+        -All `
+        -Property DisplayName,SecurityEnabled,GroupTypes |
+        Where-Object {
+            $_.SecurityEnabled -eq $true
+        } |
+        Select-Object `
+            DisplayName,
+            SecurityEnabled,
+            @{
+                Name = "GroupTypes"
+                Expression = {
+                    $_.GroupTypes -join ","
                 }
             } |
-            Sort-Object DisplayName
+        Sort-Object DisplayName
 
-        $Inventory | Format-Table -AutoSize
+    Export-SafeCsv `
+        -Data @($Groups) `
+        -FileName "entra-security-groups.csv"
 
-        Export-SanitizedCsv `
-            -InputData @($Inventory) `
-            -FileName "entra-external-vendor-membership.csv"
+    Write-Host ""
+    Write-Host "Retrieving external-vendor membership..." -ForegroundColor Cyan
 
-        $Results.ExternalVendorMembership = "Validated"
-    }
-    catch {
-        $Results.ExternalVendorMembership = "Not Validated"
-        Write-Warning "External-vendor membership inventory failed: $($_.Exception.Message)"
-    }
-}
+    $VendorGroup = Get-MgGroup `
+        -All `
+        -Property Id,DisplayName |
+        Where-Object {
+            $_.DisplayName -eq "GRP-External-Vendors"
+        } |
+        Select-Object -First 1
 
-function Get-SanitizedNorthstarServicePrincipal {
-    Write-Section "Northstar Service Principal"
+    $VendorMembershipStatus = "Object Not Found"
 
-    try {
-        $ServicePrincipals = Get-MgServicePrincipal `
-            -All `
-            -Property Id,DisplayName,AccountEnabled
-
-        $Northstar = $ServicePrincipals |
-            Where-Object {
-                $_.DisplayName -eq $NorthstarApplicationName
-            } |
-            Select-Object -First 1
-
-        if ($null -eq $Northstar) {
-            $Results.NorthstarServicePrincipal = "Object Not Found"
-            Write-Warning "The service principal '$NorthstarApplicationName' was not found."
-            return $null
+    if ($null -ne $VendorGroup) {
+        if ([string]::IsNullOrWhiteSpace($VendorGroup.Id)) {
+            $VendorMembershipStatus = "Not Validated"
+            Write-Warning "GRP-External-Vendors was found, but no usable group identifier was returned."
         }
+        else {
+            $VendorMembers = Get-MgGroupMember `
+                -GroupId $VendorGroup.Id `
+                -All |
+                ForEach-Object {
+                    [pscustomobject]@{
+                        GroupName   = "GRP-External-Vendors"
+                        DisplayName = $_.AdditionalProperties.displayName
+                        ObjectType  = (
+                            $_.AdditionalProperties.'@odata.type' `
+                                -replace "#microsoft.graph.", ""
+                        )
+                    }
+                } |
+                Sort-Object DisplayName
 
-        $SafeInventory = [pscustomobject]@{
+            Export-SafeCsv `
+                -Data @($VendorMembers) `
+                -FileName "entra-external-vendor-membership.csv"
+
+            $VendorMembershipStatus = "Validated"
+        }
+    }
+    else {
+        Write-Warning "GRP-External-Vendors was not found."
+    }
+
+    Write-Host ""
+    Write-Host "Discovering the Northstar service principal..." -ForegroundColor Cyan
+
+    $Northstar = Get-MgServicePrincipal `
+        -All `
+        -Property DisplayName,AccountEnabled |
+        Where-Object {
+            $_.DisplayName -eq "Northstar Patient Records Portal"
+        } |
+        Select-Object -First 1
+
+    $NorthstarStatus = "Object Not Found"
+
+    if ($null -ne $Northstar) {
+        $NorthstarRecord = [pscustomobject]@{
             DisplayName    = $Northstar.DisplayName
             AccountEnabled = $Northstar.AccountEnabled
         }
 
-        $SafeInventory | Format-Table -AutoSize
-
-        Export-SanitizedCsv `
-            -InputData @($SafeInventory) `
+        Export-SafeCsv `
+            -Data @($NorthstarRecord) `
             -FileName "entra-northstar-service-principal.csv"
 
-        $Results.NorthstarServicePrincipal = "Validated"
-
-        return $Northstar
+        $NorthstarStatus = "Validated"
     }
-    catch {
-        $Results.NorthstarServicePrincipal = "Not Validated"
-        Write-Warning "Northstar service-principal discovery failed: $($_.Exception.Message)"
-        return $null
+    else {
+        Write-Warning "Northstar Patient Records Portal was not found."
     }
-}
 
-function Get-SanitizedAdministrativeRoleInventory {
-    Write-Section "Selected Administrative-Role Assignments"
+    Write-Host ""
+    Write-Host "Creating validation summary..." -ForegroundColor Cyan
 
-    try {
-        $Uri = "https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments?`$expand=principal,roleDefinition"
-        $Response = Invoke-MgGraphRequest `
-            -Method GET `
-            -Uri $Uri `
-            -OutputType PSObject
-
-        $Assignments = Get-ResponseValue -Response $Response
-
-        $Inventory = foreach ($Assignment in $Assignments) {
-            $Principal = Get-GraphValue `
-                -Object $Assignment `
-                -PropertyName "principal"
-
-            $RoleDefinition = Get-GraphValue `
-                -Object $Assignment `
-                -PropertyName "roleDefinition"
-
-            $RoleName = Get-GraphValue `
-                -Object $RoleDefinition `
-                -PropertyName "displayName"
-
-            if ($RoleName -in $SelectedAdministrativeRoles) {
-                [pscustomobject]@{
-                    Identity = Get-GraphValue `
-                        -Object $Principal `
-                        -PropertyName "displayName"
-
-                    Role = $RoleName
-
-                    Scope = Get-GraphValue `
-                        -Object $Assignment `
-                        -PropertyName "directoryScopeId"
-                }
-            }
+    $Summary = @(
+        [pscustomobject]@{
+            InventoryArea = "Microsoft Graph authentication"
+            Status        = "Validated"
         }
 
-        $Inventory = @($Inventory) |
-            Where-Object {
-                -not [string\]::IsNullOrWhiteSpace($_.Role)
-            } |
-            Sort-Object Role
-
-        if ($Inventory.Count -eq 0) {
-            $Results.AdministrativeRoleInventory = "Not Yet Validated"
-            Write-Warning "No selected administrative-role assignments were returned."
-            return
+        [pscustomobject]@{
+            InventoryArea = "Users and guests"
+            Status        = "Validated"
         }
 
-        $Inventory | Format-Table -AutoSize
+        [pscustomobject]@{
+            InventoryArea = "Account-enabled status"
+            Status        = "Validated"
+        }
 
-        Export-SanitizedCsv `
-            -InputData $Inventory `
-            -FileName "entra-selected-administrative-roles.csv"
+        [pscustomobject]@{
+            InventoryArea = "Security groups"
+            Status        = "Validated"
+        }
 
-        $Results.AdministrativeRoleInventory = "Validated"
-    }
-    catch {
-        $Results.AdministrativeRoleInventory = "Not Yet Validated"
-        Write-Warning "Administrative-role inventory was not completed."
-        Write-Warning $_.Exception.Message
-    }
-}
+        [pscustomobject]@{
+            InventoryArea = "External-vendor membership"
+            Status        = $VendorMembershipStatus
+        }
 
-function Get-SanitizedNorthstarAssignments {
-    param(
-        [Parameter(Mandatory = $false)]
-        [object]$Northstar
+        [pscustomobject]@{
+            InventoryArea = "Northstar service-principal discovery"
+            Status        = $NorthstarStatus
+        }
+
+        [pscustomobject]@{
+            InventoryArea = "Administrative-role assignments"
+            Status        = "Not Yet Validated"
+        }
+
+        [pscustomobject]@{
+            InventoryArea = "Northstar application assignments"
+            Status        = "Not Yet Validated"
+        }
+
+        [pscustomobject]@{
+            InventoryArea = "Tenant modifications"
+            Status        = "None"
+        }
     )
 
-    Write-Section "Northstar Application Assignments"
-
-    try {
-        if ($null -eq $Northstar) {
-            $Results.NorthstarAssignmentInventory = "Not Yet Validated"
-            Write-Warning "Northstar assignment retrieval was skipped because the service principal was unavailable."
-            return
-        }
-
-        $NorthstarId = $Northstar.Id
-
-        if ([string\]::IsNullOrWhiteSpace($NorthstarId)) {
-            $Results.NorthstarAssignmentInventory = "Not Yet Validated"
-            Write-Warning "Northstar assignment retrieval was skipped because no usable service-principal identifier was returned."
-            return
-        }
-
-        $Uri = "https://graph.microsoft.com/v1.0/servicePrincipals/$NorthstarId/appRoleAssignedTo?`$select=principalDisplayName,principalType,resourceDisplayName"
-
-        $Response = Invoke-MgGraphRequest `
-            -Method GET `
-            -Uri $Uri `
-            -OutputType PSObject
-
-        $Assignments = Get-ResponseValue -Response $Response
-
-        $Inventory = foreach ($Assignment in $Assignments) {
-            [pscustomobject]@{
-                PrincipalDisplayName = Get-GraphValue `
-                    -Object $Assignment `
-                    -PropertyName "principalDisplayName"
-
-                PrincipalType = Get-GraphValue `
-                    -Object $Assignment `
-                    -PropertyName "principalType Get-GraphValue `
-                    -Object $Assignment `
-                    -PropertyName "resourceDisplayName"
-            }
-        }
-
-        $Inventory = @($Inventory) |
-            Where-Object {
-                -not :IsNullOrWhiteSpace($_.PrincipalDisplayName)
-            } |
-            Sort-Object PrincipalDisplayName
-
-        if ($Inventory.Count -eq 0) {
-            $Results.NorthstarAssignmentInventory = "Not Yet Validated"
-            Write-Warning "No Northstar application assignments were returned."
-            return
-        }
-
-        $Inventory | Format-Table -AutoSize
-
-        Export-SanitizedCsv `
-            -InputData $Inventory `
-            -FileName "entra-northstar-application-assignments.csv"
-
-        $Results.NorthstarAssignmentInventory = "Validated"
-    }
-    catch {
-        $Results.NorthstarAssignmentInventory = "Not Yet Validated"
-        Write-Warning "Northstar assignment inventory was not completed."
-        Write-Warning $_.Exception.Message
-    }
-}
-
-function Show-ValidationSummary {
-    Write-Section "Validation Summary"
-
-    $Summary = foreach ($Entry in $Results.GetEnumerator()) {
-        [pscustomobject]@{
-            InventoryArea = $Entry.Key
-            Status        = $Entry.Value
-        }
-    }
-
-    $Summary | Format-Table -AutoSize
-
-    Export-SanitizedCsv `
-        -InputData @($Summary) `
+    Export-SafeCsv `
+        -Data $Summary `
         -FileName "entra-inventory-validation-summary.csv"
 
     Write-Host ""
-    Write-Host "Overall classification: Partially Validated" -ForegroundColor Yellow
+    Write-Host "Inventory completed successfully." -ForegroundColor Green
+    Write-Host "Overall status: Partially Validated" -ForegroundColor Yellow
     Write-Host "No tenant changes were made." -ForegroundColor Green
-    Write-Host "Review all CSV files before publishing them." -ForegroundColor Yellow
-}
-
-try {
-    Write-Section "Prerequisite Validation"
-
-    Test-RequiredCommand -CommandName "Connect-MgGraph"
-    Test-RequiredCommand -CommandName "Get-MgContext"
-    Test-RequiredCommand -CommandName "Get-MgUser"
-    Test-RequiredCommand -CommandName "Get-MgGroup"
-    Test-RequiredCommand -CommandName "Get-MgGroupMember"
-    Test-RequiredCommand -CommandName "Get-MgServicePrincipal"
-    Test-RequiredCommand -CommandName "Invoke-MgGraphRequest"
-    Test-RequiredCommand -CommandName "Disconnect-MgGraph"
-
-    if (-not (Test-Path -Path $OutputDirectory)) {
-        New-Item `
-            -Path $OutputDirectory `
-            -ItemType Directory `
-            -Force |
-            Out-Null
-    }
-
-    Write-Host "Output directory prepared: $OutputDirectory" -ForegroundColor Green
-
-    Connect-ReadOnlyGraph
-
-    Get-SanitizedUserInventory
-    Get-SanitizedSecurityGroupInventory
-    Get-SanitizedExternalVendorMembership
-
-    $NorthstarServicePrincipal = Get-SanitizedNorthstarServicePrincipal
-
-    Get-SanitizedAdministrativeRoleInventory
-    Get-SanitizedNorthstarAssignments -Northstar $NorthstarServicePrincipal
-
-    Show-ValidationSummary
 }
 catch {
     Write-Host ""
-    Write-Error "Inventory execution stopped: $($_.Exception.Message)"
+    Write-Host "Inventory stopped safely." -ForegroundColor Red
+    Write-Host $_.Exception.Message -ForegroundColor Red
 }
 finally {
-    $Context = Get-MgContext
-
-    if ($null -ne $Context) {
-        Write-Host ""
-        Write-Host "Disconnecting from Microsoft Graph..." -ForegroundColor Yellow
-
+    if ($ConnectedToGraph) {
         Disconnect-MgGraph -ErrorAction SilentlyContinue |
             Out-Null
 
@@ -611,5 +317,4 @@ finally {
 }
 
 Write-Host ""
-Write-Host "Script completed." -ForegroundColor Cyan
-Write-Host "Review exported files before adding any output to GitHub." -ForegroundColor Yellow
+Write-Host "Review every CSV before publishing it." -ForegroundColor Yellow
