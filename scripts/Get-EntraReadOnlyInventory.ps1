@@ -201,11 +201,11 @@ function Test-GraphConnection {
 function Connect-ReadOnlyGraph {
     Write-Section "Microsoft Graph Read-Only Authentication"
 
-    if ([string\]::IsNullOrWhiteSpace($TenantDomain)) {
+    if ([string]::IsNullOrWhiteSpace($TenantDomain)) {
         $script:TenantDomain = Read-Host "Enter the Microsoft Entra tenant primary domain"
     }
 
-    if ([string\]::IsNullOrWhiteSpace($TenantDomain)) {
+    if ([string]::IsNullOrWhiteSpace($TenantDomain)) {
         throw "A tenant primary domain is required."
     }
 
