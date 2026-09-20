@@ -115,6 +115,29 @@ Privileged Identity Management could strengthen a production environment by supp
 The project design recommends evaluating whether the fictional Helpdesk Administrator and Security Reader assignments should become eligible or time-bound in an appropriately licensed production environment.
 
 ## Evidence File
+## PIM Active and Eligible Role Interface Assessment
+
+**Evidence ID:** `EVD-2026-LICENSING-005`  
+**Capability:** Active and eligible Microsoft Entra role assignments  
+**Implementation status:** Assessed, Not Deployed  
+**Tenant changes:** None  
+
+The sanitized screenshot shows the Microsoft Entra Privileged Identity Management role catalogue and its separate columns for active and eligible role assignments.
+
+The interface was assessed to understand how an appropriately licensed production environment could distinguish:
+
+- Permanently active role assignments
+- Eligible role assignments
+- Just-in-time activation
+- Time-bound privileged access
+- Assignment and activation governance
+
+The visible role rows displayed dashes under the `Active` and `Eligible` columns. This observation is limited to the portion of the role catalogue visible in the screenshot.
+
+## Evidence File
+
+```text
+entra-pim-active-eligible-role-interface_2026-09-20.png
 ## Privacy Notice
 
 The published screenshot was sanitized to remove personal account information, tenant details, the browser address, session information, and unnecessary device information.
