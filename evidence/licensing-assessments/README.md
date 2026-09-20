@@ -52,7 +52,32 @@ The current lab uses documented manual joiner-mover-leaver procedures and does n
 ```text
 entra-lifecycle-workflows-license-requirement_2026-09-20.png
 ```
+## Privileged Identity Management Access Reviews Assessment
 
+**Evidence ID:** `EVD-2026-LICENSING-003`  
+**Capability:** Administrative-role Access Reviews through Privileged Identity Management  
+**Visible licensing requirement:** EMS E5 or Microsoft Entra ID P2  
+**Implementation status:** Assessed, Not Deployed  
+**Tenant changes:** None  
+
+The sanitized screenshot shows the Microsoft Entra Privileged Identity Management Access Reviews page returning an access-denied result and stating that the tenant does not have the required licence for Access Reviews.
+
+## Governance Relevance
+
+PIM-based Access Reviews could support recurring recertification of selected administrative-role assignments, including:
+
+- Helpdesk Administrator
+- Security Reader
+- Other privileged Microsoft Entra roles
+- Time-bound and eligible privileged-access governance
+- Reviewer decisions and access-remediation workflows
+- Privileged-access audit evidence
+
+The current lab did not deploy Privileged Identity Management or native administrative-role Access Reviews.
+
+A structured manual review was used as the Free-tier governance alternative.
+
+## Evidence File
 ## Limitation
 
 The evidence records the licensing message visible during the assessment. It does not demonstrate a configured workflow, production deployment, successful automation, or complete licensing analysis for every Microsoft Entra ID Governance capability.
