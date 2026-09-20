@@ -739,7 +739,69 @@ Verification Status: Assessed
 Known Limitation: The screenshot records the displayed access and licensing message but does not demonstrate PIM deployment, eligible role assignment, just-in-time activation, a configured native Access Review, reviewer decisions, or automated remediation.
 Outstanding Action: Reassess PIM-based administrative-role Access Reviews if appropriate licensing becomes available.
 Notes: Native administrative-role Access Reviews remained unavailable. The lab used a documented manual review procedure and completed a limited fictional review of the Helpdesk Administrator and Security Reader assignments.
+### 5.14 Evidence Item: Privileged Identity Management Premium-Feature Assessment
 
+```text
+Evidence ID: EVD-2026-LICENSING-004
+Evidence Title: Microsoft Entra Privileged Identity Management Premium-Feature Assessment
+Evidence Type: Licensing Assessment
+Evidence Status: Assessed, Not Deployed
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: Microsoft Entra Privileged Identity Management
+Identity or Population: Proposed governance of Microsoft Entra administrative-role assignments
+Description: Sanitized Microsoft Entra screenshot showing the Privileged Identity Management quick-start page and premium capabilities for eligible assignment, activation, approval, auditing, alerts, and access review
+Control Demonstrated: Licensing-aware assessment of privileged-access governance capabilities
+File Name: entra-pim-premium-feature-assessment_2026-09-20.png
+File Format: PNG
+Capture Date: 2026-09-20
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Entra admin center
+Sensitivity Classification: Public after sanitization
+Redaction Status: Verified Redacted
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/licensing-assessments/entra-pim-premium-feature-assessment_2026-09-20.png
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-20
+Retention Review Date: 2029-09-20
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Assessed
+Known Limitation: The screenshot documents visible PIM capabilities but does not demonstrate licensing entitlement, PIM deployment, eligible assignments, role activation, approval workflows, activation history, privileged-role remediation, or native Access Reviews.
+Outstanding Action: Reassess PIM if appropriate Microsoft Entra licensing becomes available.
+Notes: The fictional Helpdesk Administrator and Security Reader assignments remained active direct assignments. PIM was evaluated as a proposed production enhancement and was not deployed.
+```
+
+#### Quality Review
+
+- [x] The Microsoft Entra PIM context is visible.
+- [x] PIM is visibly identified as a premium feature.
+- [x] Assignment capability is visible.
+- [x] Activation capability is visible.
+- [x] Approval capability is visible.
+- [x] Audit capability is visible.
+- [x] Roles, assignments, alerts, and access-review navigation are visible.
+- [x] Personal account information was removed or permanently redacted.
+- [x] The directory name was removed.
+- [x] The browser address was removed.
+- [x] No password, token, secret, session ID, or authentication code is visible.
+- [x] The capability is classified as assessed rather than implemented.
+- [x] No eligible assignment or role activation is claimed.
+- [x] No tenant modification is claimed.
+
+```text
+Quality Review Result: Approved for Public Repository
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-20
+Issue Identified: None
+Corrective Action: Not Applicable
+```
 ## 6. Automation Evidence Summary
 
 ```text
