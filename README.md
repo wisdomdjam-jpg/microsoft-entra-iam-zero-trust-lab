@@ -217,19 +217,36 @@ Conditional Access required Microsoft Entra ID P1 or P2. The following report-on
 ### Privileged Identity Management
 
 Privileged Identity Management was assessed as a premium capability. The production design would convert Casey IT Support's standing Helpdesk Administrator role into an eligible, time-limited assignment requiring MFA, justification, notification, and audit logging.
+## Access Reviews
 
-### Access Reviews
+A risk-based access-review framework was designed for:
 
-A quarterly external-vendor review was designed:
+- Helpdesk Administrator assignments
+- Security Reader assignments
+- Security-group memberships
+- Northstar Patient Records Portal assignments
+- Microsoft Entra B2B guest identities
+- `GRP-External-Vendors` membership
+- Direct user assignments
+- Temporary access exceptions
+
+The framework defines:
+
+- Monthly reviews for privileged roles, B2B guests, external-vendor membership, privileged direct assignments, and active exceptions
+- Quarterly reviews for standard security groups, authentication-method targeting groups, Northstar Portal assignments, and standard direct assignments
+- Resource owners, primary reviewers, backup reviewers, remediation owners, and verification owners
+- Approve, remove, modify, escalate, and temporary-exception decisions
+- Escalation, exception, remediation, verification, evidence-retention, and review-closure procedures
+
+The proposed external-vendor review is:
 
 ```text
-Review name: AR-External-Vendor-Access-Quarterly
+Review Name: AR-External-Vendor-Access-Monthly
 Resource: GRP-External-Vendors
 Scope: All members
-Frequency: Quarterly
-Decision: Approve or deny continued access
-No response: Remove access
-```
+Frequency: Monthly
+Decision: Approve, remove, modify, escalate, or temporarily retain through an approved exception
+Missing Response: Transfer to backup review and escalate; do not treat as approval
 
 ### Entitlement Management
 
@@ -243,7 +260,48 @@ Approval: Vendor sponsor or designated owner
 Access duration: 90 days
 Expiration: Automatic access removal
 Review: Quarterly
-```
+
+## Manual Access-Review Validation A limited fictional manual access review was completed for: | Fictional identity | Administrative role | Decision | |---|---|---| | Casey IT Support | Helpdesk Administrator | Approved | | Morgan Security | Security Reader | Approved | Both assignments remained aligned with the fictional responsibilities defined in the lab. The simulation included: - Defined review scope and criteria - Initial access-state evidence - Explicit reviewer assessments and decisions - Escalation and exception assessments - Findings and implementation limitations - Evidence traceability - Formal review closure No remediation was required because neither assignment was removed or modified. The simulation used one participant, so independent separation among the preparer, reviewer, and verifier could not be demonstrated. This limitation is disclosed in the review record. **Status:** Manually Simulated and Validated for the limited two-role review.
+## Read-Only Microsoft Graph Automation
+
+A short PowerShell inventory script was developed and tested using delegated read-only Microsoft Graph permissions.
+
+The validated workflow retrieved and exported:
+
+- Fictional users and guests
+- Account-enabled status
+- Six security groups
+- `GRP-External-Vendors` membership
+- An inventory validation summary
+
+The workflow:
+
+- Retained Microsoft Entra Security Defaults
+- Used interactive delegated authentication
+- Used no embedded credentials
+- Requested no write permissions
+- Created sanitized CSV evidence
+- Excluded personal and technical identifiers from public exports
+- Disconnected automatically
+- Made no tenant changes
+
+The following automation areas remain pending:
+
+- Northstar service-principal discovery in the tested short script
+- Administrative-role assignment inventory
+- Northstar application-assignment inventory
+
+```text
+Access-review policy: Completed
+Administrative-role review simulation: Manually Simulated and Validated
+Evidence register: Active, Version 1.1
+Read-only Microsoft Graph automation: Partially Validated
+Native Microsoft Entra Access Reviews: Assessed, Not Deployed
+Entitlement Management: Assessed and Designed, Not Deployed
+Privileged Identity Management: Assessed, Not Deployed
+Conditional Access: Designed, Not Implemented
+Tenant modifications during automation: None
+
 
 ### Lifecycle Workflows
 
