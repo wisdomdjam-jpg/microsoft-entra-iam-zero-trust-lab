@@ -69,20 +69,20 @@ ARI-2026-ADMIN-002
 ## 4. Evidence Summary
 
 ```text
-Total Evidence Items: 14
-Implemented and Validated Items: 8
+Total Evidence Items: 15
+Implemented and Validated Items: 7
 Manually Simulated Items: 1
 Partially Implemented Items: 2
 Design Validation Items: 0
 Designed, Not Implemented Items: 0
-Assessed, Not Deployed Items: 0
+Assessed, Not Deployed Items: 5
 Empty Templates Included: 0
-Items Approved for Public Repository: 14
+Items Approved for Public Repository: 15
 Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 12
+Items with Known Limitations: 13
 `
 These totals cover the administrative-role review evidence and the partially validated read-only Microsoft Graph automation evidence registered below.
 
@@ -802,6 +802,69 @@ Quality Review Date: 2026-09-20
 Issue Identified: None
 Corrective Action: Not Applicable
 ```
+### 5.15 Evidence Item: PIM Active and Eligible Role Interface Assessment
+
+```text
+Evidence ID: EVD-2026-LICENSING-005
+Evidence Title: Microsoft Entra PIM Active and Eligible Role Interface Assessment
+Evidence Type: Licensing Assessment
+Evidence Status: Assessed, Not Deployed
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: Microsoft Entra Privileged Identity Management role catalogue
+Identity or Population: Visible Microsoft Entra administrative-role definitions
+Description: Sanitized Microsoft Entra screenshot showing the Privileged Identity Management role catalogue and separate columns for active and eligible role assignments
+Control Demonstrated: Licensing-aware assessment of active, eligible, and just-in-time privileged-role governance
+File Name: entra-pim-active-eligible-role-interface_2026-09-20.png
+File Format: PNG
+Capture Date: 2026-09-20
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Entra admin center
+Sensitivity Classification: Public after sanitization
+Redaction Status: Verified Redacted
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/licensing-assessments/entra-pim-active-eligible-role-interface_2026-09-20.png
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-20
+Retention Review Date: 2029-09-20
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Assessed
+Known Limitation: The screenshot shows only the visible portion of the role catalogue and does not demonstrate PIM licensing, complete tenant-wide role coverage, an eligible assignment, an active PIM-managed assignment, just-in-time activation, approval, expiration, or remediation.
+Outstanding Action: Reassess active and eligible privileged-role assignments if appropriate Microsoft Entra licensing becomes available.
+Notes: The interface was reviewed without using Add assignments or changing any tenant configuration. The fictional Helpdesk Administrator and Security Reader roles remained active direct assignments outside PIM.
+```
+
+#### Quality Review
+
+- [x] The Microsoft Entra PIM context is visible.
+- [x] The PIM role catalogue is visible.
+- [x] The `Active` column is visible.
+- [x] The `Eligible` column is visible.
+- [x] The visible role rows and descriptions are readable.
+- [x] Roles, assignments, alerts, access reviews, and audit navigation are visible.
+- [x] Personal account information was removed or permanently redacted.
+- [x] The directory name was removed.
+- [x] The browser address was removed.
+- [x] No passwords, tokens, secrets, session IDs, or authentication codes are visible.
+- [x] The evidence is classified as assessed rather than implemented.
+- [x] No eligible assignment or role activation is claimed.
+- [x] No complete tenant-wide role conclusion is claimed.
+- [x] No tenant modification is claimed.
+
+```text
+Quality Review Result: Approved for Public Repository
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-20
+Issue Identified: None
+Corrective Action: Not Applicable
+```
 ## 6. Automation Evidence Summary
 
 ```text
@@ -832,6 +895,19 @@ The overall automation remains partially validated because:
 - Northstar service-principal discovery returned `Object Not Found` in the tested short script.
 - Administrative-role assignment automation was excluded from the tested short script.
 - Northstar application-assignment automation was excluded from the tested short script.
+## - Screenshots reviewed: 11
+
+1. Helpdesk Administrator assignment
+2. Security Reader assignment
+3. Northstar Microsoft Graph User.Read permission
+4. Microsoft Entra audit-log activities
+5. Read-only user and guest inventory
+6. Read-only security-group inventory
+7. Lifecycle Workflows licensing assessment
+8. Identity Governance and Entitlement Management assessment
+9. PIM Access Reviews licensing assessment
+10. PIM premium-feature assessment
+11. PIM active and eligible role-interface assessment
 
 ## 7. Automation Evidence Traceability
 
@@ -957,31 +1033,32 @@ This status does not mean that:
 ## 11. Updated Register Totals
 
 ```text
-Total Evidence Items: 14
-Implemented and Validated Items: 8
+Total Evidence Items: 15
+Implemented and Validated Items: 7
 Manually Simulated Items: 1
 Partially Implemented Items: 2
 Design Validation Items: 0
 Designed, Not Implemented Items: 0
-Assessed, Not Deployed Items: 2
+Assessed, Not Deployed Items: 5
 Empty Templates Included: 0
-Items Approved for Public Repository: 14
+Items Approved for Public Repository: 15
 Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 12
+Items with Known Limitations: 13
 ```
 
 ## 12. Register Update Record
 
 ```text
 Document: Access Review Evidence Register
-Updated Version: 1.6
+Updated Version: 1.9
 Status: Active
 Updated By: Wisdom Kwame Djam
-Update Date: 2026-09-18
-Change Description: Added the tested read-only inventory script and four public-safe Microsoft Graph automation outputs
+Updated Version: 1.9
+Update Date: 2026-09-20
+Change Description: Added sanitized Microsoft Entra PIM active and eligible role-interface assessment evidence
 Publication Review: Completed
 Privacy Review: Passed
 Automation Status: Partially Validated
@@ -1018,7 +1095,7 @@ Toronto, Ontario, Canada
 ```text
 Document: Access Review and Automation Evidence Register
 File: evidence/evidence-register.md
-Version: 1.7
+Version: 1.9
 Status: Active
 Owner: Wisdom Kwame Djam
 Created: 2026-09-20
