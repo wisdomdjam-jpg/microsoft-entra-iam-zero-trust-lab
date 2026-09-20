@@ -78,10 +78,43 @@ The current lab did not deploy Privileged Identity Management or native administ
 A structured manual review was used as the Free-tier governance alternative.
 
 ## Evidence File
+
 ## Limitation
-
 The evidence records the licensing message visible during the assessment. It does not demonstrate a configured workflow, production deployment, successful automation, or complete licensing analysis for every Microsoft Entra ID Governance capability.
+## Privileged Identity Management Assessment
 
+**Evidence ID:** `EVD-2026-LICENSING-004`  
+**Capability:** Microsoft Entra Privileged Identity Management  
+**Capability classification:** Premium feature  
+**Implementation status:** Assessed, Not Deployed  
+**Tenant changes:** None  
+
+The sanitized screenshot shows the Microsoft Entra Privileged Identity Management quick-start page and the following governance capabilities:
+
+- Assign eligible or time-bound privileged roles
+- Activate eligible role assignments
+- Approve or deny activation requests
+- Review assignment and activation history
+- Access privileged-role audits and alerts
+- Conduct privileged-role access reviews where appropriately licensed
+
+## Governance Relevance
+
+Privileged Identity Management could strengthen a production environment by supporting:
+
+- Eligible rather than permanently active administrative roles
+- Just-in-time privileged-role activation
+- Time-bound administrative access
+- Approval-based activation
+- Multifactor-authentication requirements
+- Activation justification
+- Assignment and activation auditing
+- Privileged-role access reviews
+- Alerts concerning privileged access
+
+The project design recommends evaluating whether the fictional Helpdesk Administrator and Security Reader assignments should become eligible or time-bound in an appropriately licensed production environment.
+
+## Evidence File
 ## Privacy Notice
 
 The published screenshot was sanitized to remove personal account information, tenant details, the browser address, session information, and unnecessary device information.
