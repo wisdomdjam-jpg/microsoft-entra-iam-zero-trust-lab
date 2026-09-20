@@ -12,6 +12,29 @@ This folder contains sanitized evidence of premium Microsoft Entra capabilities 
 
 The sanitized screenshot shows the Microsoft Entra Lifecycle Workflows overview returning an access-denied message and identifying Microsoft Entra ID Governance licensing as a requirement.
 
+## Identity Governance and Entitlement Management Assessment
+
+**Evidence ID:** `EVD-2026-LICENSING-002`  
+**Capability:** Microsoft Entra Identity Governance and Entitlement Management  
+**Implementation status:** Assessed, Not Deployed  
+**Tenant changes:** None  
+
+The sanitized screenshot shows the Microsoft Entra Identity Governance dashboard and the available navigation for:
+
+- Catalogs
+- Access packages
+- Connected organizations
+- Lifecycle workflows
+- Access reviews
+- Identity-governance reporting and configuration
+
+The dashboard also displayed trial and purchase options, indicating that the current lab had not deployed the premium Identity Governance capabilities.
+
+The dashboard identified:
+
+```text
+8 member user accounts recently created
+1 application with direct user assignments
 ## Control Relevance
 
 Lifecycle Workflows could support automated identity-lifecycle activities such as:
