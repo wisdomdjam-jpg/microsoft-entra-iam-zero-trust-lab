@@ -143,3 +143,33 @@ entra-pim-active-eligible-role-interface_2026-09-20.png
 The published screenshot was sanitized to remove personal account information, tenant details, the browser address, session information, and unnecessary device information.
 
 All organizational scenarios and identities associated with this project are fictional and intended for educational portfolio use.
+## Conditional Access Licensing Assessment
+
+**Evidence ID:** `EVD-2026-LICENSING-006`  
+**Capability:** Microsoft Entra Conditional Access  
+**Visible licensing requirement:** Microsoft Entra ID P1 or P2  
+**Implementation status:** Assessed, Not Deployed  
+**Tenant changes:** None  
+
+The sanitized screenshot shows the Microsoft Entra Conditional Access interface returning an access-denied result and identifying Microsoft Entra ID P1 or P2 as the required subscription.
+
+## Security Relevance
+
+Conditional Access could support a production environment through policies such as:
+
+- Requiring multifactor authentication for administrators
+- Requiring multifactor authentication for selected applications
+- Blocking legacy authentication
+- Applying risk-aware access conditions
+- Limiting access by device, location, application, or user population
+- Supporting report-only policy validation
+- Providing controlled policy exclusions and emergency-access safeguards
+
+The project includes licensing-aware Conditional Access policy designs for administrator MFA, legacy-authentication blocking, and application-specific MFA.
+
+These policies were documented as proposed production controls and were not configured in the current lab.
+
+## Evidence File
+
+```text
+entra-conditional-access-license-requirement_2026-09-20.png
