@@ -69,7 +69,7 @@ ARI-2026-ADMIN-002
 ## 4. Evidence Summary
 
 ```text
-Total Evidence Items: 11
+Total Evidence Items: 12
 Implemented and Validated Items: 7
 Manually Simulated Items: 1
 Partially Implemented Items: 2
@@ -77,12 +77,12 @@ Design Validation Items: 0
 Designed, Not Implemented Items: 0
 Assessed, Not Deployed Items: 0
 Empty Templates Included: 0
-Items Approved for Public Repository: 10
+Items Approved for Public Repository: 12
 Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 9
+Items with Known Limitations: 10
 `
 These totals cover the administrative-role review evidence and the partially validated read-only Microsoft Graph automation evidence registered below.
 
@@ -857,27 +857,27 @@ This status does not mean that:
 ## 11. Updated Register Totals
 
 ```text
-Total Evidence Items: 8
-Implemented and Validated Items: 5
+Total Evidence Items: 12
+Implemented and Validated Items: 7
 Manually Simulated Items: 1
 Partially Implemented Items: 2
 Design Validation Items: 0
 Designed, Not Implemented Items: 0
-Assessed, Not Deployed Items: 0
+Assessed, Not Deployed Items: 2
 Empty Templates Included: 0
-Items Approved for Public Repository: 7
+Items Approved for Public Repository: 12
 Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 6
+Items with Known Limitations: 10
 ```
 
 ## 12. Register Update Record
 
 ```text
 Document: Access Review Evidence Register
-Updated Version: 1.1
+Updated Version: 1.6
 Status: Active
 Updated By: Wisdom Kwame Djam
 Update Date: 2026-09-18
@@ -918,7 +918,7 @@ Toronto, Ontario, Canada
 ```text
 Document: Access Review and Automation Evidence Register
 File: evidence/evidence-register.md
-Version: 1.5
+Version: 1.6
 Status: Active
 Owner: Wisdom Kwame Djam
 Created: 2026-09-20
