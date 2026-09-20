@@ -15,7 +15,7 @@ Register ID: EVR-2026-ACCESS-REVIEW-001
 Register Title: Northstar Health Access Review and Automation Evidence Register
 Related Project: Microsoft Entra IAM and Zero Trust Governance Lab
 Document Owner: Wisdom Kwame Djam
-Version: 1.5
+Version: 1.7
 Status: Active
 Created Date: 2026-09-20
 Last Updated Date: 2026-09-18
@@ -69,20 +69,20 @@ ARI-2026-ADMIN-002
 ## 4. Evidence Summary
 
 ```text
-Total Evidence Items: 12
-Implemented and Validated Items: 7
+Total Evidence Items: 14
+Implemented and Validated Items: 8
 Manually Simulated Items: 1
 Partially Implemented Items: 2
 Design Validation Items: 0
 Designed, Not Implemented Items: 0
 Assessed, Not Deployed Items: 0
 Empty Templates Included: 0
-Items Approved for Public Repository: 12
+Items Approved for Public Repository: 14
 Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 10
+Items with Known Limitations: 12
 `
 These totals cover the administrative-role review evidence and the partially validated read-only Microsoft Graph automation evidence registered below.
 
@@ -545,7 +545,7 @@ Redaction Status: Verified Redacted
 Redaction Verified By: Wisdom Kwame Djam
 Publication Status: Published
 Repository Location: evidence/automation/graph-readonly-user-and-guest-inventory_2026-09-18.png
-Version: 1.0
+Version: 1.7
 Integrity Check: Git commit history
 Retention Start Date: 2026-09-18
 Retention Review Date: 2029-09-18
@@ -702,6 +702,44 @@ Quality Review Date: 2026-09-20
 Issue Identified: None
 Corrective Action: Not Applicable
 ```
+### 5.13 Evidence Item: PIM Access Reviews Licensing Assessment
+
+```text
+Evidence ID: EVD-2026-LICENSING-003
+Evidence Title: Microsoft Entra PIM Access Reviews Licensing Assessment
+Evidence Type: Licensing Assessment
+Evidence Status: Assessed, Not Deployed
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: Microsoft Entra Privileged Identity Management Access Reviews
+Identity or Population: Microsoft Entra administrative-role assignments
+Description: Sanitized Microsoft Entra screenshot showing access denied to administrative-role Access Reviews and identifying EMS E5 or Microsoft Entra ID P2 as the displayed licensing requirement
+Control Demonstrated: Licensing-aware assessment of privileged administrative-role access reviews
+File Name: entra-pim-access-reviews-license-requirement_2026-09-20.png
+File Format: PNG
+Capture Date: 2026-09-20
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Entra admin center
+Sensitivity Classification: Public after sanitization
+Redaction Status: Verified Redacted
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/licensing-assessments/entra-pim-access-reviews-license-requirement_2026-09-20.png
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-20
+Retention Review Date: 2029-09-20
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Assessed
+Known Limitation: The screenshot records the displayed access and licensing message but does not demonstrate PIM deployment, eligible role assignment, just-in-time activation, a configured native Access Review, reviewer decisions, or automated remediation.
+Outstanding Action: Reassess PIM-based administrative-role Access Reviews if appropriate licensing becomes available.
+Notes: Native administrative-role Access Reviews remained unavailable. The lab used a documented manual review procedure and completed a limited fictional review of the Helpdesk Administrator and Security Reader assignments.
+
 ## 6. Automation Evidence Summary
 
 ```text
@@ -857,20 +895,20 @@ This status does not mean that:
 ## 11. Updated Register Totals
 
 ```text
-Total Evidence Items: 12
-Implemented and Validated Items: 7
+Total Evidence Items: 14
+Implemented and Validated Items: 8
 Manually Simulated Items: 1
 Partially Implemented Items: 2
 Design Validation Items: 0
 Designed, Not Implemented Items: 0
 Assessed, Not Deployed Items: 2
 Empty Templates Included: 0
-Items Approved for Public Repository: 12
+Items Approved for Public Repository: 14
 Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 10
+Items with Known Limitations: 12
 ```
 
 ## 12. Register Update Record
@@ -918,7 +956,7 @@ Toronto, Ontario, Canada
 ```text
 Document: Access Review and Automation Evidence Register
 File: evidence/evidence-register.md
-Version: 1.6
+Version: 1.7
 Status: Active
 Owner: Wisdom Kwame Djam
 Created: 2026-09-20
