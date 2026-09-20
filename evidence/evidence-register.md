@@ -15,9 +15,9 @@ Register ID: EVR-2026-ACCESS-REVIEW-001
 Register Title: Northstar Health Access Review and Automation Evidence Register
 Related Project: Microsoft Entra IAM and Zero Trust Governance Lab
 Document Owner: Wisdom Kwame Djam
-Version: 1.1
+Version: 1.2
 Status: Active
-Created Date: 2026-09-17
+Created Date: 2026-09-20
 Last Updated Date: 2026-09-18
 Review Frequency: Annual and event-driven
 Next Review Date: 2027-09-17
@@ -69,8 +69,8 @@ ARI-2026-ADMIN-002
 ## 4. Evidence Summary
 
 ```text
-Total Evidence Items: 7
-Implemented and Validated Items: 4
+Total Evidence Items: 8
+Implemented and Validated Items: 5
 Manually Simulated Items: 1
 Partially Implemented Items: 2
 Design Validation Items: 0
@@ -82,7 +82,7 @@ Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 5
+Items with Known Limitations: 6
 `
 These totals cover the administrative-role review evidence and the partially validated read-only Microsoft Graph automation evidence registered below.
 
@@ -674,8 +674,8 @@ This status does not mean that:
 ## 11. Updated Register Totals
 
 ```text
-Total Evidence Items: 7
-Implemented and Validated Items: 4
+Total Evidence Items: 8
+Implemented and Validated Items: 5
 Manually Simulated Items: 1
 Partially Implemented Items: 2
 Design Validation Items: 0
@@ -687,7 +687,7 @@ Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 5
+Items with Known Limitations: 6
 ```
 
 ## 12. Register Update Record
@@ -735,13 +735,13 @@ Toronto, Ontario, Canada
 ```text
 Document: Access Review and Automation Evidence Register
 File: evidence/evidence-register.md
-Version: 1.1
+Version: 1.2
 Status: Active
 Owner: Wisdom Kwame Djam
-Created: 2026-09-17
+Created: 2026-09-20
 Last Updated: 2026-09-18
 Review Frequency: Annual and event-driven
-Next Scheduled Review: 2027-09-17
+Next Scheduled Review: 2027-09-20
 ```
 
 ## Disclaimer
