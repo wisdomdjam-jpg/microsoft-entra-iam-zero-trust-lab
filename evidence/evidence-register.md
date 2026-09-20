@@ -15,10 +15,10 @@ Register ID: EVR-2026-ACCESS-REVIEW-001
 Register Title: Northstar Health Access Review and Automation Evidence Register
 Related Project: Microsoft Entra IAM and Zero Trust Governance Lab
 Document Owner: Wisdom Kwame Djam
-Version: 1.7
+Version: 1.10
 Status: Active
-Created Date: 2026-09-20
-Last Updated Date: 2026-09-18
+Created Date: 2026-09-14
+Last Updated Date: 2026-09-20
 Review Frequency: Annual and event-driven
 Next Review Date: 2027-09-17
 Repository Location: evidence/evidence-register.md
@@ -69,20 +69,20 @@ ARI-2026-ADMIN-002
 ## 4. Evidence Summary
 
 ```text
-Total Evidence Items: 15
+Total Evidence Items: 16
 Implemented and Validated Items: 7
 Manually Simulated Items: 1
 Partially Implemented Items: 2
 Design Validation Items: 0
 Designed, Not Implemented Items: 0
-Assessed, Not Deployed Items: 5
+Assessed, Not Deployed Items: 6
 Empty Templates Included: 0
-Items Approved for Public Repository: 15
+Items Approved for Public Repository: 16
 Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 13
+Items with Known Limitations: 14
 `
 These totals cover the administrative-role review evidence and the partially validated read-only Microsoft Graph automation evidence registered below.
 
@@ -865,6 +865,68 @@ Quality Review Date: 2026-09-20
 Issue Identified: None
 Corrective Action: Not Applicable
 ```
+### 5.16 Evidence Item: Conditional Access Licensing Assessment
+
+```text
+Evidence ID: EVD-2026-LICENSING-006
+Evidence Title: Microsoft Entra Conditional Access Licensing Assessment
+Evidence Type: Licensing Assessment
+Evidence Status: Assessed, Not Deployed
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: Microsoft Entra Conditional Access
+Identity or Population: Proposed administrator, workforce, and application-access populations
+Description: Sanitized Microsoft Entra screenshot showing access denied to Conditional Access and identifying Microsoft Entra ID P1 or P2 as the displayed subscription requirement
+Control Demonstrated: Licensing-aware assessment of Conditional Access security capabilities
+File Name: entra-conditional-access-license-requirement_2026-09-20.png
+File Format: PNG
+Capture Date: 2026-09-20
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Entra admin center
+Sensitivity Classification: Public after sanitization
+Redaction Status: Verified Redacted
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/licensing-assessments/entra-conditional-access-license-requirement_2026-09-20.png
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-20
+Retention Review Date: 2029-09-20
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Assessed
+Known Limitation: The screenshot records the visible access and licensing message but does not demonstrate a configured Conditional Access policy, report-only testing, MFA enforcement through Conditional Access, legacy-authentication blocking, application-specific conditions, or production monitoring.
+Outstanding Action: Reassess Conditional Access if appropriate Microsoft Entra ID P1 or P2 licensing becomes available.
+Notes: Conditional Access remained assessed and design-specified but not deployed. Microsoft Entra Security Defaults remained enabled and must not be represented as a custom Conditional Access implementation.
+```
+
+#### Quality Review
+
+- [x] The Microsoft Entra Conditional Access context is visible.
+- [x] The access-denied result is visible.
+- [x] Error code 401 is visible.
+- [x] The displayed Microsoft Entra ID P1 or P2 licensing requirement is visible.
+- [x] Personal account information was removed or permanently redacted.
+- [x] The directory or tenant name was removed.
+- [x] The browser address was removed.
+- [x] Session and resource identifiers were removed or permanently redacted.
+- [x] No passwords, tokens, secrets, or authentication codes are visible.
+- [x] The capability is classified as assessed rather than implemented.
+- [x] Security Defaults are not described as a custom Conditional Access policy.
+- [x] No Conditional Access enforcement or testing is claimed.
+- [x] No tenant modification is claimed.
+
+```text
+Quality Review Result: Approved for Public Repository
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-20
+Issue Identified: None
+Corrective Action: Not Applicable
+```
 ## 6. Automation Evidence Summary
 
 ```text
@@ -895,7 +957,7 @@ The overall automation remains partially validated because:
 - Northstar service-principal discovery returned `Object Not Found` in the tested short script.
 - Administrative-role assignment automation was excluded from the tested short script.
 - Northstar application-assignment automation was excluded from the tested short script.
-## - Screenshots reviewed: 11
+## - Screenshots reviewed: 12
 
 1. Helpdesk Administrator assignment
 2. Security Reader assignment
@@ -908,6 +970,7 @@ The overall automation remains partially validated because:
 9. PIM Access Reviews licensing assessment
 10. PIM premium-feature assessment
 11. PIM active and eligible role-interface assessment
+12. Conditional Access licensing assessment
 
 ## 7. Automation Evidence Traceability
 
@@ -1033,27 +1096,27 @@ This status does not mean that:
 ## 11. Updated Register Totals
 
 ```text
-Total Evidence Items: 15
+Total Evidence Items: 16
 Implemented and Validated Items: 7
 Manually Simulated Items: 1
 Partially Implemented Items: 2
 Design Validation Items: 0
 Designed, Not Implemented Items: 0
-Assessed, Not Deployed Items: 5
+Assessed, Not Deployed Items: 6
 Empty Templates Included: 0
-Items Approved for Public Repository: 15
+Items Approved for Public Repository: 16
 Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 13
+Items with Known Limitations: 14
 ```
 
 ## 12. Register Update Record
 
 ```text
 Document: Access Review Evidence Register
-Updated Version: 1.9
+Updated Version: 1.10
 Status: Active
 Updated By: Wisdom Kwame Djam
 Updated Version: 1.9
