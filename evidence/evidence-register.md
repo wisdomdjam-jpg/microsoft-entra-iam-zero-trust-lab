@@ -89,7 +89,19 @@ These totals cover the administrative-role review evidence and the partially val
 Empty templates are maintained separately and are not counted as evidence that a governance process or technical control was executed.
 
 ## 5. Master Evidence Register
-
+Evidence ID: EVD-2026-AUDIT-001
+Evidence Title: Microsoft Entra Identity and Application Audit Activities
+Evidence Type: Audit Record
+Evidence Status: Implemented and Validated
+Resource: Microsoft Entra audit logs
+Description: Sanitized Microsoft Entra screenshot showing successful identity-management, authentication, directory-management, and application-management audit activities
+Control Demonstrated: Administrative activity logging and audit traceability
+File Name: entra-audit-log-identity-and-application-activities_2026-09-13.png
+File Format: PNG
+Sensitivity Classification: Public after sanitization
+Redaction Status: Verified Redacted
+Repository Location: evidence/audit-logs/
+Known Limitation: The screenshot provides summary-level events and does not independently display every target resource, initiating identity, or modified property
 ### 5.1 Evidence Item: Administrative-Role Assignment Record
 
 ```text
