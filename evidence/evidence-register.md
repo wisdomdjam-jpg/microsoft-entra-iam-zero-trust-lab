@@ -15,7 +15,7 @@ Register ID: EVR-2026-ACCESS-REVIEW-001
 Register Title: Northstar Health Access Review and Automation Evidence Register
 Related Project: Microsoft Entra IAM and Zero Trust Governance Lab
 Document Owner: Wisdom Kwame Djam
-Version: 1.4
+Version: 1.5
 Status: Active
 Created Date: 2026-09-20
 Last Updated Date: 2026-09-18
@@ -69,7 +69,7 @@ ARI-2026-ADMIN-002
 ## 4. Evidence Summary
 
 ```text
-Total Evidence Items: 10
+Total Evidence Items: 11
 Implemented and Validated Items: 7
 Manually Simulated Items: 1
 Partially Implemented Items: 2
@@ -82,7 +82,7 @@ Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 8
+Items with Known Limitations: 9
 `
 These totals cover the administrative-role review evidence and the partially validated read-only Microsoft Graph automation evidence registered below.
 
@@ -641,6 +641,67 @@ Quality Review Date: 2026-09-20
 Issue Identified: None
 Corrective Action: Not Applicable
 ```
+### 5.11 Evidence Item: Lifecycle Workflows Licensing Assessment
+
+```text
+Evidence ID: EVD-2026-LICENSING-001
+Evidence Title: Microsoft Entra Lifecycle Workflows Licensing Assessment
+Evidence Type: Licensing Assessment
+Evidence Status: Assessed, Not Deployed
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: Microsoft Entra Lifecycle Workflows
+Identity or Population: Not Applicable
+Description: Sanitized Microsoft Entra screenshot showing access denied to Lifecycle Workflows and identifying Microsoft Entra ID Governance licensing as a requirement
+Control Demonstrated: Licensing-aware assessment of automated identity-lifecycle capabilities
+File Name: entra-lifecycle-workflows-license-requirement_2026-09-20.png
+File Format: PNG
+Capture Date: 2026-09-20
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Entra admin center
+Sensitivity Classification: Public after sanitization
+Redaction Status: Verified Redacted
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/licensing-assessments/entra-lifecycle-workflows-license-requirement_2026-09-20.png
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-20
+Retention Review Date: 2029-09-20
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Assessed
+Known Limitation: The screenshot records the visible licensing requirement but does not demonstrate a configured workflow, production deployment, successful automation, or complete licensing analysis for every Microsoft Entra governance capability.
+Outstanding Action: Reassess Lifecycle Workflows if appropriate Microsoft Entra ID Governance licensing becomes available.
+Notes: Lifecycle Workflows remained unavailable and no tenant change was made. Manual joiner-mover-leaver procedures remain the documented Free-tier alternative.
+```
+
+#### Quality Review
+
+- [x] The Lifecycle Workflows page is visible.
+- [x] The access-denied result is visible.
+- [x] The Microsoft Entra ID Governance licensing requirement is visible.
+- [x] Error code 403 is visible.
+- [x] Personal account information was removed or permanently redacted.
+- [x] The tenant or directory name was removed.
+- [x] The browser address was removed.
+- [x] Session information was permanently redacted.
+- [x] No password, token, secret, or authentication code is visible.
+- [x] The evidence is classified as assessed rather than implemented.
+- [x] No workflow deployment is claimed.
+- [x] No tenant modification is claimed.
+
+```text
+Quality Review Result: Approved for Public Repository
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-20
+Issue Identified: None
+Corrective Action: Not Applicable
+```
 ## 6. Automation Evidence Summary
 
 ```text
@@ -857,7 +918,7 @@ Toronto, Ontario, Canada
 ```text
 Document: Access Review and Automation Evidence Register
 File: evidence/evidence-register.md
-Version: 1.4
+Version: 1.5
 Status: Active
 Owner: Wisdom Kwame Djam
 Created: 2026-09-20
