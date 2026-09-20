@@ -15,7 +15,7 @@ Register ID: EVR-2026-ACCESS-REVIEW-001
 Register Title: Northstar Health Access Review and Automation Evidence Register
 Related Project: Microsoft Entra IAM and Zero Trust Governance Lab
 Document Owner: Wisdom Kwame Djam
-Version: 1.2
+Version: 1.4
 Status: Active
 Created Date: 2026-09-20
 Last Updated Date: 2026-09-18
@@ -69,20 +69,20 @@ ARI-2026-ADMIN-002
 ## 4. Evidence Summary
 
 ```text
-Total Evidence Items: 8
-Implemented and Validated Items: 5
+Total Evidence Items: 10
+Implemented and Validated Items: 7
 Manually Simulated Items: 1
 Partially Implemented Items: 2
 Design Validation Items: 0
 Designed, Not Implemented Items: 0
 Assessed, Not Deployed Items: 0
 Empty Templates Included: 0
-Items Approved for Public Repository: 7
+Items Approved for Public Repository: 10
 Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 6
+Items with Known Limitations: 8
 `
 These totals cover the administrative-role review evidence and the partially validated read-only Microsoft Graph automation evidence registered below.
 
@@ -518,7 +518,129 @@ Sensitivity Classification: Public after sanitization
 Redaction Status: Verified Redacted
 Repository Location: evidence/audit-logs/
 Known Limitation: The screenshot provides summary-level events and does not independently display every target resource, initiating identity, or modified property
+### 5.9 Evidence Item: Read-Only User and Guest Inventory Screenshot
 
+```text
+Evidence ID: EVD-2026-AUTOMATION-006
+Evidence Title: Read-Only Microsoft Graph User and Guest Inventory
+Evidence Type: Script Output Screenshot
+Evidence Status: Implemented and Validated
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: Microsoft Entra users
+Identity or Population: Fictional member and guest identities approved for publication
+Description: Sanitized PowerShell screenshot showing delegated Microsoft Graph authentication with User.Read.All and successful read-only retrieval of fictional directory display names and user types
+Control Demonstrated: Read-only user and guest inventory automation
+File Name: graph-readonly-user-and-guest-inventory_2026-09-18.png
+File Format: PNG
+Capture Date: 2026-09-18
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Graph PowerShell
+Sensitivity Classification: Public after sanitization
+Redaction Status: Verified Redacted
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/automation/graph-readonly-user-and-guest-inventory_2026-09-18.png
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-18
+Retention Review Date: 2029-09-18
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Validated
+Known Limitation: The screenshot shows only the first ten returned identities and does not demonstrate account-enabled status, effective access, group membership, or complete tenant inventory coverage.
+Outstanding Action: None
+Notes: The tenant domain and non-fictional identity entries were removed from the public version. The screenshot demonstrates read-only retrieval and does not show a tenant modification.
+```
+
+#### Quality Review
+
+- [x] Delegated Microsoft Graph authentication is visible.
+- [x] The `User.Read.All` delegated permission is visible.
+- [x] The read-only `Get-MgUser` command is visible.
+- [x] Fictional member and guest identities are visible.
+- [x] The tenant domain was permanently removed or redacted.
+- [x] Personal and administrative identity entries were permanently removed or redacted.
+- [x] User principal names and email addresses are not visible.
+- [x] Tenant, object, and application identifiers are not visible.
+- [x] No passwords, tokens, secrets, or authentication codes are visible.
+- [x] The screenshot does not imply complete access or membership analysis.
+- [x] The evidence limitation is documented.
+- [x] The screenshot shows no tenant modification.
+
+```text
+Quality Review Result: Approved for Public Repository
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-20
+Issue Identified: None
+Corrective Action: Not Applicable
+```
+
+### 5.10 Evidence Item: Read-Only Security-Group Inventory Screenshot
+
+```text
+Evidence ID: EVD-2026-AUTOMATION-007
+Evidence Title: Read-Only Microsoft Graph Security-Group Inventory
+Evidence Type: Script Output Screenshot
+Evidence Status: Implemented and Validated
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: Microsoft Entra security groups
+Identity or Population: Six fictional role-aligned security groups
+Description: Sanitized PowerShell screenshot showing successful read-only retrieval of the six fictional Microsoft Entra security groups and their security-enabled status
+Control Demonstrated: Read-only security-group inventory automation
+File Name: graph-readonly-security-group-inventory_2026-09-18.png
+File Format: PNG
+Capture Date: 2026-09-18
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Graph PowerShell
+Sensitivity Classification: Public after sanitization
+Redaction Status: Verified Redacted
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/automation/graph-readonly-security-group-inventory_2026-09-18.png
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-18
+Retention Review Date: 2029-09-18
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Validated
+Known Limitation: The screenshot confirms group discovery and security-enabled status but does not demonstrate complete membership, ownership, effective access, dynamic membership rules, licensing assignments, or application assignments.
+Outstanding Action: None
+Notes: The screenshot demonstrates a read-only Microsoft Graph query and does not show a tenant modification.
+```
+
+#### Quality Review
+
+- [x] The read-only `Get-MgGroup` command is visible.
+- [x] The six expected fictional security groups are visible.
+- [x] Security-enabled status is visible.
+- [x] Personal identity rows were excluded through cropping.
+- [x] The unfinished external-vendor membership query was excluded through cropping.
+- [x] Tenant and object identifiers are not visible.
+- [x] User principal names and email addresses are not visible.
+- [x] No passwords, tokens, secrets, or authentication codes are visible.
+- [x] The evidence is limited to security-group discovery and status.
+- [x] The screenshot does not imply complete group-membership validation.
+- [x] The evidence limitation is documented.
+- [x] The screenshot shows no tenant modification.
+
+```text
+Quality Review Result: Approved for Public Repository
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-20
+Issue Identified: None
+Corrective Action: Not Applicable
+```
 ## 6. Automation Evidence Summary
 
 ```text
@@ -735,7 +857,7 @@ Toronto, Ontario, Canada
 ```text
 Document: Access Review and Automation Evidence Register
 File: evidence/evidence-register.md
-Version: 1.2
+Version: 1.4
 Status: Active
 Owner: Wisdom Kwame Djam
 Created: 2026-09-20
