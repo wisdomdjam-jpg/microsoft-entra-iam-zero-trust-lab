@@ -15,7 +15,7 @@ Register ID: EVR-2026-ACCESS-REVIEW-001
 Register Title: Northstar Health Access Review and Automation Evidence Register
 Related Project: Microsoft Entra IAM and Zero Trust Governance Lab
 Document Owner: Wisdom Kwame Djam
-Version: 1.10
+Version: 1.11
 Status: Active
 Created Date: 2026-09-14
 Last Updated Date: 2026-09-20
@@ -69,20 +69,20 @@ ARI-2026-ADMIN-002
 ## 4. Evidence Summary
 
 ```text
-Total Evidence Items: 16
-Implemented and Validated Items: 7
+Total Evidence Items: 17
+Implemented and Validated Items: 8
 Manually Simulated Items: 1
 Partially Implemented Items: 2
 Design Validation Items: 0
 Designed, Not Implemented Items: 0
 Assessed, Not Deployed Items: 6
 Empty Templates Included: 0
-Items Approved for Public Repository: 16
+Items Approved for Public Repository: 17
 Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 14
+Items with Known Limitations: 15
 `
 These totals cover the administrative-role review evidence and the partially validated read-only Microsoft Graph automation evidence registered below.
 
@@ -926,7 +926,60 @@ Quality Reviewed By: Wisdom Kwame Djam
 Quality Review Date: 2026-09-20
 Issue Identified: None
 Corrective Action: Not Applicable
+
+
 ```
+### 5.17 Evidence Item: Disabled Lifecycle Identity
+
+```text
+Evidence ID: EVD-2026-IDENTITY-001
+Evidence Title: Disabled Microsoft Entra Lifecycle Identity
+Evidence Type: Identity Record
+Evidence Status: Implemented and Validated
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: Microsoft Entra user identity
+Identity or Population: Riley Lifecycle
+Description: Sanitized Microsoft Entra screenshot showing the fictional Riley Lifecycle member identity in a disabled account state with no visible group memberships, application assignments, administrative roles, or assigned licences
+Control Demonstrated: Manual leaver-style account disablement and identity-state verification
+File Name: entra-riley-lifecycle-disabled-account_2026-09-20.png
+File Format: PNG
+Capture Date: 2026-09-20
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Entra admin center
+Sensitivity Classification: Public after sanitization
+Redaction Status: Verified Redacted
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/identities/entra-riley-lifecycle-disabled-account_2026-09-20.png
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-20
+Retention Review Date: 2029-09-20
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Validated
+Known Limitation: The screenshot shows the observed disabled state but does not independently demonstrate the administrator or process responsible, disablement time, session revocation, credential invalidation, automated offboarding, retention actions, or removal from every indirect access path.
+Outstanding Action: None
+Notes: The evidence supports a fictional manual leaver-style identity state. Lifecycle Workflows remained assessed but not deployed, and no automated offboarding claim is made.
+```
+
+#### Quality Review
+
+- [x] The fictional identity display name is visible.
+- [x] User type `Member` is visible.
+- [x] Account status `Disabled` is visible.
+- [x] Zero visible group memberships are recorded.
+- [x] Zero visible application assignments are recorded.
+- [x] Zero assigned roles are recorded.
+- [x] Zero assigned licences are recorded.
+- [x] The user principal name was removed or permanently redacted.
+- [x] The object ID was removed or permanently redacted.
+- 
 ## 6. Automation Evidence Summary
 
 ```text
@@ -957,7 +1010,7 @@ The overall automation remains partially validated because:
 - Northstar service-principal discovery returned `Object Not Found` in the tested short script.
 - Administrative-role assignment automation was excluded from the tested short script.
 - Northstar application-assignment automation was excluded from the tested short script.
-## - Screenshots reviewed: 12
+## - Screenshots reviewed: 13
 
 1. Helpdesk Administrator assignment
 2. Security Reader assignment
@@ -971,6 +1024,7 @@ The overall automation remains partially validated because:
 10. PIM premium-feature assessment
 11. PIM active and eligible role-interface assessment
 12. Conditional Access licensing assessment
+13. Disabled Riley Lifecycle identity
 
 ## 7. Automation Evidence Traceability
 
@@ -1119,9 +1173,9 @@ Document: Access Review Evidence Register
 Updated Version: 1.10
 Status: Active
 Updated By: Wisdom Kwame Djam
-Updated Version: 1.9
+Updated Version: 1.11
 Update Date: 2026-09-20
-Change Description: Added sanitized Microsoft Entra PIM active and eligible role-interface assessment evidence
+Change Description: Added sanitized disabled lifecycle identity evidence for the fictional Riley Lifecycle member account
 Publication Review: Completed
 Privacy Review: Passed
 Automation Status: Partially Validated
