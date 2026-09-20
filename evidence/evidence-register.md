@@ -15,7 +15,7 @@ Register ID: EVR-2026-ACCESS-REVIEW-001
 Register Title: Northstar Health Access Review and Automation Evidence Register
 Related Project: Microsoft Entra IAM and Zero Trust Governance Lab
 Document Owner: Wisdom Kwame Djam
-Version: 1.11
+Version: 1.12
 Status: Active
 Created Date: 2026-09-14
 Last Updated Date: 2026-09-20
@@ -69,20 +69,20 @@ ARI-2026-ADMIN-002
 ## 4. Evidence Summary
 
 ```text
-Total Evidence Items: 17
-Implemented and Validated Items: 8
+Total Evidence Items: 18
+Implemented and Validated Items: 9
 Manually Simulated Items: 1
 Partially Implemented Items: 2
 Design Validation Items: 0
 Designed, Not Implemented Items: 0
 Assessed, Not Deployed Items: 6
 Empty Templates Included: 0
-Items Approved for Public Repository: 17
+Items Approved for Public Repository: 18
 Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 15
+Items with Known Limitations: 16
 `
 These totals cover the administrative-role review evidence and the partially validated read-only Microsoft Graph automation evidence registered below.
 
@@ -979,7 +979,70 @@ Notes: The evidence supports a fictional manual leaver-style identity state. Lif
 - [x] Zero assigned licences are recorded.
 - [x] The user principal name was removed or permanently redacted.
 - [x] The object ID was removed or permanently redacted.
-- 
+
+- ### 5.18 Evidence Item: HR Security-Group Direct Membership
+
+```text
+Evidence ID: EVD-2026-GROUP-001
+Evidence Title: GRP-HR-Users Direct Membership Evidence
+Evidence Type: Group Membership
+Evidence Status: Implemented and Validated
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: GRP-HR-Users
+Identity or Population: Riley Lifecycle and Taylor HR
+Description: Sanitized Microsoft Entra screenshot showing the fictional Riley Lifecycle and Taylor HR identities as direct members of GRP-HR-Users
+Control Demonstrated: Role-aligned security-group membership and lifecycle-state documentation
+File Name: entra-grp-hr-users-direct-membership_2026-09-20.png
+File Format: PNG
+Capture Date: 2026-09-20
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Entra admin center
+Sensitivity Classification: Public after sanitization
+Redaction Status: Verified Redacted
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/security-groups/entra-grp-hr-users-direct-membership_2026-09-20.png
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-20
+Retention Review Date: 2029-09-20
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Validated for the visible membership state
+Known Limitation: The screenshot confirms the visible direct-membership state but does not independently establish assignment timing, approval, a completed mover event, removal timing, dynamic membership, or effective application access.
+Outstanding Action: Reconcile the screenshot sequence with the later disabled-account evidence and retain the lifecycle interpretation as a staged fictional scenario unless removal evidence is available.
+Notes: A separate screenshot shows Riley Lifecycle disabled with zero visible group memberships. The artifacts must be described as different lifecycle states rather than simultaneous conditions.
+```
+
+#### Quality Review
+
+- [x] The `GRP-HR-Users` group name is visible.
+- [x] The direct-membership view is visible.
+- [x] Two group members are visible.
+- [x] Riley Lifecycle is visible.
+- [x] Taylor HR is visible.
+- [x] Object type `User` is visible.
+- [x] Personal account information was removed.
+- [x] The directory or tenant name was removed.
+- [x] The browser address and group identifier were removed.
+- [x] No user principal names or email addresses are visible.
+- [x] No passwords, tokens, secrets, or authentication codes are visible.
+- [x] The screenshot is not represented as proof of automated lifecycle management.
+- [x] The relationship with the disabled-account evidence is documented.
+- [x] The evidence limitation is recorded.
+
+```text
+Quality Review Result: Approved with Lifecycle Context
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-20
+Issue Identified: Riley Lifecycle appears in this group-membership state but appears with zero group memberships in later disabled-account evidence.
+Corrective Action: Preserve both artifacts as different stages of the fictional lifecycle scenario and avoid claiming a fully evidenced mover or leaver sequence without removal evidence.
+```
 ## 6. Automation Evidence Summary
 
 ```text
@@ -1010,7 +1073,7 @@ The overall automation remains partially validated because:
 - Northstar service-principal discovery returned `Object Not Found` in the tested short script.
 - Administrative-role assignment automation was excluded from the tested short script.
 - Northstar application-assignment automation was excluded from the tested short script.
-## - Screenshots reviewed: 13
+## - Screenshots reviewed: 14
 
 1. Helpdesk Administrator assignment
 2. Security Reader assignment
