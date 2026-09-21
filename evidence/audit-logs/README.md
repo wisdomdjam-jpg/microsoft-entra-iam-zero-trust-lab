@@ -9,7 +9,17 @@ This folder contains sanitized evidence showing identity-management and applicat
 **Control demonstrated:** Administrative activity logging  
 **Date represented:** September 13, 2026  
 **Status:** Implemented and Validated  
+## Northstar Service-Principal Audit Target
 
+**Evidence ID:** `EVD-2026-AUDIT-002`  
+**Target type:** Service Principal  
+**Target display name:** Northstar Patient Records Portal  
+**Service:** Core Directory  
+**Status:** Implemented and Validated  
+
+The sanitized screenshot shows the target-details panel for a selected Microsoft Entra audit event.
+
+The visible target is:
 ## Visible Activities
 
 The sanitized evidence includes successful events associated with:
@@ -32,7 +42,8 @@ The evidence supports:
 - Audit and governance documentation
 - Investigation and review readiness
 
-## Evidence File
+## Evidence Files
 
 ```text
 entra-audit-log-identity-and-application-activities_2026-09-13.png
+19-entra-northstar-service-principal-audit-target_2026-09-14.png
