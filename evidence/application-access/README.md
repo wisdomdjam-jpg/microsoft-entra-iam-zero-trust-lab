@@ -12,7 +12,94 @@ This folder contains sanitized evidence of application registration, enterprise-
 **Status:** Implemented and Validated  
 
 The sanitized screenshot shows the `Users and groups` page for the Northstar Patient Records Portal enterprise application.
+## Northstar Enterprise Application Overview
 
+**Evidence ID:** `EVD-2026-APP-003`  
+**Application:** Northstar Patient Records Portal  
+**Resource type:** Enterprise Application  
+**Status:** Implemented and Validated  
+
+The sanitized screenshot shows the Microsoft Entra enterprise-application overview for the fictional Northstar Patient Records Portal.
+
+The overview presents navigation for:
+
+- Assigning users and groups
+- Provisioning user accounts
+- Conditional Access
+- Self-service access
+
+The presence of these options does not mean that every displayed capability was configured.
+
+## Control Purpose
+
+The evidence supports:
+
+- Enterprise-application existence
+- Tenant-local service-principal representation
+- Application-access governance
+- Workload-identity documentation
+- Application-management traceability
+- Evidence-based review of application controls
+
+## Related Evidence
+
+```text
+EVD-2026-APP-001
+Avery Clinical and Casey IT Support are directly assigned.
+
+EVD-2026-APP-002
+Assignment required is set to Yes.
+
+EVD-2026-APP-003
+The Northstar enterprise application exists in the tenant.
+```
+
+Together, these evidence items document:
+
+```text
+Enterprise application created
+        ↓
+Explicit assignment required
+        ↓
+Two fictional users directly assigned
+```
+
+## Evidence File
+
+```text
+23-entra-northstar-enterprise-application-overview_2026-09-20.png
+```
+
+## Known Limitations
+
+The screenshot does not independently demonstrate:
+
+- User provisioning
+- Conditional Access implementation
+- Self-service access
+- Single sign-on
+- Successful authentication
+- Effective in-application authorization
+- Assignment-required configuration
+- User or group assignments
+- Application-role enforcement
+- Production application use
+
+Conditional Access remained assessed and designed but not deployed.
+
+## Privacy Notice
+
+The published screenshot was sanitized to remove:
+
+- Signed-in account information
+- Tenant and directory details
+- Browser-address information
+- Application ID
+- Object ID
+- Account avatars
+- Unnecessary browser and device information
+
+The Northstar Patient Records Portal is a fictional educational portfolio application.
 The visible assignments are:
 
 ```text
