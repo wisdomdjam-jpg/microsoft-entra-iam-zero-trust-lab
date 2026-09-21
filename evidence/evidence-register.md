@@ -1043,6 +1043,70 @@ Quality Review Date: 2026-09-20
 Issue Identified: Riley Lifecycle appears in this group-membership state but appears with zero group memberships in later disabled-account evidence.
 Corrective Action: Preserve both artifacts as different stages of the fictional lifecycle scenario and avoid claiming a fully evidenced mover or leaver sequence without removal evidence.
 ```
+### 5.19 Evidence Item: Finance Security-Group Direct Membership
+
+```text
+Evidence ID: EVD-2026-GROUP-002
+Evidence Title: GRP-Finance-Users Direct Membership Evidence
+Evidence Type: Group Membership
+Evidence Status: Implemented and Validated
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: GRP-Finance-Users
+Identity or Population: Jordan Finance and Riley Lifecycle
+Description: Sanitized Microsoft Entra screenshot showing the fictional Jordan Finance and Riley Lifecycle identities as direct members of GRP-Finance-Users
+Control Demonstrated: Role-aligned security-group membership and lifecycle-state documentation
+File Name: entra-grp-finance-users-direct-membership_2026-09-20.png
+File Format: PNG
+Capture Date: 2026-09-20
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Entra admin center
+Sensitivity Classification: Public after sanitization
+Redaction Status: Verified Redacted
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/security-groups/entra-grp-finance-users-direct-membership_2026-09-20.png
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-20
+Retention Review Date: 2029-09-20
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Validated for the visible membership state
+Known Limitation: The screenshot confirms the visible direct-membership state but does not independently establish assignment timing, approval, removal from GRP-HR-Users, a completed mover event, dynamic membership, or effective application access.
+Outstanding Action: Preserve the evidence as one observed lifecycle state and avoid claiming a fully validated mover sequence unless removal or audit evidence establishes the transition.
+Notes: Separate evidence shows Riley Lifecycle in GRP-HR-Users and in a later disabled state with zero visible group memberships. These artifacts represent different fictional lifecycle states and must not be presented as simultaneous conditions.
+```
+
+#### Quality Review
+
+- [x] The `GRP-Finance-Users` group name is visible.
+- [x] The direct-membership view is visible.
+- [x] Two group members are visible.
+- [x] Jordan Finance is visible.
+- [x] Riley Lifecycle is visible.
+- [x] Object type `User` is visible.
+- [x] Personal account information was removed.
+- [x] The directory or tenant name was removed.
+- [x] The browser address and group identifier were removed.
+- [x] No user principal names or email addresses are visible.
+- [x] No passwords, tokens, secrets, or authentication codes are visible.
+- [x] Automated lifecycle management is not claimed.
+- [x] A completed mover sequence is not claimed.
+- [x] The relationship with the HR-group and disabled-account evidence is documented.
+- [x] The evidence limitation is recorded.
+
+```text
+Quality Review Result: Approved with Lifecycle Context
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-20
+Issue Identified: Riley Lifecycle appears in multiple group-membership and disabled-account states across separate evidence artifacts.
+Corrective Action: Preserve the artifacts as different stages of the fictional lifecycle scenario and avoid claiming a fully validated mover sequence without transition evidence.
+```
 ## 6. Automation Evidence Summary
 
 ```text
@@ -1073,7 +1137,7 @@ The overall automation remains partially validated because:
 - Northstar service-principal discovery returned `Object Not Found` in the tested short script.
 - Administrative-role assignment automation was excluded from the tested short script.
 - Northstar application-assignment automation was excluded from the tested short script.
-## - Screenshots reviewed: 14
+## - Screenshots reviewed: 15
 
 1. Helpdesk Administrator assignment
 2. Security Reader assignment
@@ -1213,32 +1277,32 @@ This status does not mean that:
 ## 11. Updated Register Totals
 
 ```text
-Total Evidence Items: 16
-Implemented and Validated Items: 7
+Total Evidence Items: 19
+Implemented and Validated Items: 10
 Manually Simulated Items: 1
 Partially Implemented Items: 2
 Design Validation Items: 0
 Designed, Not Implemented Items: 0
 Assessed, Not Deployed Items: 6
 Empty Templates Included: 0
-Items Approved for Public Repository: 16
+Items Approved for Public Repository: 19
 Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 14
+Items with Known Limitations: 17
 ```
 
 ## 12. Register Update Record
 
 ```text
 Document: Access Review Evidence Register
-Updated Version: 1.10
+Updated Version: 1.13
 Status: Active
 Updated By: Wisdom Kwame Djam
-Updated Version: 1.11
+Updated Version: 1.13
 Update Date: 2026-09-20
-Change Description: Added sanitized disabled lifecycle identity evidence for the fictional Riley Lifecycle member account
+Change Description: Added sanitized GRP-Finance-Users direct-membership evidence for Jordan Finance and Riley Lifecycle
 Publication Review: Completed
 Privacy Review: Passed
 Automation Status: Partially Validated
