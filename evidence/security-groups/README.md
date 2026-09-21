@@ -36,6 +36,38 @@ The two artifacts may represent different points in the fictional lifecycle scen
 
 ```text
 HR group membership
+## Finance Security-Group Membership
+
+**Evidence ID:** `EVD-2026-GROUP-002`  
+**Group:** `GRP-Finance-Users`  
+**Membership type:** Direct  
+**Visible members:** Jordan Finance and Riley Lifecycle  
+**Implementation status:** Implemented and Validated for the visible membership state  
+
+The sanitized screenshot shows the fictional Jordan Finance and Riley Lifecycle identities as direct members of the `GRP-Finance-Users` security group.
+
+## Lifecycle Context
+
+The project contains separate screenshots showing:
+
+1. Riley Lifecycle as a direct member of `GRP-HR-Users`
+2. Riley Lifecycle as a direct member of `GRP-Finance-Users`
+3. Riley Lifecycle in a later disabled state with zero visible group memberships
+
+These artifacts demonstrate different fictional lifecycle states.
+
+The evidence does not independently prove:
+
+- The precise order of the membership changes
+- Removal from `GRP-HR-Users` before assignment to `GRP-Finance-Users`
+- The approval or administrator responsible for the changes
+- The time elapsed between each state
+- Automated mover or leaver processing
+
+## Evidence File
+
+```text
+entra-grp-finance-users-direct-membership_2026-09-20.png
         ↓
 Access removal
         ↓
