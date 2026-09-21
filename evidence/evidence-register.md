@@ -1234,12 +1234,76 @@ Quality Review Date: 2026-09-20
 Issue Identified: The original screenshot exposed a personal display name, email address, guest user principal name, object identifier, and tenant details.
 Corrective Action: Permanently remove the exposed personal and technical identifiers from the public screenshot and retain the complete source only in private storage.
 ```
+### 5.22 Evidence Item: B2B Guest Invitation Pending Acceptance
+
+```text
+Evidence ID: EVD-2026-B2B-002
+Evidence Title: Microsoft Entra B2B Guest Invitation Pending Acceptance
+Evidence Type: Guest Identity Record
+Evidence Status: Implemented and Validated
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: Microsoft Entra B2B guest identity
+Identity or Population: Northstar Vendor Guest
+Description: Sanitized Microsoft Entra screenshot showing the fictional Northstar Vendor Guest identity created through invitation and remaining in the Pending acceptance state
+Control Demonstrated: B2B guest invitation creation and pre-redemption lifecycle validation
+File Name: 18-entra-b2b-guest-invitation-pending_2026-09-14.png
+File Format: PNG
+Capture Date: 2026-09-14
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Entra admin center
+Sensitivity Classification: Public after sanitization
+Redaction Status: Verified Redacted
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/b2b-guests/18-entra-b2b-guest-invitation-pending_2026-09-14.png
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-20
+Retention Review Date: 2029-09-20
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Validated
+Known Limitation: The screenshot confirms the observed guest type, invitation creation type, and pending-acceptance state but does not independently demonstrate invitation sender, delivery, sponsorship, authentication method, group membership, application access, access duration, entitlement management, or review completion.
+Outstanding Action: None
+Notes: Separate sanitized evidence shows the invitation in an Accepted state. Together, the two screenshots demonstrate separate stages of the fictional B2B invitation lifecycle.
+```
+
+#### Quality Review
+
+- [x] The fictional display name is visible.
+- [x] User type `Guest` is visible.
+- [x] Creation type `Invitation` is visible.
+- [x] Invitation state `Pending acceptance` is visible.
+- [x] Creation and state-change timestamps are visible.
+- [x] Personal email addresses were permanently removed or redacted.
+- [x] The guest user principal name was permanently removed or redacted.
+- [x] The object ID was permanently removed or redacted.
+- [x] Signed-in account and tenant details were removed.
+- [x] The browser address and embedded object identifier were removed.
+- [x] No password, token, secret, or authentication code is visible.
+- [x] Group membership is not claimed from this screenshot.
+- [x] Application access is not claimed from this screenshot.
+- [x] Entitlement Management is not claimed as deployed.
+- [x] The evidence limitation is documented.
+
+```text
+Quality Review Result: Approved for Public Repository
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-20
+Issue Identified: The original screenshot exposed personal and tenant-related identity information.
+Corrective Action: Permanently remove personal and technical identifiers from the public screenshot and retain the complete source only in private storage.
+```
 ## 6. Automation Evidence Summary
 
 ```text
-Total Automation Evidence Items: 5
-Published Automation Evidence Items: 5
-Implemented and Validated Automation Items: 3
+Total Automation Evidence Items: 7
+Published Automation Evidence Items: 57
+Implemented and Validated Automation Items: 5
 Partially Implemented Automation Items: 2
 Items Pending Redaction: 0
 Items Not Approved for Publication: 0
@@ -1410,38 +1474,36 @@ This status does not mean that:
 ## 11. Updated Register Totals
 
 ```text
-Total Evidence Items: 19
-Implemented and Validated Items: 10
+Total Evidence Items: 22
+Implemented and Validated Items: 13
 Manually Simulated Items: 1
 Partially Implemented Items: 2
 Design Validation Items: 0
 Designed, Not Implemented Items: 0
 Assessed, Not Deployed Items: 6
 Empty Templates Included: 0
-Items Approved for Public Repository: 19
+Items Approved for Public Repository: 22
 Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 17
+Items with Known Limitations: 20
 ```
 
 ## 12. Register Update Record
 
-```text
-Document: Access Review Evidence Register
-Updated Version: 1.13
+Document: Access Review and Automation Evidence Register
+Updated Version: 1.16
 Status: Active
 Updated By: Wisdom Kwame Djam
-Updated Version: 1.13
 Update Date: 2026-09-20
-Change Description: Added sanitized GRP-Finance-Users direct-membership evidence for Jordan Finance and Riley Lifecycle
+Change Description: Reconciled the active evidence register through 22 evidence items, including access-review evidence, read-only Microsoft Graph automation, audit logs, licensing assessments, identity lifecycle, security-group memberships, and B2B invitation states
 Publication Review: Completed
 Privacy Review: Passed
 Automation Status: Partially Validated
+Screenshot Review Status: 18 screenshots reviewed
 Tenant Modifications: None
 Next Scheduled Review: 2027-09-17
-```
 
 
 
@@ -1459,7 +1521,13 @@ Update this register when:
 - An escalation or exception simulation is performed
 - Evidence reaches its retention-review date
 - Portfolio wording changes
+## Screenshot Review Progress
 
+```text
+Original Screenshot Package: Approximately 23 screenshots
+Screenshots Reviewed: 18
+Screenshots Remaining: Approximately 5
+Review Status: In Progress
 ## Author
 
 **Wisdom Kwame Djam**  
@@ -1468,18 +1536,16 @@ Information Security Management
 Toronto, Ontario, Canada
 
 ## Document Control
-
-```text
 Document: Access Review and Automation Evidence Register
 File: evidence/evidence-register.md
-Version: 1.9
+Version: 1.16
 Status: Active
 Owner: Wisdom Kwame Djam
-Created: 2026-09-20
-Last Updated: 2026-09-18
+Created: 2026-09-17
+Last Updated: 2026-09-20
 Review Frequency: Annual and event-driven
-Next Scheduled Review: 2027-09-20
-```
+Next Scheduled Review: 2027-09-17
+
 
 ## Disclaimer
 
