@@ -18,7 +18,22 @@ The visible lifecycle timestamps are:
 Created date time: September 14, 2026, 2:02 AM
 External user state change date time: September 14, 2026, 2:11 AM
 ```
+## B2B Guest Invitation Pending Acceptance
 
+**Evidence ID:** `EVD-2026-B2B-002`  
+**Identity:** Northstar Vendor Guest  
+**User type:** Guest  
+**Creation type:** Invitation  
+**Invitation state:** Pending acceptance  
+**Implementation status:** Implemented and Validated  
+
+The sanitized screenshot shows the fictional Northstar Vendor Guest identity after invitation creation and before invitation redemption.
+
+The visible lifecycle timestamps are:
+
+```text
+Created date time: September 14, 2026, 2:02 AM
+External user state change date time: September 14, 2026, 2:02 AM
 ## Control Purpose
 
 The evidence supports:
