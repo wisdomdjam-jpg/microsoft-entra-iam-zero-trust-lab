@@ -15,7 +15,7 @@ Register ID: EVR-2026-ACCESS-REVIEW-001
 Register Title: Northstar Health Access Review and Automation Evidence Register
 Related Project: Microsoft Entra IAM and Zero Trust Governance Lab
 Document Owner: Wisdom Kwame Djam
-Version: 1.15
+Version: 1.23
 Status: Active
 Created Date: 2026-09-14
 Last Updated Date: 2026-09-20
@@ -1492,6 +1492,70 @@ Quality Review Date: 2026-09-20
 Issue Identified: None
 Corrective Action: Not Applicable
 ```
+### 5.27 Evidence Item: Northstar Enterprise Application Overview
+
+```text
+Evidence ID: EVD-2026-APP-003
+Evidence Title: Northstar Patient Records Portal Enterprise Application Overview
+Evidence Type: Application Assignment
+Evidence Status: Implemented and Validated
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: Northstar Patient Records Portal enterprise application
+Identity or Population: Fictional tenant-local service principal
+Description: Sanitized Microsoft Entra screenshot confirming the tenant-local enterprise application for the fictional Northstar Patient Records Portal
+Control Demonstrated: Enterprise-application existence, workload-identity documentation, and application-governance traceability
+File Name: 23-entra-northstar-enterprise-application-overview_2026-09-20.png
+File Format: PNG
+Capture Date: 2026-09-20
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Entra admin center
+Sensitivity Classification: Public after sanitization
+Redaction Status: Verified Redacted
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/application-access/23-entra-northstar-enterprise-application-overview_2026-09-20.png
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-20
+Retention Review Date: 2029-09-20
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Validated
+Known Limitation: The screenshot confirms the enterprise-application overview but does not independently demonstrate provisioning, Conditional Access, self-service access, single sign-on, successful authentication, effective authorization, direct assignments, assignment-required configuration, or production use.
+Outstanding Action: None
+Notes: Related evidence EVD-2026-APP-001 documents direct user assignments and EVD-2026-APP-002 documents assignment-required configuration. Conditional Access remained assessed and designed but not deployed.
+```
+
+#### Quality Review
+
+- [x] The Northstar Patient Records Portal name is visible.
+- [x] The Enterprise Application context is visible.
+- [x] The Overview page is visible.
+- [x] The application-management options are visible.
+- [x] The Application ID was permanently removed or redacted.
+- [x] The Object ID was permanently removed or redacted.
+- [x] Browser-address information was removed.
+- [x] Signed-in account and tenant information were removed.
+- [x] The Windows taskbar was removed.
+- [x] No passwords, tokens, secrets, or authentication codes are visible.
+- [x] Provisioning is not claimed as configured.
+- [x] Conditional Access is not claimed as implemented.
+- [x] Self-service access is not claimed as configured.
+- [x] Successful application authentication is not claimed.
+- [x] The evidence limitation is documented.
+
+```text
+Quality Review Result: Approved for Public Repository
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-20
+Issue Identified: None
+Corrective Action: Not Applicable
+```
 ## 6. Automation Evidence Summary
 
 ```text
@@ -1522,7 +1586,7 @@ The overall automation remains partially validated because:
 - Northstar service-principal discovery returned `Object Not Found` in the tested short script.
 - Administrative-role assignment automation was excluded from the tested short script.
 - Northstar application-assignment automation was excluded from the tested short script.
-## Screenshots Reviewed: 22
+## Screenshots Reviewed: 23
 
 1. Helpdesk Administrator assignment
 2. Security Reader assignment
@@ -1546,6 +1610,7 @@ The overall automation remains partially validated because:
 20. Northstar service-principal update activity
 21. Northstar direct user assignments
 22. Northstar assignment-required configuration
+23. Northstar enterprise application overview
 
 
 ## 7. Automation Evidence Traceability
@@ -1672,26 +1737,26 @@ This status does not mean that:
 ## 11. Updated Register Totals
 
 ```text
-Total Evidence Items: 26
-Implemented and Validated Items: 17
+Total Evidence Items: 27
+Implemented and Validated Items: 18
 Manually Simulated Items: 1
 Partially Implemented Items: 2
 Design Validation Items: 0
 Designed, Not Implemented Items: 0
 Assessed, Not Deployed Items: 6
 Empty Templates Included: 0
-Items Approved for Public Repository: 26
+Items Approved for Public Repository: 27
 Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 24
+Items with Known Limitations: 25
 ```
 
 ## 12. Register Update Record
 
 Document: Access Review and Automation Evidence Register
-Updated Version: 1.20
+Updated Version: 1.21
 Status: Active
 Updated By: Wisdom Kwame Djam
 Update Date: 2026-09-20
