@@ -15,7 +15,7 @@ Register ID: EVR-2026-ACCESS-REVIEW-001
 Register Title: Northstar Health Access Review and Automation Evidence Register
 Related Project: Microsoft Entra IAM and Zero Trust Governance Lab
 Document Owner: Wisdom Kwame Djam
-Version: 1.12
+Version: 1.15
 Status: Active
 Created Date: 2026-09-14
 Last Updated Date: 2026-09-20
@@ -69,20 +69,20 @@ ARI-2026-ADMIN-002
 ## 4. Evidence Summary
 
 ```text
-Total Evidence Items: 20
-Implemented and Validated Items: 11
+Total Evidence Items: 21
+Implemented and Validated Items: 12
 Manually Simulated Items: 1
 Partially Implemented Items: 2
 Design Validation Items: 0
 Designed, Not Implemented Items: 0
 Assessed, Not Deployed Items: 6
 Empty Templates Included: 0
-Items Approved for Public Repository: 20
+Items Approved for Public Repository: 21
 Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 18
+Items with Known Limitations: 19
 `
 These totals cover the administrative-role review evidence and the partially validated read-only Microsoft Graph automation evidence registered below.
 
@@ -1170,6 +1170,70 @@ Quality Review Date: 2026-09-20
 Issue Identified: The original screenshot displayed a personal guest identity and school email address.
 Corrective Action: Remove the complete personal membership row from the public screenshot and retain the unsanitized source only in private local storage.
 ```
+### 5.21 Evidence Item: B2B Guest Invitation Acceptance
+
+```text
+Evidence ID: EVD-2026-B2B-001
+Evidence Title: Microsoft Entra B2B Guest Invitation Acceptance
+Evidence Type: Guest Identity Record
+Evidence Status: Implemented and Validated
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: Microsoft Entra B2B guest identity
+Identity or Population: Sanitized fictional external guest
+Description: Sanitized Microsoft Entra screenshot showing a guest identity created through invitation and reaching the Accepted invitation state
+Control Demonstrated: B2B guest invitation, acceptance, and external-identity lifecycle validation
+File Name: entra-b2b-guest-invitation-accepted_2026-09-14.png
+File Format: PNG
+Capture Date: 2026-09-20
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Entra admin center
+Sensitivity Classification: Public after sanitization
+Redaction Status: Verified Redacted
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/b2b-guests/entra-b2b-guest-invitation-accepted_2026-09-14.png
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-20
+Retention Review Date: 2029-09-20
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Validated
+Known Limitation: The screenshot confirms the observed guest type, invitation creation type, and accepted state but does not independently demonstrate invitation sender, sponsorship, authentication method, group membership, application access, access duration, entitlement management, or access-review completion.
+Outstanding Action: None
+Notes: All personal display names, email addresses, user principal names, object identifiers, and tenant details were removed from the public version. The complete source evidence remains private.
+```
+
+#### Quality Review
+
+- [x] User type `Guest` is visible.
+- [x] Creation type `Invitation` is visible.
+- [x] Invitation state `Accepted` is visible.
+- [x] Creation date and state-change date are visible.
+- [x] Personal display names were permanently removed or redacted.
+- [x] Personal email addresses were permanently removed or redacted.
+- [x] The user principal name was removed or permanently redacted.
+- [x] The object ID was removed or permanently redacted.
+- [x] Signed-in account and tenant details were removed.
+- [x] The browser address and embedded object identifier were removed.
+- [x] No password, token, secret, or authentication code is visible.
+- [x] Group membership is not claimed from this screenshot.
+- [x] Application access is not claimed from this screenshot.
+- [x] Entitlement Management is not claimed as deployed.
+- [x] The evidence limitation is documented.
+
+```text
+Quality Review Result: Approved for Public Repository
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-20
+Issue Identified: The original screenshot exposed a personal display name, email address, guest user principal name, object identifier, and tenant details.
+Corrective Action: Permanently remove the exposed personal and technical identifiers from the public screenshot and retain the complete source only in private storage.
+```
 ## 6. Automation Evidence Summary
 
 ```text
@@ -1200,7 +1264,7 @@ The overall automation remains partially validated because:
 - Northstar service-principal discovery returned `Object Not Found` in the tested short script.
 - Administrative-role assignment automation was excluded from the tested short script.
 - Northstar application-assignment automation was excluded from the tested short script.
-## Screenshots Reviewed: 16
+## Screenshots Reviewed: 17
 
 1. Helpdesk Administrator assignment
 2. Security Reader assignment
@@ -1218,6 +1282,9 @@ The overall automation remains partially validated because:
 14. `GRP-HR-Users` direct membership
 15. `GRP-Finance-Users` direct membership
 16. `GRP-External-Vendors` public-safe direct membership
+17.  B2B guest invitation accepted
+18.  
+
 
 ## 7. Automation Evidence Traceability
 
