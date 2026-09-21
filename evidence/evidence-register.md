@@ -69,20 +69,20 @@ ARI-2026-ADMIN-002
 ## 4. Evidence Summary
 
 ```text
-Total Evidence Items: 18
-Implemented and Validated Items: 9
+Total Evidence Items: 20
+Implemented and Validated Items: 11
 Manually Simulated Items: 1
 Partially Implemented Items: 2
 Design Validation Items: 0
 Designed, Not Implemented Items: 0
 Assessed, Not Deployed Items: 6
 Empty Templates Included: 0
-Items Approved for Public Repository: 18
+Items Approved for Public Repository: 20
 Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 16
+Items with Known Limitations: 18
 `
 These totals cover the administrative-role review evidence and the partially validated read-only Microsoft Graph automation evidence registered below.
 
@@ -1107,6 +1107,69 @@ Quality Review Date: 2026-09-20
 Issue Identified: Riley Lifecycle appears in multiple group-membership and disabled-account states across separate evidence artifacts.
 Corrective Action: Preserve the artifacts as different stages of the fictional lifecycle scenario and avoid claiming a fully validated mover sequence without transition evidence.
 ```
+### 5.20 Evidence Item: Public External-Vendor Group Membership
+
+```text
+Evidence ID: EVD-2026-GROUP-003
+Evidence Title: Public GRP-External-Vendors Direct Membership Evidence
+Evidence Type: Group Membership
+Evidence Status: Implemented and Validated
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: GRP-External-Vendors
+Identity or Population: Vendor Support
+Description: Public-safe Microsoft Entra screenshot showing the fictional Vendor Support identity as a direct member of GRP-External-Vendors
+Control Demonstrated: External-vendor security-group membership and privacy-conscious evidence publication
+File Name: entra-grp-external-vendors-public-membership_2026-09-20.png
+File Format: PNG
+Capture Date: 2026-09-20
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Entra admin center
+Sensitivity Classification: Public after sanitization
+Redaction Status: Verified Redacted
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/security-groups/entra-grp-external-vendors-public-membership_2026-09-20.png
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-20
+Retention Review Date: 2029-09-20
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Validated for the published fictional membership state
+Known Limitation: The public screenshot excludes a personal guest identity and does not demonstrate invitation redemption, sponsorship, membership duration, effective application access, access-review completion, entitlement management, or automatic expiration.
+Outstanding Action: None
+Notes: The complete raw membership evidence remains local. The published screenshot and CSV contain only the fictional Vendor Support identity.
+```
+
+#### Quality Review
+
+- [x] The `GRP-External-Vendors` group name is visible.
+- [x] The direct-membership view is visible.
+- [x] The fictional Vendor Support identity is visible.
+- [x] Object type `User` is visible.
+- [x] The personal guest-membership row was permanently removed or redacted.
+- [x] The personal email address was permanently removed or redacted.
+- [x] Signed-in account and tenant information were removed.
+- [x] The browser address and group identifier were removed.
+- [x] No user principal names are visible.
+- [x] No passwords, tokens, secrets, or authentication codes are visible.
+- [x] Access-review completion is not claimed.
+- [x] Entitlement Management is not claimed as deployed.
+- [x] Automatic access expiration is not claimed.
+- [x] The evidence limitation is documented.
+
+```text
+Quality Review Result: Approved for Public Repository
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-20
+Issue Identified: The original screenshot displayed a personal guest identity and school email address.
+Corrective Action: Remove the complete personal membership row from the public screenshot and retain the unsanitized source only in private local storage.
+```
 ## 6. Automation Evidence Summary
 
 ```text
@@ -1137,11 +1200,11 @@ The overall automation remains partially validated because:
 - Northstar service-principal discovery returned `Object Not Found` in the tested short script.
 - Administrative-role assignment automation was excluded from the tested short script.
 - Northstar application-assignment automation was excluded from the tested short script.
-## - Screenshots reviewed: 15
+## Screenshots Reviewed: 16
 
 1. Helpdesk Administrator assignment
 2. Security Reader assignment
-3. Northstar Microsoft Graph User.Read permission
+3. Northstar Microsoft Graph `User.Read` permission
 4. Microsoft Entra audit-log activities
 5. Read-only user and guest inventory
 6. Read-only security-group inventory
@@ -1152,6 +1215,9 @@ The overall automation remains partially validated because:
 11. PIM active and eligible role-interface assessment
 12. Conditional Access licensing assessment
 13. Disabled Riley Lifecycle identity
+14. `GRP-HR-Users` direct membership
+15. `GRP-Finance-Users` direct membership
+16. `GRP-External-Vendors` public-safe direct membership
 
 ## 7. Automation Evidence Traceability
 
