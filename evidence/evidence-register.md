@@ -1,10 +1,10 @@
-# Access Review Evidence Register
+# Access Review and Automation Evidence Register
 
 ## Simulation Notice
 
 This register documents fictional and sanitized evidence associated with the Northstar Health Microsoft Entra IAM and Zero Trust Governance Lab.
 
-It does not contain production access-review records, real employee information, real patient information, real vendor records, security-incident evidence, or native Microsoft Entra access-review records.
+It does not contain production access-review records, real employee information, real patient information, real vendor records, security-incident evidence, regulatory evidence, or native Microsoft Entra access-review records.
 
 All identities, organizational responsibilities, review decisions, and business scenarios referenced in this register are fictional.
 
@@ -15,33 +15,31 @@ Register ID: EVR-2026-ACCESS-REVIEW-001
 Register Title: Northstar Health Access Review and Automation Evidence Register
 Related Project: Microsoft Entra IAM and Zero Trust Governance Lab
 Document Owner: Wisdom Kwame Djam
-Version: 1.23
+Version: 1.24
 Status: Active
-Created Date: 2026-09-14
+Created Date: 2026-09-17
 Last Updated Date: 2026-09-20
 Review Frequency: Annual and event-driven
 Next Review Date: 2027-09-17
 Repository Location: evidence/evidence-register.md
+```
 
 ## 2. Register Purpose
 
-This register provides a central index of evidence connected to the fictional manual access-review simulation.
+This register provides a central index of evidence connected to the fictional access-review simulation, Microsoft Graph read-only automation, audit validation, licensing assessments, identity lifecycle, group membership, B2B collaboration, application access, authentication methods, and Microsoft Graph permission configuration.
 
 The register is designed to:
 
-- Link evidence to the related access review
+- Link evidence to the related control or review
 - Identify the resource and control demonstrated
-- Record evidence ownership and capture dates
-- Record sensitivity and publication status
+- Record evidence ownership, capture dates, sensitivity, and publication status
 - Track sanitization and redaction
-- Document evidence limitations
-- Support traceability from the access snapshot to review closure
+- Document evidence limitations and outstanding actions
+- Support traceability from configuration through review and closure
 - Prevent inaccurate portfolio claims
-- Distinguish implemented role assignments from the manually simulated review process
+- Distinguish implemented, manually simulated, partially implemented, and assessed-but-not-deployed controls
 
 ## 3. Identifier Standards
-
-The project uses the following identifier formats:
 
 ```text
 Access Review: AR-[YEAR]-[FREQUENCY]-[RESOURCE]-[SEQUENCE]
@@ -53,47 +51,37 @@ Verification: VER-[YEAR]-[RESOURCE]-[SEQUENCE]
 Evidence: EVD-[YEAR]-[RESOURCE]-[SEQUENCE]
 ```
 
-The current review identifier is:
-
 ```text
-AR-2026-MONTHLY-ADMIN-001
-```
-
-The current review-item identifiers are:
-
-```text
-ARI-2026-ADMIN-001
-ARI-2026-ADMIN-002
+Current Review ID: AR-2026-MONTHLY-ADMIN-001
+Current Review Items: ARI-2026-ADMIN-001 and ARI-2026-ADMIN-002
 ```
 
 ## 4. Evidence Summary
 
 ```text
-Total Evidence Items: 21
-Implemented and Validated Items: 12
+Total Evidence Items: 30
+Implemented and Validated Items: 21
 Manually Simulated Items: 1
 Partially Implemented Items: 2
 Design Validation Items: 0
 Designed, Not Implemented Items: 0
 Assessed, Not Deployed Items: 6
 Empty Templates Included: 0
-Items Approved for Public Repository: 21
+Items Approved for Public Repository: 30
 Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 19
-`
-These totals cover the administrative-role review evidence and the partially validated read-only Microsoft Graph automation evidence registered below.
+Items with Known Limitations: 28
+```
 
-Empty templates are maintained separately and are not counted as evidence that a governance process or technical control was executed.
+These totals cover administrative-role review evidence, read-only Microsoft Graph automation, audit logs, licensing assessments, identity lifecycle, group memberships, B2B collaboration, application access, authentication-method targeting, and Microsoft Graph permission configuration.
+
+Empty templates are maintained separately and are not counted as evidence that a process or control was executed.
 
 ## 5. Master Evidence Register
 
-### 5.1 Evidence Item: Administrative-Role Assignment Record
-
-```text
-### 5.1 Evidence Item: Administrative-Role Assignment Record
+### 5.1 Evidence Item: Selected Administrative-Role Assignment Evidence
 
 ```text
 Evidence ID: EVD-2026-ADMIN-001
@@ -108,7 +96,7 @@ Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: Helpdesk Administrator and Security Reader
 Identity or Population: Casey IT Support and Morgan Security
-Description: Two sanitized screenshots supporting the selected Helpdesk Administrator and Security Reader assignments in the Microsoft Entra lab
+Description: Two sanitized screenshots showing direct Helpdesk Administrator and Security Reader assignments.
 Control Demonstrated: Least-privilege administrative-role assignment
 File Name: AR-2026-MONTHLY-ADMIN-001_helpdesk-administrator_assignment_2026-09-17.png; AR-2026-MONTHLY-ADMIN-001_security-reader_assignment_2026-09-17.png
 File Format: PNG
@@ -123,38 +111,36 @@ Repository Location: evidence/access-reviews/administrative-roles/
 Version: 1.0
 Integrity Check: Git commit history
 Retention Start Date: 2026-09-17
-Retention Review Date: 2029-09-17
+Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
-Verification Status: Reviewed for the limited fictional simulation
-Known Limitation: The evidence demonstrates active direct role assignments but does not demonstrate Privileged Identity Management, eligible assignments, just-in-time activation, or native Microsoft Entra Access Reviews.
+Verification Status: Validated
+Known Limitation: Direct assignments are shown, but PIM, eligible assignment, just-in-time activation, and native Access Reviews are not demonstrated.
 Outstanding Action: None
-Notes: This evidence supports the existence of the two selected fictional role assignments. It does not prove deployment of premium privileged-access or automated access-review capabilities.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
 - [x] The evidence has a unique identifier.
-- [x] The evidence type is accurate.
-- [x] The related review and review items are identified.
-- [x] The two affected resources are identified.
-- [x] The two fictional identities are identified correctly.
-- [x] The exact evidence filenames are recorded.
-- [x] The repository location is recorded.
-- [x] The sensitivity classification is recorded.
-- [x] The screenshots received a publication review.
-- [x] The licensing and implementation limitations are disclosed.
-- [x] The evidence is not described as a native Microsoft Entra Access Review record.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
-Quality Review Result: Accepted for Public Repository
+Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
-Quality Review Date: 2026-09-18
-Issue Identified: None
+Quality Review Date: 2026-09-20
+Issue Identified: None remaining after sanitization and reconciliation
 Corrective Action: Not Applicable
 ```
 
-### 5.2 Evidence Item: Manual Administrative-Role Review Record
+### 5.2 Evidence Item: Sample Administrative-Role Access Review
 
 ```text
 Evidence ID: EVD-2026-ADMIN-002
@@ -169,14 +155,14 @@ Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: Microsoft Entra Helpdesk Administrator and Security Reader roles
 Identity or Population: Two selected fictional administrative-role holders
-Description: Completed fictional manual review containing scope, reviewer assessments, explicit approval decisions, findings, evidence references, metrics, limitations, and closure
-Control Demonstrated: Manual administrative-role access-recertification process
+Description: Completed limited fictional manual review with explicit decisions, evidence references, metrics, limitations, and closure.
+Control Demonstrated: Manual administrative-role access recertification
 File Name: sample-administrative-role-review.md
 File Format: Markdown
 Capture Date: 2026-09-17
 Captured By: Wisdom Kwame Djam
 Source: Fictional manual access-review simulation
-Sensitivity Classification: Public
+Sensitivity Classification: Public after sanitization
 Redaction Status: Not Required
 Redaction Verified By: Wisdom Kwame Djam
 Publication Status: Published
@@ -184,36 +170,36 @@ Repository Location: evidence/access-reviews/administrative-roles/sample-adminis
 Version: 1.0
 Integrity Check: Git commit history
 Retention Start Date: 2026-09-17
-Retention Review Date: 2029-09-17
+Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
-Verification Status: Completed for the limited simulation scope
-Known Limitation: The simulation used a single participant, did not require remediation, and therefore did not demonstrate an actual post-remediation verification workflow.
-Outstanding Action: Complete a future fictional review scenario involving removal or modification to test remediation and post-remediation verification.
-Notes: This artifact supports only a limited fictional manual review. It does not demonstrate native Microsoft Entra Access Reviews, Privileged Identity Management, production access governance, or independent reviewer separation.
+Verification Status: Completed for limited simulation
+Known Limitation: A single participant was used and no remediation or independent post-remediation verification was required.
+Outstanding Action: Complete a future remediation-based fictional review if required.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
 - [x] The evidence has a unique identifier.
-- [x] The evidence title describes the artifact.
-- [x] The evidence status is accurate.
-- [x] The review and review-item identifiers are included.
-- [x] The fictional simulation is clearly labeled.
-- [x] The repository location is recorded.
-- [x] The sensitivity classification is appropriate.
-- [x] The known limitations are documented.
-- [x] The artifact does not claim native access-review automation.
-- [x] The artifact does not contain real patient, employee, or vendor information.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
-Quality Review Result: Accepted for Limited Fictional Simulation
+Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
-Quality Review Date: 2026-09-17
-Issue Identified: Independent reviewer separation and post-remediation verification were not demonstrated.
-Corrective Action: Preserve the limitation and create a separate remediation-based simulation in a future phase if required.
+Quality Review Date: 2026-09-20
+Issue Identified: None remaining after sanitization and reconciliation
+Corrective Action: Not Applicable
 ```
-### 5.3 Evidence Item: Read-Only Inventory Script
+
+### 5.3 Evidence Item: Microsoft Entra Read-Only Inventory Script
 
 ```text
 Evidence ID: EVD-2026-AUTOMATION-001
@@ -228,14 +214,14 @@ Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: Microsoft Entra tenant inventory
 Identity or Population: Selected fictional users, guests, groups, and application resources
-Description: Locally tested PowerShell script that uses delegated read-only Microsoft Graph permissions to generate sanitized identity and access inventory exports
+Description: Locally tested PowerShell script using delegated read-only Microsoft Graph permissions to generate sanitized inventory exports.
 Control Demonstrated: Read-only inventory automation and evidence preparation
 File Name: Get-EntraReadOnlyInventory.ps1
 File Format: PowerShell
 Capture Date: 2026-09-18
 Captured By: Wisdom Kwame Djam
 Source: Locally tested Microsoft Graph PowerShell workflow
-Sensitivity Classification: Public
+Sensitivity Classification: Public after sanitization
 Redaction Status: Not Required
 Redaction Verified By: Wisdom Kwame Djam
 Publication Status: Published
@@ -243,37 +229,36 @@ Repository Location: scripts/Get-EntraReadOnlyInventory.ps1
 Version: 1.0
 Integrity Check: Git commit history
 Retention Start Date: 2026-09-18
-Retention Review Date: 2029-09-18
+Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
 Verification Status: Partially Validated
-Known Limitation: The tested script did not validate Northstar service-principal discovery, administrative-role assignments, or Northstar application assignments.
-Outstanding Action: Complete the remaining read-only inventory areas during a future validation phase.
-Notes: The script retained Security Defaults, used no embedded credentials, requested no write permissions, disconnected automatically, and made no tenant changes.
+Known Limitation: Northstar service-principal discovery, administrative-role inventory, and Northstar assignment inventory were not validated in the short script.
+Outstanding Action: Complete the remaining read-only inventory areas in a future phase.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
-- [x] The script was tested locally.
-- [x] Interactive delegated authentication succeeded.
-- [x] Only read permissions were requested.
-- [x] No embedded credentials were used.
-- [x] Security Defaults remained enabled.
-- [x] The script disconnected automatically.
-- [x] The script generated sanitized CSV exports.
-- [x] No tenant changes were performed.
-- [x] Pending automation areas are documented.
-- [x] The script was uploaded directly from the tested local file.
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
-Quality Review Result: Accepted as Partially Validated
+Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
-Quality Review Date: 2026-09-18
-Issue Identified: Three planned inventory areas remain unvalidated.
-Corrective Action: Complete those areas during a future controlled validation phase.
+Quality Review Date: 2026-09-20
+Issue Identified: None remaining after sanitization and reconciliation
+Corrective Action: Not Applicable
 ```
 
-### 5.4 Evidence Item: Public User and Guest Inventory
+### 5.4 Evidence Item: Sanitized Microsoft Entra User and Guest Inventory
 
 ```text
 Evidence ID: EVD-2026-AUTOMATION-002
@@ -288,14 +273,14 @@ Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: Microsoft Entra users
 Identity or Population: Fictional lab identities approved for publication
-Description: Public-safe inventory of fictional user display names, user types, and account-enabled status generated through the tested read-only script
+Description: Public-safe CSV of fictional display names, user types, and account-enabled status.
 Control Demonstrated: Automated user, guest, and account-status inventory
 File Name: entra-users-and-guests-public.csv
 File Format: CSV
 Capture Date: 2026-09-18
 Captured By: Wisdom Kwame Djam
 Source: Microsoft Graph PowerShell
-Sensitivity Classification: Public
+Sensitivity Classification: Public after sanitization
 Redaction Status: Verified Redacted
 Redaction Verified By: Wisdom Kwame Djam
 Publication Status: Published
@@ -303,35 +288,36 @@ Repository Location: evidence/automation/entra-users-and-guests-public.csv
 Version: 1.0
 Integrity Check: Git commit history
 Retention Start Date: 2026-09-18
-Retention Review Date: 2029-09-18
+Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
 Verification Status: Validated
 Known Limitation: Personal administrative and guest identities were excluded from the public version.
 Outstanding Action: None
-Notes: The complete raw local export was retained locally and was not published.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
-- [x] The file was generated by the tested read-only script.
-- [x] The file contains only approved fictional identities.
-- [x] User type and account-enabled status are included.
-- [x] User principal names are excluded.
-- [x] Email addresses are excluded.
-- [x] Tenant and object identifiers are excluded.
-- [x] Personal identities were removed from the public version.
-- [x] The published columns were reviewed.
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
 Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
-Quality Review Date: 2026-09-18
-Issue Identified: None
+Quality Review Date: 2026-09-20
+Issue Identified: None remaining after sanitization and reconciliation
 Corrective Action: Not Applicable
 ```
 
-### 5.5 Evidence Item: Security-Group Inventory
+### 5.5 Evidence Item: Microsoft Entra Security-Group Inventory
 
 ```text
 Evidence ID: EVD-2026-AUTOMATION-003
@@ -346,14 +332,14 @@ Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: Microsoft Entra security groups
 Identity or Population: Six fictional role-aligned security groups
-Description: Read-only inventory of security-group display names, security-enabled status, and group types
+Description: Read-only CSV inventory of group display names, security-enabled status, and group types.
 Control Demonstrated: Automated security-group inventory
 File Name: entra-security-groups.csv
 File Format: CSV
 Capture Date: 2026-09-18
 Captured By: Wisdom Kwame Djam
 Source: Microsoft Graph PowerShell
-Sensitivity Classification: Public
+Sensitivity Classification: Public after sanitization
 Redaction Status: Not Required
 Redaction Verified By: Wisdom Kwame Djam
 Publication Status: Published
@@ -361,35 +347,36 @@ Repository Location: evidence/automation/entra-security-groups.csv
 Version: 1.0
 Integrity Check: Git commit history
 Retention Start Date: 2026-09-18
-Retention Review Date: 2029-09-18
+Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
 Verification Status: Validated
-Known Limitation: The export records group inventory but does not demonstrate every effective access path or every group membership.
+Known Limitation: The export does not demonstrate every membership, owner, effective access path, or application assignment.
 Outstanding Action: None
-Notes: Object identifiers, tenant information, and ownership details were excluded.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
-- [x] Six intended security groups were retrieved.
-- [x] Security-enabled status was included.
-- [x] Group type information was included.
-- [x] Object identifiers were excluded.
-- [x] Tenant identifiers were excluded.
-- [x] No personal account information was included.
-- [x] The file was reviewed before publication.
-- [x] The limitation concerning effective access was documented.
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
 Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
-Quality Review Date: 2026-09-18
-Issue Identified: None
+Quality Review Date: 2026-09-20
+Issue Identified: None remaining after sanitization and reconciliation
 Corrective Action: Not Applicable
 ```
 
-### 5.6 Evidence Item: Public External-Vendor Membership
+### 5.6 Evidence Item: Sanitized External-Vendor Membership Inventory
 
 ```text
 Evidence ID: EVD-2026-AUTOMATION-004
@@ -404,14 +391,14 @@ Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: GRP-External-Vendors
 Identity or Population: Fictional vendor identity approved for publication
-Description: Public-safe export of selected external-vendor group membership generated through the tested read-only script
+Description: Public-safe CSV of selected external-vendor group membership.
 Control Demonstrated: Automated external-vendor membership inventory
 File Name: entra-external-vendor-membership-public.csv
 File Format: CSV
 Capture Date: 2026-09-18
 Captured By: Wisdom Kwame Djam
 Source: Microsoft Graph PowerShell
-Sensitivity Classification: Public
+Sensitivity Classification: Public after sanitization
 Redaction Status: Verified Redacted
 Redaction Verified By: Wisdom Kwame Djam
 Publication Status: Published
@@ -419,35 +406,36 @@ Repository Location: evidence/automation/entra-external-vendor-membership-public
 Version: 1.0
 Integrity Check: Git commit history
 Retention Start Date: 2026-09-18
-Retention Review Date: 2029-09-18
+Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
 Verification Status: Validated
-Known Limitation: A personal guest identity present in the complete raw local export was excluded from the public version.
+Known Limitation: A personal guest identity in the complete local export was excluded from the public version.
 Outstanding Action: None
-Notes: The complete raw membership export was retained locally and was not published.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
-- [x] The group name is recorded.
-- [x] The fictional vendor display name is recorded.
-- [x] The object type is recorded.
-- [x] The personal guest identity was excluded.
-- [x] User principal names are excluded.
-- [x] Object and tenant identifiers are excluded.
-- [x] The public version was reviewed.
-- [x] The raw local file was not published.
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
 Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
-Quality Review Date: 2026-09-18
-Issue Identified: None
+Quality Review Date: 2026-09-20
+Issue Identified: None remaining after sanitization and reconciliation
 Corrective Action: Not Applicable
 ```
 
-### 5.7 Evidence Item: Inventory Validation Summary
+### 5.7 Evidence Item: Microsoft Entra Inventory Validation Summary
 
 ```text
 Evidence ID: EVD-2026-AUTOMATION-005
@@ -462,14 +450,14 @@ Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: Microsoft Entra inventory automation
 Identity or Population: Selected lab inventory areas
-Description: Validation-status summary generated by the tested read-only PowerShell inventory script
-Control Demonstrated: Transparent tracking of validated and pending automation areas
+Description: CSV summary distinguishing validated and pending automation areas.
+Control Demonstrated: Transparent automation-status tracking
 File Name: entra-inventory-validation-summary.csv
 File Format: CSV
 Capture Date: 2026-09-18
 Captured By: Wisdom Kwame Djam
 Source: Microsoft Graph PowerShell
-Sensitivity Classification: Public
+Sensitivity Classification: Public after sanitization
 Redaction Status: Not Required
 Redaction Verified By: Wisdom Kwame Djam
 Publication Status: Published
@@ -477,48 +465,95 @@ Repository Location: evidence/automation/entra-inventory-validation-summary.csv
 Version: 1.0
 Integrity Check: Git commit history
 Retention Start Date: 2026-09-18
-Retention Review Date: 2029-09-18
+Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
 Verification Status: Partially Validated
-Known Limitation: Northstar service-principal discovery returned Object Not Found. Administrative-role and Northstar application-assignment automation remained Not Yet Validated.
-Outstanding Action: Complete the three pending inventory areas during a future controlled validation phase.
-Notes: The summary explicitly records that no tenant modifications occurred.
+Known Limitation: Northstar service-principal discovery returned Object Not Found; administrative-role and Northstar assignment automation remained Not Yet Validated.
+Outstanding Action: Complete the three pending inventory areas in a future phase.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
-- [x] Successfully validated inventory areas are identified.
-- [x] Pending automation areas are identified.
-- [x] Northstar discovery is not incorrectly represented as successful.
-- [x] Administrative-role automation is not represented as successful.
-- [x] Northstar assignment automation is not represented as successful.
-- [x] The absence of tenant modifications is recorded.
-- [x] No personal or technical identifiers are included.
-- [x] The overall status remains Partially Validated.
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
-Quality Review Result: Accepted as Partially Validated
+Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
-Quality Review Date: 2026-09-18
-Issue Identified: Three inventory areas remain pending.
-Corrective Action: Complete a future controlled validation without weakening Security Defaults.
+Quality Review Date: 2026-09-20
+Issue Identified: None remaining after sanitization and reconciliation
+Corrective Action: Not Applicable
 ```
-## 5.8 Evidence Item: Microsoft Entra Audit-Log Activities
+
+### 5.8 Evidence Item: Microsoft Entra Identity and Application Audit Activities
+
+```text
 Evidence ID: EVD-2026-AUDIT-001
 Evidence Title: Microsoft Entra Identity and Application Audit Activities
 Evidence Type: Audit Record
 Evidence Status: Implemented and Validated
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
 Resource: Microsoft Entra audit logs
-Description: Sanitized Microsoft Entra screenshot showing successful identity-management, authentication, directory-management, and application-management audit activities
-Control Demonstrated: Administrative activity logging and audit traceability
+Identity or Population: Selected fictional identity and application-management activities
+Description: Sanitized screenshot showing successful identity-management, authentication, directory-management, and application-management audit activities.
+Control Demonstrated: Administrative-activity logging and audit traceability
 File Name: entra-audit-log-identity-and-application-activities_2026-09-13.png
 File Format: PNG
+Capture Date: 2026-09-13
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Entra audit logs
 Sensitivity Classification: Public after sanitization
 Redaction Status: Verified Redacted
-Repository Location: evidence/audit-logs/
-Known Limitation: The screenshot provides summary-level events and does not independently display every target resource, initiating identity, or modified property
-### 5.9 Evidence Item: Read-Only User and Guest Inventory Screenshot
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/audit-logs/entra-audit-log-identity-and-application-activities_2026-09-13.png
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-13
+Retention Review Date: 2029-09-20
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Validated
+Known Limitation: Summary-level events do not show every target, initiating identity, modified property, or detailed result.
+Outstanding Action: None
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
+```
+
+#### Quality Review
+
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
+
+```text
+Quality Review Result: Approved for Public Repository
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-20
+Issue Identified: None remaining after sanitization and reconciliation
+Corrective Action: Not Applicable
+```
+
+### 5.9 Evidence Item: Read-Only Microsoft Graph User and Guest Inventory
 
 ```text
 Evidence ID: EVD-2026-AUTOMATION-006
@@ -533,7 +568,7 @@ Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: Microsoft Entra users
 Identity or Population: Fictional member and guest identities approved for publication
-Description: Sanitized PowerShell screenshot showing delegated Microsoft Graph authentication with User.Read.All and successful read-only retrieval of fictional directory display names and user types
+Description: Sanitized PowerShell screenshot showing delegated User.Read.All authentication and read-only user retrieval.
 Control Demonstrated: Read-only user and guest inventory automation
 File Name: graph-readonly-user-and-guest-inventory_2026-09-18.png
 File Format: PNG
@@ -545,42 +580,39 @@ Redaction Status: Verified Redacted
 Redaction Verified By: Wisdom Kwame Djam
 Publication Status: Published
 Repository Location: evidence/automation/graph-readonly-user-and-guest-inventory_2026-09-18.png
-Version: 1.7
+Version: 1.0
 Integrity Check: Git commit history
 Retention Start Date: 2026-09-18
-Retention Review Date: 2029-09-18
+Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
 Verification Status: Validated
-Known Limitation: The screenshot shows only the first ten returned identities and does not demonstrate account-enabled status, effective access, group membership, or complete tenant inventory coverage.
+Known Limitation: Only the first returned identities are shown; effective access, memberships, and complete tenant coverage are not demonstrated.
 Outstanding Action: None
-Notes: The tenant domain and non-fictional identity entries were removed from the public version. The screenshot demonstrates read-only retrieval and does not show a tenant modification.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
-- [x] Delegated Microsoft Graph authentication is visible.
-- [x] The `User.Read.All` delegated permission is visible.
-- [x] The read-only `Get-MgUser` command is visible.
-- [x] Fictional member and guest identities are visible.
-- [x] The tenant domain was permanently removed or redacted.
-- [x] Personal and administrative identity entries were permanently removed or redacted.
-- [x] User principal names and email addresses are not visible.
-- [x] Tenant, object, and application identifiers are not visible.
-- [x] No passwords, tokens, secrets, or authentication codes are visible.
-- [x] The screenshot does not imply complete access or membership analysis.
-- [x] The evidence limitation is documented.
-- [x] The screenshot shows no tenant modification.
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
 Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
 Quality Review Date: 2026-09-20
-Issue Identified: None
+Issue Identified: None remaining after sanitization and reconciliation
 Corrective Action: Not Applicable
 ```
 
-### 5.10 Evidence Item: Read-Only Security-Group Inventory Screenshot
+### 5.10 Evidence Item: Read-Only Microsoft Graph Security-Group Inventory
 
 ```text
 Evidence ID: EVD-2026-AUTOMATION-007
@@ -595,7 +627,7 @@ Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: Microsoft Entra security groups
 Identity or Population: Six fictional role-aligned security groups
-Description: Sanitized PowerShell screenshot showing successful read-only retrieval of the six fictional Microsoft Entra security groups and their security-enabled status
+Description: Sanitized PowerShell screenshot showing read-only retrieval of six security-enabled groups.
 Control Demonstrated: Read-only security-group inventory automation
 File Name: graph-readonly-security-group-inventory_2026-09-18.png
 File Format: PNG
@@ -610,38 +642,36 @@ Repository Location: evidence/automation/graph-readonly-security-group-inventory
 Version: 1.0
 Integrity Check: Git commit history
 Retention Start Date: 2026-09-18
-Retention Review Date: 2029-09-18
+Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
 Verification Status: Validated
-Known Limitation: The screenshot confirms group discovery and security-enabled status but does not demonstrate complete membership, ownership, effective access, dynamic membership rules, licensing assignments, or application assignments.
+Known Limitation: Complete membership, ownership, effective access, dynamic rules, licensing, and application assignment are not demonstrated.
 Outstanding Action: None
-Notes: The screenshot demonstrates a read-only Microsoft Graph query and does not show a tenant modification.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
-- [x] The read-only `Get-MgGroup` command is visible.
-- [x] The six expected fictional security groups are visible.
-- [x] Security-enabled status is visible.
-- [x] Personal identity rows were excluded through cropping.
-- [x] The unfinished external-vendor membership query was excluded through cropping.
-- [x] Tenant and object identifiers are not visible.
-- [x] User principal names and email addresses are not visible.
-- [x] No passwords, tokens, secrets, or authentication codes are visible.
-- [x] The evidence is limited to security-group discovery and status.
-- [x] The screenshot does not imply complete group-membership validation.
-- [x] The evidence limitation is documented.
-- [x] The screenshot shows no tenant modification.
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
 Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
 Quality Review Date: 2026-09-20
-Issue Identified: None
+Issue Identified: None remaining after sanitization and reconciliation
 Corrective Action: Not Applicable
 ```
-### 5.11 Evidence Item: Lifecycle Workflows Licensing Assessment
+
+### 5.11 Evidence Item: Microsoft Entra Lifecycle Workflows Licensing Assessment
 
 ```text
 Evidence ID: EVD-2026-LICENSING-001
@@ -656,8 +686,8 @@ Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: Microsoft Entra Lifecycle Workflows
 Identity or Population: Not Applicable
-Description: Sanitized Microsoft Entra screenshot showing access denied to Lifecycle Workflows and identifying Microsoft Entra ID Governance licensing as a requirement
-Control Demonstrated: Licensing-aware assessment of automated identity-lifecycle capabilities
+Description: Sanitized screenshot showing access denied and a Microsoft Entra ID Governance licensing requirement.
+Control Demonstrated: Licensing-aware assessment of automated identity lifecycle
 File Name: entra-lifecycle-workflows-license-requirement_2026-09-20.png
 File Format: PNG
 Capture Date: 2026-09-20
@@ -675,34 +705,91 @@ Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
 Verification Status: Assessed
-Known Limitation: The screenshot records the visible licensing requirement but does not demonstrate a configured workflow, production deployment, successful automation, or complete licensing analysis for every Microsoft Entra governance capability.
-Outstanding Action: Reassess Lifecycle Workflows if appropriate Microsoft Entra ID Governance licensing becomes available.
-Notes: Lifecycle Workflows remained unavailable and no tenant change was made. Manual joiner-mover-leaver procedures remain the documented Free-tier alternative.
+Known Limitation: No configured workflow, deployment, successful automation, or complete licensing analysis is demonstrated.
+Outstanding Action: Reassess if appropriate licensing becomes available.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
-- [x] The Lifecycle Workflows page is visible.
-- [x] The access-denied result is visible.
-- [x] The Microsoft Entra ID Governance licensing requirement is visible.
-- [x] Error code 403 is visible.
-- [x] Personal account information was removed or permanently redacted.
-- [x] The tenant or directory name was removed.
-- [x] The browser address was removed.
-- [x] Session information was permanently redacted.
-- [x] No password, token, secret, or authentication code is visible.
-- [x] The evidence is classified as assessed rather than implemented.
-- [x] No workflow deployment is claimed.
-- [x] No tenant modification is claimed.
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
 Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
 Quality Review Date: 2026-09-20
-Issue Identified: None
+Issue Identified: None remaining after sanitization and reconciliation
 Corrective Action: Not Applicable
 ```
-### 5.13 Evidence Item: PIM Access Reviews Licensing Assessment
+
+### 5.12 Evidence Item: Microsoft Entra Identity Governance and Entitlement Management Assessment
+
+```text
+Evidence ID: EVD-2026-LICENSING-002
+Evidence Title: Microsoft Entra Identity Governance and Entitlement Management Assessment
+Evidence Type: Licensing Assessment
+Evidence Status: Assessed, Not Deployed
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: Microsoft Entra Identity Governance
+Identity or Population: Fictional lab tenant resources
+Description: Sanitized dashboard screenshot showing Entitlement Management, access packages, lifecycle workflows, access reviews, and premium prompts.
+Control Demonstrated: Licensing-aware assessment of identity-governance capabilities
+File Name: entra-identity-governance-entitlement-assessment_2026-09-20.png
+File Format: PNG
+Capture Date: 2026-09-20
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Entra admin center
+Sensitivity Classification: Public after sanitization
+Redaction Status: Verified Redacted
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/licensing-assessments/entra-identity-governance-entitlement-assessment_2026-09-20.png
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-20
+Retention Review Date: 2029-09-20
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Assessed
+Known Limitation: No catalog, access package, approval workflow, automatic expiration, native review, or lifecycle workflow is demonstrated.
+Outstanding Action: Reassess if appropriate licensing becomes available.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
+```
+
+#### Quality Review
+
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
+
+```text
+Quality Review Result: Approved for Public Repository
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-20
+Issue Identified: None remaining after sanitization and reconciliation
+Corrective Action: Not Applicable
+```
+
+### 5.13 Evidence Item: Microsoft Entra PIM Access Reviews Licensing Assessment
 
 ```text
 Evidence ID: EVD-2026-LICENSING-003
@@ -715,10 +802,10 @@ Related Escalation ID: Not Applicable
 Related Exception ID: Not Applicable
 Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
-Resource: Microsoft Entra Privileged Identity Management Access Reviews
-Identity or Population: Microsoft Entra administrative-role assignments
-Description: Sanitized Microsoft Entra screenshot showing access denied to administrative-role Access Reviews and identifying EMS E5 or Microsoft Entra ID P2 as the displayed licensing requirement
-Control Demonstrated: Licensing-aware assessment of privileged administrative-role access reviews
+Resource: Microsoft Entra PIM Access Reviews
+Identity or Population: Administrative-role assignments
+Description: Sanitized screenshot showing access denied and the displayed EMS E5 or Entra ID P2 licensing requirement.
+Control Demonstrated: Licensing-aware assessment of privileged-role access reviews
 File Name: entra-pim-access-reviews-license-requirement_2026-09-20.png
 File Format: PNG
 Capture Date: 2026-09-20
@@ -736,10 +823,32 @@ Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
 Verification Status: Assessed
-Known Limitation: The screenshot records the displayed access and licensing message but does not demonstrate PIM deployment, eligible role assignment, just-in-time activation, a configured native Access Review, reviewer decisions, or automated remediation.
-Outstanding Action: Reassess PIM-based administrative-role Access Reviews if appropriate licensing becomes available.
-Notes: Native administrative-role Access Reviews remained unavailable. The lab used a documented manual review procedure and completed a limited fictional review of the Helpdesk Administrator and Security Reader assignments.
-### 5.14 Evidence Item: Privileged Identity Management Premium-Feature Assessment
+Known Limitation: PIM deployment, eligible assignment, JIT activation, native review, reviewer decisions, and automated remediation are not demonstrated.
+Outstanding Action: Reassess if appropriate licensing becomes available.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
+```
+
+#### Quality Review
+
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
+
+```text
+Quality Review Result: Approved for Public Repository
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-20
+Issue Identified: None remaining after sanitization and reconciliation
+Corrective Action: Not Applicable
+```
+
+### 5.14 Evidence Item: Microsoft Entra Privileged Identity Management Premium-Feature Assessment
 
 ```text
 Evidence ID: EVD-2026-LICENSING-004
@@ -753,9 +862,9 @@ Related Exception ID: Not Applicable
 Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: Microsoft Entra Privileged Identity Management
-Identity or Population: Proposed governance of Microsoft Entra administrative-role assignments
-Description: Sanitized Microsoft Entra screenshot showing the Privileged Identity Management quick-start page and premium capabilities for eligible assignment, activation, approval, auditing, alerts, and access review
-Control Demonstrated: Licensing-aware assessment of privileged-access governance capabilities
+Identity or Population: Proposed administrative-role governance
+Description: Sanitized PIM quick-start screenshot showing assignment, activation, approval, audit, alert, and review capabilities.
+Control Demonstrated: Licensing-aware privileged-access assessment
 File Name: entra-pim-premium-feature-assessment_2026-09-20.png
 File Format: PNG
 Capture Date: 2026-09-20
@@ -773,36 +882,32 @@ Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
 Verification Status: Assessed
-Known Limitation: The screenshot documents visible PIM capabilities but does not demonstrate licensing entitlement, PIM deployment, eligible assignments, role activation, approval workflows, activation history, privileged-role remediation, or native Access Reviews.
-Outstanding Action: Reassess PIM if appropriate Microsoft Entra licensing becomes available.
-Notes: The fictional Helpdesk Administrator and Security Reader assignments remained active direct assignments. PIM was evaluated as a proposed production enhancement and was not deployed.
+Known Limitation: No licensing entitlement, PIM deployment, role activation, approval workflow, remediation, or native review is demonstrated.
+Outstanding Action: Reassess if appropriate licensing becomes available.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
-- [x] The Microsoft Entra PIM context is visible.
-- [x] PIM is visibly identified as a premium feature.
-- [x] Assignment capability is visible.
-- [x] Activation capability is visible.
-- [x] Approval capability is visible.
-- [x] Audit capability is visible.
-- [x] Roles, assignments, alerts, and access-review navigation are visible.
-- [x] Personal account information was removed or permanently redacted.
-- [x] The directory name was removed.
-- [x] The browser address was removed.
-- [x] No password, token, secret, session ID, or authentication code is visible.
-- [x] The capability is classified as assessed rather than implemented.
-- [x] No eligible assignment or role activation is claimed.
-- [x] No tenant modification is claimed.
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
 Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
 Quality Review Date: 2026-09-20
-Issue Identified: None
+Issue Identified: None remaining after sanitization and reconciliation
 Corrective Action: Not Applicable
 ```
-### 5.15 Evidence Item: PIM Active and Eligible Role Interface Assessment
+
+### 5.15 Evidence Item: Microsoft Entra PIM Active and Eligible Role Interface Assessment
 
 ```text
 Evidence ID: EVD-2026-LICENSING-005
@@ -815,10 +920,10 @@ Related Escalation ID: Not Applicable
 Related Exception ID: Not Applicable
 Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
-Resource: Microsoft Entra Privileged Identity Management role catalogue
-Identity or Population: Visible Microsoft Entra administrative-role definitions
-Description: Sanitized Microsoft Entra screenshot showing the Privileged Identity Management role catalogue and separate columns for active and eligible role assignments
-Control Demonstrated: Licensing-aware assessment of active, eligible, and just-in-time privileged-role governance
+Resource: Microsoft Entra PIM role catalogue
+Identity or Population: Visible administrative-role definitions
+Description: Sanitized screenshot showing separate Active and Eligible role-assignment columns.
+Control Demonstrated: Assessment of active, eligible, and JIT privileged-role governance
 File Name: entra-pim-active-eligible-role-interface_2026-09-20.png
 File Format: PNG
 Capture Date: 2026-09-20
@@ -836,36 +941,32 @@ Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
 Verification Status: Assessed
-Known Limitation: The screenshot shows only the visible portion of the role catalogue and does not demonstrate PIM licensing, complete tenant-wide role coverage, an eligible assignment, an active PIM-managed assignment, just-in-time activation, approval, expiration, or remediation.
-Outstanding Action: Reassess active and eligible privileged-role assignments if appropriate Microsoft Entra licensing becomes available.
-Notes: The interface was reviewed without using Add assignments or changing any tenant configuration. The fictional Helpdesk Administrator and Security Reader roles remained active direct assignments outside PIM.
+Known Limitation: Only a visible portion of the catalogue is shown; PIM licensing, eligible assignment, activation, approval, and expiration are not demonstrated.
+Outstanding Action: Reassess if appropriate licensing becomes available.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
-- [x] The Microsoft Entra PIM context is visible.
-- [x] The PIM role catalogue is visible.
-- [x] The `Active` column is visible.
-- [x] The `Eligible` column is visible.
-- [x] The visible role rows and descriptions are readable.
-- [x] Roles, assignments, alerts, access reviews, and audit navigation are visible.
-- [x] Personal account information was removed or permanently redacted.
-- [x] The directory name was removed.
-- [x] The browser address was removed.
-- [x] No passwords, tokens, secrets, session IDs, or authentication codes are visible.
-- [x] The evidence is classified as assessed rather than implemented.
-- [x] No eligible assignment or role activation is claimed.
-- [x] No complete tenant-wide role conclusion is claimed.
-- [x] No tenant modification is claimed.
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
 Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
 Quality Review Date: 2026-09-20
-Issue Identified: None
+Issue Identified: None remaining after sanitization and reconciliation
 Corrective Action: Not Applicable
 ```
-### 5.16 Evidence Item: Conditional Access Licensing Assessment
+
+### 5.16 Evidence Item: Microsoft Entra Conditional Access Licensing Assessment
 
 ```text
 Evidence ID: EVD-2026-LICENSING-006
@@ -880,8 +981,8 @@ Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: Microsoft Entra Conditional Access
 Identity or Population: Proposed administrator, workforce, and application-access populations
-Description: Sanitized Microsoft Entra screenshot showing access denied to Conditional Access and identifying Microsoft Entra ID P1 or P2 as the displayed subscription requirement
-Control Demonstrated: Licensing-aware assessment of Conditional Access security capabilities
+Description: Sanitized screenshot showing access denied and Microsoft Entra ID P1 or P2 as the displayed licensing requirement.
+Control Demonstrated: Licensing-aware Conditional Access assessment
 File Name: entra-conditional-access-license-requirement_2026-09-20.png
 File Format: PNG
 Capture Date: 2026-09-20
@@ -899,37 +1000,32 @@ Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
 Verification Status: Assessed
-Known Limitation: The screenshot records the visible access and licensing message but does not demonstrate a configured Conditional Access policy, report-only testing, MFA enforcement through Conditional Access, legacy-authentication blocking, application-specific conditions, or production monitoring.
-Outstanding Action: Reassess Conditional Access if appropriate Microsoft Entra ID P1 or P2 licensing becomes available.
-Notes: Conditional Access remained assessed and design-specified but not deployed. Microsoft Entra Security Defaults remained enabled and must not be represented as a custom Conditional Access implementation.
+Known Limitation: No policy, report-only test, MFA enforcement, legacy-authentication block, application condition, or monitoring is demonstrated.
+Outstanding Action: Reassess if appropriate licensing becomes available.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
-- [x] The Microsoft Entra Conditional Access context is visible.
-- [x] The access-denied result is visible.
-- [x] Error code 401 is visible.
-- [x] The displayed Microsoft Entra ID P1 or P2 licensing requirement is visible.
-- [x] Personal account information was removed or permanently redacted.
-- [x] The directory or tenant name was removed.
-- [x] The browser address was removed.
-- [x] Session and resource identifiers were removed or permanently redacted.
-- [x] No passwords, tokens, secrets, or authentication codes are visible.
-- [x] The capability is classified as assessed rather than implemented.
-- [x] Security Defaults are not described as a custom Conditional Access policy.
-- [x] No Conditional Access enforcement or testing is claimed.
-- [x] No tenant modification is claimed.
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
 Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
 Quality Review Date: 2026-09-20
-Issue Identified: None
+Issue Identified: None remaining after sanitization and reconciliation
 Corrective Action: Not Applicable
-
-
 ```
-### 5.17 Evidence Item: Disabled Lifecycle Identity
+
+### 5.17 Evidence Item: Disabled Microsoft Entra Lifecycle Identity
 
 ```text
 Evidence ID: EVD-2026-IDENTITY-001
@@ -944,8 +1040,8 @@ Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: Microsoft Entra user identity
 Identity or Population: Riley Lifecycle
-Description: Sanitized Microsoft Entra screenshot showing the fictional Riley Lifecycle member identity in a disabled account state with no visible group memberships, application assignments, administrative roles, or assigned licences
-Control Demonstrated: Manual leaver-style account disablement and identity-state verification
+Description: Sanitized screenshot showing a disabled fictional member with zero visible groups, applications, roles, and licences.
+Control Demonstrated: Manual leaver-style disablement and state verification
 File Name: entra-riley-lifecycle-disabled-account_2026-09-20.png
 File Format: PNG
 Capture Date: 2026-09-20
@@ -963,24 +1059,32 @@ Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
 Verification Status: Validated
-Known Limitation: The screenshot shows the observed disabled state but does not independently demonstrate the administrator or process responsible, disablement time, session revocation, credential invalidation, automated offboarding, retention actions, or removal from every indirect access path.
+Known Limitation: The responsible process, disablement time, session revocation, credential invalidation, automated offboarding, and indirect access removal are not demonstrated.
 Outstanding Action: None
-Notes: The evidence supports a fictional manual leaver-style identity state. Lifecycle Workflows remained assessed but not deployed, and no automated offboarding claim is made.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
-- [x] The fictional identity display name is visible.
-- [x] User type `Member` is visible.
-- [x] Account status `Disabled` is visible.
-- [x] Zero visible group memberships are recorded.
-- [x] Zero visible application assignments are recorded.
-- [x] Zero assigned roles are recorded.
-- [x] Zero assigned licences are recorded.
-- [x] The user principal name was removed or permanently redacted.
-- [x] The object ID was removed or permanently redacted.
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
-- ### 5.18 Evidence Item: HR Security-Group Direct Membership
+```text
+Quality Review Result: Approved for Public Repository
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-20
+Issue Identified: None remaining after sanitization and reconciliation
+Corrective Action: Not Applicable
+```
+
+### 5.18 Evidence Item: GRP-HR-Users Direct Membership Evidence
 
 ```text
 Evidence ID: EVD-2026-GROUP-001
@@ -995,8 +1099,8 @@ Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: GRP-HR-Users
 Identity or Population: Riley Lifecycle and Taylor HR
-Description: Sanitized Microsoft Entra screenshot showing the fictional Riley Lifecycle and Taylor HR identities as direct members of GRP-HR-Users
-Control Demonstrated: Role-aligned security-group membership and lifecycle-state documentation
+Description: Sanitized screenshot showing two direct fictional members.
+Control Demonstrated: Role-aligned group membership and lifecycle-state documentation
 File Name: entra-grp-hr-users-direct-membership_2026-09-20.png
 File Format: PNG
 Capture Date: 2026-09-20
@@ -1013,37 +1117,33 @@ Retention Start Date: 2026-09-20
 Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
-Verification Status: Validated for the visible membership state
-Known Limitation: The screenshot confirms the visible direct-membership state but does not independently establish assignment timing, approval, a completed mover event, removal timing, dynamic membership, or effective application access.
-Outstanding Action: Reconcile the screenshot sequence with the later disabled-account evidence and retain the lifecycle interpretation as a staged fictional scenario unless removal evidence is available.
-Notes: A separate screenshot shows Riley Lifecycle disabled with zero visible group memberships. The artifacts must be described as different lifecycle states rather than simultaneous conditions.
+Verification Status: Validated for visible state
+Known Limitation: Timing, approval, transition sequence, dynamic membership, and effective application access are not demonstrated.
+Outstanding Action: Preserve as a staged lifecycle state.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
-- [x] The `GRP-HR-Users` group name is visible.
-- [x] The direct-membership view is visible.
-- [x] Two group members are visible.
-- [x] Riley Lifecycle is visible.
-- [x] Taylor HR is visible.
-- [x] Object type `User` is visible.
-- [x] Personal account information was removed.
-- [x] The directory or tenant name was removed.
-- [x] The browser address and group identifier were removed.
-- [x] No user principal names or email addresses are visible.
-- [x] No passwords, tokens, secrets, or authentication codes are visible.
-- [x] The screenshot is not represented as proof of automated lifecycle management.
-- [x] The relationship with the disabled-account evidence is documented.
-- [x] The evidence limitation is recorded.
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
-Quality Review Result: Approved with Lifecycle Context
+Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
 Quality Review Date: 2026-09-20
-Issue Identified: Riley Lifecycle appears in this group-membership state but appears with zero group memberships in later disabled-account evidence.
-Corrective Action: Preserve both artifacts as different stages of the fictional lifecycle scenario and avoid claiming a fully evidenced mover or leaver sequence without removal evidence.
+Issue Identified: None remaining after sanitization and reconciliation
+Corrective Action: Not Applicable
 ```
-### 5.19 Evidence Item: Finance Security-Group Direct Membership
+
+### 5.19 Evidence Item: GRP-Finance-Users Direct Membership Evidence
 
 ```text
 Evidence ID: EVD-2026-GROUP-002
@@ -1058,8 +1158,8 @@ Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: GRP-Finance-Users
 Identity or Population: Jordan Finance and Riley Lifecycle
-Description: Sanitized Microsoft Entra screenshot showing the fictional Jordan Finance and Riley Lifecycle identities as direct members of GRP-Finance-Users
-Control Demonstrated: Role-aligned security-group membership and lifecycle-state documentation
+Description: Sanitized screenshot showing two direct fictional members.
+Control Demonstrated: Role-aligned group membership and lifecycle-state documentation
 File Name: entra-grp-finance-users-direct-membership_2026-09-20.png
 File Format: PNG
 Capture Date: 2026-09-20
@@ -1076,38 +1176,33 @@ Retention Start Date: 2026-09-20
 Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
-Verification Status: Validated for the visible membership state
-Known Limitation: The screenshot confirms the visible direct-membership state but does not independently establish assignment timing, approval, removal from GRP-HR-Users, a completed mover event, dynamic membership, or effective application access.
-Outstanding Action: Preserve the evidence as one observed lifecycle state and avoid claiming a fully validated mover sequence unless removal or audit evidence establishes the transition.
-Notes: Separate evidence shows Riley Lifecycle in GRP-HR-Users and in a later disabled state with zero visible group memberships. These artifacts represent different fictional lifecycle states and must not be presented as simultaneous conditions.
+Verification Status: Validated for visible state
+Known Limitation: Timing, approval, HR-group removal, completed mover sequence, dynamic membership, and effective application access are not demonstrated.
+Outstanding Action: Preserve as a staged lifecycle state.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
-- [x] The `GRP-Finance-Users` group name is visible.
-- [x] The direct-membership view is visible.
-- [x] Two group members are visible.
-- [x] Jordan Finance is visible.
-- [x] Riley Lifecycle is visible.
-- [x] Object type `User` is visible.
-- [x] Personal account information was removed.
-- [x] The directory or tenant name was removed.
-- [x] The browser address and group identifier were removed.
-- [x] No user principal names or email addresses are visible.
-- [x] No passwords, tokens, secrets, or authentication codes are visible.
-- [x] Automated lifecycle management is not claimed.
-- [x] A completed mover sequence is not claimed.
-- [x] The relationship with the HR-group and disabled-account evidence is documented.
-- [x] The evidence limitation is recorded.
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
-Quality Review Result: Approved with Lifecycle Context
+Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
 Quality Review Date: 2026-09-20
-Issue Identified: Riley Lifecycle appears in multiple group-membership and disabled-account states across separate evidence artifacts.
-Corrective Action: Preserve the artifacts as different stages of the fictional lifecycle scenario and avoid claiming a fully validated mover sequence without transition evidence.
+Issue Identified: None remaining after sanitization and reconciliation
+Corrective Action: Not Applicable
 ```
-### 5.20 Evidence Item: Public External-Vendor Group Membership
+
+### 5.20 Evidence Item: Public GRP-External-Vendors Direct Membership Evidence
 
 ```text
 Evidence ID: EVD-2026-GROUP-003
@@ -1122,8 +1217,8 @@ Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: GRP-External-Vendors
 Identity or Population: Vendor Support
-Description: Public-safe Microsoft Entra screenshot showing the fictional Vendor Support identity as a direct member of GRP-External-Vendors
-Control Demonstrated: External-vendor security-group membership and privacy-conscious evidence publication
+Description: Public-safe screenshot showing Vendor Support as a direct member.
+Control Demonstrated: External-vendor membership and privacy-conscious publication
 File Name: entra-grp-external-vendors-public-membership_2026-09-20.png
 File Format: PNG
 Capture Date: 2026-09-20
@@ -1140,37 +1235,33 @@ Retention Start Date: 2026-09-20
 Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
-Verification Status: Validated for the published fictional membership state
-Known Limitation: The public screenshot excludes a personal guest identity and does not demonstrate invitation redemption, sponsorship, membership duration, effective application access, access-review completion, entitlement management, or automatic expiration.
+Verification Status: Validated for public state
+Known Limitation: A personal guest was excluded; invitation redemption, sponsorship, duration, effective access, review completion, and expiration are not demonstrated.
 Outstanding Action: None
-Notes: The complete raw membership evidence remains local. The published screenshot and CSV contain only the fictional Vendor Support identity.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
-- [x] The `GRP-External-Vendors` group name is visible.
-- [x] The direct-membership view is visible.
-- [x] The fictional Vendor Support identity is visible.
-- [x] Object type `User` is visible.
-- [x] The personal guest-membership row was permanently removed or redacted.
-- [x] The personal email address was permanently removed or redacted.
-- [x] Signed-in account and tenant information were removed.
-- [x] The browser address and group identifier were removed.
-- [x] No user principal names are visible.
-- [x] No passwords, tokens, secrets, or authentication codes are visible.
-- [x] Access-review completion is not claimed.
-- [x] Entitlement Management is not claimed as deployed.
-- [x] Automatic access expiration is not claimed.
-- [x] The evidence limitation is documented.
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
 Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
 Quality Review Date: 2026-09-20
-Issue Identified: The original screenshot displayed a personal guest identity and school email address.
-Corrective Action: Remove the complete personal membership row from the public screenshot and retain the unsanitized source only in private local storage.
+Issue Identified: None remaining after sanitization and reconciliation
+Corrective Action: Not Applicable
 ```
-### 5.21 Evidence Item: B2B Guest Invitation Acceptance
+
+### 5.21 Evidence Item: Microsoft Entra B2B Guest Invitation Acceptance
 
 ```text
 Evidence ID: EVD-2026-B2B-001
@@ -1185,56 +1276,51 @@ Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: Microsoft Entra B2B guest identity
 Identity or Population: Sanitized fictional external guest
-Description: Sanitized Microsoft Entra screenshot showing a guest identity created through invitation and reaching the Accepted invitation state
-Control Demonstrated: B2B guest invitation, acceptance, and external-identity lifecycle validation
-File Name: entra-b2b-guest-invitation-accepted_2026-09-14.png
+Description: Sanitized screenshot showing guest type, invitation creation, and Accepted state.
+Control Demonstrated: B2B invitation acceptance and external-identity lifecycle validation
+File Name: 17-entra-b2b-guest-invitation-accepted_2026-09-14.png
 File Format: PNG
-Capture Date: 2026-09-20
+Capture Date: 2026-09-14
 Captured By: Wisdom Kwame Djam
 Source: Microsoft Entra admin center
 Sensitivity Classification: Public after sanitization
 Redaction Status: Verified Redacted
 Redaction Verified By: Wisdom Kwame Djam
 Publication Status: Published
-Repository Location: evidence/b2b-guests/entra-b2b-guest-invitation-accepted_2026-09-14.png
+Repository Location: evidence/b2b-guests/17-entra-b2b-guest-invitation-accepted_2026-09-14.png
 Version: 1.0
 Integrity Check: Git commit history
-Retention Start Date: 2026-09-20
+Retention Start Date: 2026-09-14
 Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
 Verification Status: Validated
-Known Limitation: The screenshot confirms the observed guest type, invitation creation type, and accepted state but does not independently demonstrate invitation sender, sponsorship, authentication method, group membership, application access, access duration, entitlement management, or access-review completion.
+Known Limitation: Sender, sponsorship, authentication method, group membership, application access, duration, entitlement management, and review completion are not demonstrated.
 Outstanding Action: None
-Notes: All personal display names, email addresses, user principal names, object identifiers, and tenant details were removed from the public version. The complete source evidence remains private.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
-- [x] User type `Guest` is visible.
-- [x] Creation type `Invitation` is visible.
-- [x] Invitation state `Accepted` is visible.
-- [x] Creation date and state-change date are visible.
-- [x] Personal display names were permanently removed or redacted.
-- [x] Personal email addresses were permanently removed or redacted.
-- [x] The user principal name was removed or permanently redacted.
-- [x] The object ID was removed or permanently redacted.
-- [x] Signed-in account and tenant details were removed.
-- [x] The browser address and embedded object identifier were removed.
-- [x] No password, token, secret, or authentication code is visible.
-- [x] Group membership is not claimed from this screenshot.
-- [x] Application access is not claimed from this screenshot.
-- [x] Entitlement Management is not claimed as deployed.
-- [x] The evidence limitation is documented.
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
 Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
 Quality Review Date: 2026-09-20
-Issue Identified: The original screenshot exposed a personal display name, email address, guest user principal name, object identifier, and tenant details.
-Corrective Action: Permanently remove the exposed personal and technical identifiers from the public screenshot and retain the complete source only in private storage.
+Issue Identified: None remaining after sanitization and reconciliation
+Corrective Action: Not Applicable
 ```
-### 5.22 Evidence Item: B2B Guest Invitation Pending Acceptance
+
+### 5.22 Evidence Item: Microsoft Entra B2B Guest Invitation Pending Acceptance
 
 ```text
 Evidence ID: EVD-2026-B2B-002
@@ -1249,8 +1335,8 @@ Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: Microsoft Entra B2B guest identity
 Identity or Population: Northstar Vendor Guest
-Description: Sanitized Microsoft Entra screenshot showing the fictional Northstar Vendor Guest identity created through invitation and remaining in the Pending acceptance state
-Control Demonstrated: B2B guest invitation creation and pre-redemption lifecycle validation
+Description: Sanitized screenshot showing a fictional guest invitation in Pending acceptance state.
+Control Demonstrated: B2B invitation creation and pre-redemption validation
 File Name: 18-entra-b2b-guest-invitation-pending_2026-09-14.png
 File Format: PNG
 Capture Date: 2026-09-14
@@ -1263,41 +1349,36 @@ Publication Status: Published
 Repository Location: evidence/b2b-guests/18-entra-b2b-guest-invitation-pending_2026-09-14.png
 Version: 1.0
 Integrity Check: Git commit history
-Retention Start Date: 2026-09-20
+Retention Start Date: 2026-09-14
 Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
 Verification Status: Validated
-Known Limitation: The screenshot confirms the observed guest type, invitation creation type, and pending-acceptance state but does not independently demonstrate invitation sender, delivery, sponsorship, authentication method, group membership, application access, access duration, entitlement management, or review completion.
+Known Limitation: Sender, delivery, sponsorship, authentication method, group membership, application access, duration, entitlement management, and review completion are not demonstrated.
 Outstanding Action: None
-Notes: Separate sanitized evidence shows the invitation in an Accepted state. Together, the two screenshots demonstrate separate stages of the fictional B2B invitation lifecycle.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
-- [x] The fictional display name is visible.
-- [x] User type `Guest` is visible.
-- [x] Creation type `Invitation` is visible.
-- [x] Invitation state `Pending acceptance` is visible.
-- [x] Creation and state-change timestamps are visible.
-- [x] Personal email addresses were permanently removed or redacted.
-- [x] The guest user principal name was permanently removed or redacted.
-- [x] The object ID was permanently removed or redacted.
-- [x] Signed-in account and tenant details were removed.
-- [x] The browser address and embedded object identifier were removed.
-- [x] No password, token, secret, or authentication code is visible.
-- [x] Group membership is not claimed from this screenshot.
-- [x] Application access is not claimed from this screenshot.
-- [x] Entitlement Management is not claimed as deployed.
-- [x] The evidence limitation is documented.
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
 Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
 Quality Review Date: 2026-09-20
-Issue Identified: The original screenshot exposed personal and tenant-related identity information.
-Corrective Action: Permanently remove personal and technical identifiers from the public screenshot and retain the complete source only in private storage.
+Issue Identified: None remaining after sanitization and reconciliation
+Corrective Action: Not Applicable
 ```
+
 ### 5.23 Evidence Item: Northstar Service-Principal Audit Target
 
 ```text
@@ -1313,8 +1394,8 @@ Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: Northstar Patient Records Portal service principal
 Identity or Population: Fictional enterprise-application service principal
-Description: Sanitized Microsoft Entra screenshot identifying the Northstar Patient Records Portal service principal as the target of a selected Core Directory audit event
-Control Demonstrated: Application-management audit traceability and service-principal target identification
+Description: Sanitized audit-detail screenshot identifying the Northstar service principal as a Core Directory event target.
+Control Demonstrated: Application audit traceability and target identification
 File Name: 19-entra-northstar-service-principal-audit-target_2026-09-14.png
 File Format: PNG
 Capture Date: 2026-09-14
@@ -1327,41 +1408,96 @@ Publication Status: Published
 Repository Location: evidence/audit-logs/19-entra-northstar-service-principal-audit-target_2026-09-14.png
 Version: 1.0
 Integrity Check: Git commit history
-Retention Start Date: 2026-09-20
+Retention Start Date: 2026-09-14
 Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
 Verification Status: Validated
-Known Limitation: The screenshot identifies the service-principal target but does not independently display the complete activity name, initiating identity, modified properties, token issuance, application sign-in, assignment activity, or complete audit coverage.
+Known Limitation: The activity name, initiator, modified properties, token issuance, sign-in, assignment, and complete audit coverage are not demonstrated.
 Outstanding Action: None
-Notes: The screenshot demonstrates that the Northstar Patient Records Portal service principal was identified as the target of a selected Core Directory audit event. No security incident or Microsoft Sentinel integration is claimed.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
-- [x] The Microsoft Entra audit-log context is visible.
-- [x] The Audit Log Details panel is visible.
-- [x] The `Target(s)` tab is visible.
-- [x] Target type `ServicePrincipal` is visible.
-- [x] Display name `Northstar Patient Records Portal` is visible.
-- [x] The Core Directory service context is visible.
-- [x] The target object ID was permanently removed or redacted.
-- [x] Personal account and tenant information were removed.
-- [x] The browser address was removed.
-- [x] No password, token, secret, or authentication code is visible.
-- [x] The complete activity is not inferred from the target tab.
-- [x] A security incident is not claimed.
-- [x] Microsoft Sentinel integration is not claimed.
-- [x] The evidence limitation is documented.
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
 Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
 Quality Review Date: 2026-09-20
-Issue Identified: The original screenshot exposed the target object identifier and account or tenant context.
-Corrective Action: Permanently remove the technical and account identifiers from the public screenshot while retaining the target type and fictional display name.
+Issue Identified: None remaining after sanitization and reconciliation
+Corrective Action: Not Applicable
 ```
-### 5.25 Evidence Item: Northstar Direct User Assignments
+
+### 5.24 Evidence Item: Northstar Service-Principal Update Activity
+
+```text
+Evidence ID: EVD-2026-AUDIT-003
+Evidence Title: Northstar Service-Principal Update Activity
+Evidence Type: Audit Record
+Evidence Status: Implemented and Validated
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: Northstar Patient Records Portal service principal
+Identity or Population: Fictional enterprise-application service principal
+Description: Sanitized audit-detail screenshot showing a successful Update service principal ApplicationManagement event.
+Control Demonstrated: Application-management logging and change traceability
+File Name: 20-entra-northstar-service-principal-update-activity_2026-09-14.png
+File Format: PNG
+Capture Date: 2026-09-14
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Entra audit logs
+Sensitivity Classification: Public after sanitization
+Redaction Status: Verified Redacted
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/audit-logs/20-entra-northstar-service-principal-update-activity_2026-09-14.png
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-14
+Retention Review Date: 2029-09-20
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Validated
+Known Limitation: The precise property, reason, initiating individual, assignment activity, API change, token issuance, and complete coverage are not demonstrated.
+Outstanding Action: None
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
+```
+
+#### Quality Review
+
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
+
+```text
+Quality Review Result: Approved for Public Repository
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-20
+Issue Identified: None remaining after sanitization and reconciliation
+Corrective Action: Not Applicable
+```
+
+### 5.25 Evidence Item: Northstar Patient Records Portal Direct User Assignments
 
 ```text
 Evidence ID: EVD-2026-APP-001
@@ -1376,8 +1512,8 @@ Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: Northstar Patient Records Portal enterprise application
 Identity or Population: Avery Clinical and Casey IT Support
-Description: Sanitized Microsoft Entra screenshot showing Avery Clinical and Casey IT Support directly assigned to the Northstar Patient Records Portal enterprise application
-Control Demonstrated: Explicit direct user assignment and least-privilege enterprise-application access governance
+Description: Sanitized screenshot showing two direct user assignments.
+Control Demonstrated: Explicit assignment and least-privilege application access
 File Name: 21-entra-northstar-direct-user-assignments_2026-09-20.png
 File Format: PNG
 Capture Date: 2026-09-20
@@ -1395,43 +1531,37 @@ Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
 Verification Status: Validated
-Known Limitation: The screenshot confirms direct assignment records but does not independently demonstrate successful sign-in, effective in-application authorization, assignment-required configuration, group-based assignment, application-role enforcement, single sign-on, provisioning, Conditional Access, or production use.
+Known Limitation: Successful sign-in, effective authorization, group assignment, app roles, SSO, provisioning, Conditional Access, and production use are not demonstrated.
 Outstanding Action: None
-Notes: The interface states that the application will not appear in My Apps unless the Visible to users property is enabled. The screenshot documents direct assignment only and does not claim group-based access.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
-- [x] The Northstar Patient Records Portal name is visible.
-- [x] The Enterprise Application context is visible.
-- [x] The Users and groups page is visible.
-- [x] Avery Clinical is visible.
-- [x] Casey IT Support is visible.
-- [x] Object type `User` is visible for both assignments.
-- [x] The My Apps visibility notice is visible.
-- [x] Browser-address information was removed.
-- [x] Object and application identifiers were removed.
-- [x] Signed-in account and tenant information were removed.
-- [x] No user principal names or personal email addresses are visible.
-- [x] No passwords, secrets, tokens, or authentication codes are visible.
-- [x] Group-based assignment is not claimed.
-- [x] Successful application sign-in is not claimed.
-- [x] Assignment-required configuration is not claimed from this screenshot.
-- [x] The evidence limitation is documented.
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
 Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
 Quality Review Date: 2026-09-20
-Issue Identified: None
+Issue Identified: None remaining after sanitization and reconciliation
 Corrective Action: Not Applicable
 ```
-### 5.26 Evidence Item: Northstar Assignment-Required Configuration
+
+### 5.26 Evidence Item: Northstar Patient Records Portal Assignment-Required Configuration
 
 ```text
 Evidence ID: EVD-2026-APP-002
 Evidence Title: Northstar Patient Records Portal Assignment-Required Configuration
-Evidence Type: Application Assignment
+Evidence Type: Application Configuration
 Evidence Status: Implemented and Validated
 Related Review ID: Not Applicable
 Related Review Item ID: Not Applicable
@@ -1441,8 +1571,8 @@ Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: Northstar Patient Records Portal enterprise application
 Identity or Population: Users requiring explicit assignment
-Description: Sanitized Microsoft Entra screenshot showing the Northstar Patient Records Portal activated, enabled for user sign-in, and configured with Assignment required set to Yes and Visible to users set to No
-Control Demonstrated: Explicit-assignment enforcement and least-privilege enterprise-application access governance
+Description: Sanitized properties screenshot showing Activated, sign-in enabled, Assignment required Yes, and Visible to users No.
+Control Demonstrated: Explicit-assignment enforcement and least-privilege application governance
 File Name: 22-entra-northstar-assignment-required-properties_2026-09-20.png
 File Format: PNG
 Capture Date: 2026-09-20
@@ -1460,44 +1590,37 @@ Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
 Verification Status: Validated
-Known Limitation: The screenshot confirms the visible enterprise-application properties but does not independently demonstrate successful sign-in, effective in-application authorization, single sign-on, provisioning, Conditional Access, group-based assignment, app-role enforcement, My Apps visibility, or production use.
+Known Limitation: Successful sign-in, in-app authorization, SSO, provisioning, Conditional Access, group assignment, app roles, My Apps visibility, and production use are not demonstrated.
 Outstanding Action: None
-Notes: Related evidence EVD-2026-APP-001 shows Avery Clinical and Casey IT Support directly assigned to the enterprise application. Visible to users remained set to No.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
-- [x] The Northstar Patient Records Portal name is visible.
-- [x] The Enterprise Application context is visible.
-- [x] Activation status `Activated` is visible.
-- [x] Enabled for users to sign in is set to `Yes`.
-- [x] Assignment required is set to `Yes`.
-- [x] Visible to users is set to `No`.
-- [x] The Application ID was permanently removed or redacted.
-- [x] The Object ID was permanently removed or redacted.
-- [x] Browser-address information was removed.
-- [x] Signed-in account and tenant information were removed.
-- [x] The Windows taskbar was removed.
-- [x] No passwords, tokens, secrets, or authentication codes are visible.
-- [x] Successful application sign-in is not claimed.
-- [x] Group-based assignment is not claimed.
-- [x] Conditional Access is not claimed.
-- [x] The application-visibility distinction is documented.
-- [x] The evidence limitation is recorded.
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
 Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
 Quality Review Date: 2026-09-20
-Issue Identified: None
+Issue Identified: None remaining after sanitization and reconciliation
 Corrective Action: Not Applicable
 ```
-### 5.27 Evidence Item: Northstar Enterprise Application Overview
+
+### 5.27 Evidence Item: Northstar Patient Records Portal Enterprise Application Overview
 
 ```text
 Evidence ID: EVD-2026-APP-003
 Evidence Title: Northstar Patient Records Portal Enterprise Application Overview
-Evidence Type: Application Assignment
+Evidence Type: Application Configuration
 Evidence Status: Implemented and Validated
 Related Review ID: Not Applicable
 Related Review Item ID: Not Applicable
@@ -1507,8 +1630,8 @@ Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: Northstar Patient Records Portal enterprise application
 Identity or Population: Fictional tenant-local service principal
-Description: Sanitized Microsoft Entra screenshot confirming the tenant-local enterprise application for the fictional Northstar Patient Records Portal
-Control Demonstrated: Enterprise-application existence, workload-identity documentation, and application-governance traceability
+Description: Sanitized overview confirming the tenant-local enterprise application.
+Control Demonstrated: Enterprise-application existence and workload-identity traceability
 File Name: 23-entra-northstar-enterprise-application-overview_2026-09-20.png
 File Format: PNG
 Capture Date: 2026-09-20
@@ -1526,37 +1649,32 @@ Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
 Verification Status: Validated
-Known Limitation: The screenshot confirms the enterprise-application overview but does not independently demonstrate provisioning, Conditional Access, self-service access, single sign-on, successful authentication, effective authorization, direct assignments, assignment-required configuration, or production use.
+Known Limitation: Provisioning, Conditional Access, self-service, SSO, successful authentication, direct assignments, assignment required, and production use are not independently demonstrated.
 Outstanding Action: None
-Notes: Related evidence EVD-2026-APP-001 documents direct user assignments and EVD-2026-APP-002 documents assignment-required configuration. Conditional Access remained assessed and designed but not deployed.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
-- [x] The Northstar Patient Records Portal name is visible.
-- [x] The Enterprise Application context is visible.
-- [x] The Overview page is visible.
-- [x] The application-management options are visible.
-- [x] The Application ID was permanently removed or redacted.
-- [x] The Object ID was permanently removed or redacted.
-- [x] Browser-address information was removed.
-- [x] Signed-in account and tenant information were removed.
-- [x] The Windows taskbar was removed.
-- [x] No passwords, tokens, secrets, or authentication codes are visible.
-- [x] Provisioning is not claimed as configured.
-- [x] Conditional Access is not claimed as implemented.
-- [x] Self-service access is not claimed as configured.
-- [x] Successful application authentication is not claimed.
-- [x] The evidence limitation is documented.
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
 Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
 Quality Review Date: 2026-09-20
-Issue Identified: None
+Issue Identified: None remaining after sanitization and reconciliation
 Corrective Action: Not Applicable
 ```
-### 5.28 Evidence Item: Northstar Application Registration Overview
+
+### 5.28 Evidence Item: Northstar Patient Records Portal Application Registration Overview
 
 ```text
 Evidence ID: EVD-2026-APP-004
@@ -1571,8 +1689,8 @@ Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: Northstar Patient Records Portal application registration
 Identity or Population: Fictional single-tenant application object
-Description: Sanitized Microsoft Entra screenshot confirming the single-tenant application registration for the fictional Northstar Patient Records Portal and its corresponding managed application in the local directory
-Control Demonstrated: Application-object registration, single-tenant scope, workload-identity documentation, and application-governance traceability
+Description: Sanitized overview confirming the single-tenant registration and corresponding managed application.
+Control Demonstrated: Application-object registration and workload-identity traceability
 File Name: 24-entra-northstar-app-registration-overview_2026-09-20.png
 File Format: PNG
 Capture Date: 2026-09-20
@@ -1590,39 +1708,32 @@ Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
 Verification Status: Validated
-Known Limitation: The screenshot confirms the visible application-registration overview but does not independently demonstrate credential absence outside the visible overview, successful authentication, token issuance, redirect-URI testing, single sign-on, provisioning, Conditional Access, effective authorization, or production use.
+Known Limitation: Credential absence outside the visible overview, authentication, token issuance, redirect testing, SSO, provisioning, Conditional Access, authorization, and production use are not demonstrated.
 Outstanding Action: None
-Notes: The application client ID, object ID, and directory tenant ID were excluded from the public version. The visible account type is My organization only, and the overview links to the corresponding Northstar managed application in the local directory.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
-- [x] The Northstar Patient Records Portal display name is visible.
-- [x] The App registrations context is visible.
-- [x] The application overview is visible.
-- [x] Supported account type `My organization only` is visible.
-- [x] The corresponding managed application is visible.
-- [x] State `Activated` is visible.
-- [x] The Application client ID was permanently removed or redacted.
-- [x] The Object ID was permanently removed or redacted.
-- [x] The Directory tenant ID was permanently removed or redacted.
-- [x] Browser-address information was removed.
-- [x] Signed-in account and directory information were removed.
-- [x] The Windows taskbar was removed.
-- [x] No password, token, secret, or authentication code is visible.
-- [x] Successful application authentication is not claimed.
-- [x] Credential absence outside the visible overview is not claimed.
-- [x] Production application use is not claimed.
-- [x] The evidence limitation is documented.
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
 Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
 Quality Review Date: 2026-09-20
-Issue Identified: None
+Issue Identified: None remaining after sanitization and reconciliation
 Corrective Action: Not Applicable
 ```
-### 5.29 Evidence Item: Microsoft Authenticator Target Groups
+
+### 5.29 Evidence Item: Microsoft Authenticator Selected-Group Targeting
 
 ```text
 Evidence ID: EVD-2026-AUTH-001
@@ -1637,8 +1748,8 @@ Related Remediation ID: Not Applicable
 Related Verification ID: Not Applicable
 Resource: Microsoft Entra Microsoft Authenticator settings
 Identity or Population: GRP-IT-Support and GRP-Security-Readers
-Description: Sanitized Microsoft Entra screenshot showing Microsoft Authenticator enabled and targeted to GRP-IT-Support and GRP-Security-Readers with optional registration and authentication mode set to Any
-Control Demonstrated: Selected-group authentication-method targeting and role-aligned authentication governance
+Description: Sanitized screenshot showing Authenticator enabled and targeted to two groups with optional registration and mode Any.
+Control Demonstrated: Selected-group authentication-method targeting
 File Name: 25-entra-microsoft-authenticator-target-groups_2026-09-20.png
 File Format: PNG
 Capture Date: 2026-09-20
@@ -1656,43 +1767,95 @@ Retention Review Date: 2029-09-20
 Disposal Date: Not Applicable
 Evidence Owner: Wisdom Kwame Djam
 Verification Status: Validated
-Known Limitation: The screenshot demonstrates authentication-method enablement and selected-group targeting but does not independently demonstrate completed registration, MFA enforcement, passwordless authentication, push-notification use, Authentication Strength, Conditional Access enforcement, registration-campaign deployment, or successful authentication events.
+Known Limitation: Completed registration, MFA enforcement, passwordless use, push usage, Authentication Strength, Conditional Access, campaigns, and successful events are not demonstrated.
 Outstanding Action: None
-Notes: Microsoft Authenticator was targeted to GRP-IT-Support and GRP-Security-Readers with optional registration and authentication mode set to Any. Conditional Access remained assessed and designed but not deployed.
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
 ```
 
 #### Quality Review
 
-- [x] The Microsoft Authenticator settings page is visible.
-- [x] The Enable and Target tab is visible.
-- [x] Microsoft Authenticator is visibly enabled.
-- [x] Selected-group targeting is visible.
-- [x] `GRP-IT-Support` is visible.
-- [x] `GRP-Security-Readers` is visible.
-- [x] Object type `Group` is visible.
-- [x] Registration `Optional` is visible.
-- [x] Authentication mode `Any` is visible.
-- [x] Browser-address information was removed.
-- [x] Signed-in account and tenant information were removed.
-- [x] The Windows taskbar was removed.
-- [x] No passwords, tokens, secrets, or authentication codes are visible.
-- [x] Completed Authenticator registration is not claimed.
-- [x] MFA enforcement is not claimed.
-- [x] Conditional Access implementation is not claimed.
-- [x] The enforcement limitation is documented.
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
 
 ```text
 Quality Review Result: Approved for Public Repository
 Quality Reviewed By: Wisdom Kwame Djam
 Quality Review Date: 2026-09-20
-Issue Identified: None
+Issue Identified: None remaining after sanitization and reconciliation
 Corrective Action: Not Applicable
 ```
+
+### 5.30 Evidence Item: Northstar Microsoft Graph Delegated Permission
+
+```text
+Evidence ID: EVD-2026-GRAPH-001
+Evidence Title: Northstar Microsoft Graph Delegated Permission
+Evidence Type: Application Permission Configuration
+Evidence Status: Implemented and Validated
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: Northstar Patient Records Portal
+Identity or Population: Fictional single-tenant application
+Description: Sanitized screenshot showing delegated Microsoft Graph User.Read configured for sign-in and profile access.
+Control Demonstrated: Minimal delegated Microsoft Graph permission
+File Name: northstar-microsoft-graph-user-read-permission_2026-09-17.png
+File Format: PNG
+Capture Date: 2026-09-17
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Entra admin center
+Sensitivity Classification: Public after sanitization
+Redaction Status: Verified Redacted
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/graph-permissions/northstar-microsoft-graph-user-read-permission_2026-09-17.png
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-17
+Retention Review Date: 2029-09-20
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Validated
+Known Limitation: Token issuance, Graph API execution, tenant-wide admin consent, and additional permissions are not demonstrated.
+Outstanding Action: None
+Notes: No production data, password, token, secret, authentication code, or write automation is represented by this evidence item.
+```
+
+#### Quality Review
+
+- [x] The evidence has a unique identifier.
+- [x] The evidence title and type are accurate.
+- [x] The resource and population are identified.
+- [x] The repository path is recorded.
+- [x] The sensitivity and redaction status are recorded.
+- [x] Personal and unnecessary technical identifiers were excluded from public evidence.
+- [x] The implementation status is not overstated.
+- [x] The known limitation is documented.
+- [x] The evidence received a publication review.
+
+```text
+Quality Review Result: Approved for Public Repository
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-20
+Issue Identified: None remaining after sanitization and reconciliation
+Corrective Action: Not Applicable
+```
+
 ## 6. Automation Evidence Summary
 
 ```text
 Total Automation Evidence Items: 7
-Published Automation Evidence Items: 57
+Published Automation Evidence Items: 7
 Implemented and Validated Automation Items: 5
 Partially Implemented Automation Items: 2
 Items Pending Redaction: 0
@@ -1702,23 +1865,167 @@ Tenant Modifications: None
 Overall Automation Status: Partially Validated
 ```
 
-The implemented and validated automation items are:
+Implemented and validated automation items:
 
 - Public user, guest, and account-status inventory
 - Security-group inventory
 - Public external-vendor membership inventory
+- Read-only user and guest inventory screenshot
+- Read-only security-group inventory screenshot
 
-The partially implemented items are:
+Partially implemented automation items:
 
 - Read-only inventory script
-- Validation-summary output
+- Inventory validation-summary output
 
-The overall automation remains partially validated because:
+The automation remains partially validated because Northstar service-principal discovery returned `Object Not Found`, and administrative-role and Northstar assignment automation were not validated in the short script.
 
-- Northstar service-principal discovery returned `Object Not Found` in the tested short script.
-- Administrative-role assignment automation was excluded from the tested short script.
-- Northstar application-assignment automation was excluded from the tested short script.
-## Screenshots Reviewed: 25
+## 7. Automation Evidence Traceability
+
+```text
+Tested Local PowerShell Script
+    ↓
+Interactive Delegated Microsoft Graph Authentication
+    ↓
+Users and Guests Export
+    ↓
+Security-Group Export
+    ↓
+External-Vendor Membership Export
+    ↓
+Public-Safe Redaction
+    ↓
+Sensitive-Column Review
+    ↓
+Validation-Summary Export
+    ↓
+GitHub Publication
+```
+
+```text
+Inventory Script: EVD-2026-AUTOMATION-001
+Public User and Guest Inventory: EVD-2026-AUTOMATION-002
+Security-Group Inventory: EVD-2026-AUTOMATION-003
+Public External-Vendor Membership: EVD-2026-AUTOMATION-004
+Validation Summary: EVD-2026-AUTOMATION-005
+User and Guest Inventory Screenshot: EVD-2026-AUTOMATION-006
+Security-Group Inventory Screenshot: EVD-2026-AUTOMATION-007
+```
+
+## 8. Privacy Review
+
+The public evidence was reviewed for:
+
+```text
+Id
+ObjectId
+TenantId
+AppId
+ClientId
+UserPrincipalName
+Mail
+Email
+IPAddress
+RequestId
+CorrelationId
+HomeAccountId
+AccessToken
+Passwords
+Secrets
+Authentication codes
+```
+
+```text
+Privacy Review Result: Passed
+Sensitive Columns Found in Public CSVs: None
+Raw User Export Published: No
+Raw External-Vendor Membership Export Published: No
+Public-Safe Copies Created: Yes
+Reviewed By: Wisdom Kwame Djam
+Review Date: 2026-09-20
+```
+
+## 9. Outstanding Actions
+
+```text
+1. Improve Northstar service-principal discovery without adding sensitive output.
+2. Validate read-only administrative-role assignment inventory.
+3. Validate read-only Northstar application-assignment inventory.
+4. Complete a future remediation-based manual review scenario if required.
+5. Reassess premium governance capabilities if appropriate licensing becomes available.
+6. Remove any duplicate nested evidence folder left from earlier GitHub uploads.
+```
+
+## 10. Control Status
+
+```text
+Access-Review Policy: Completed
+Administrative-Role Review Simulation: Manually Simulated and Validated
+Evidence Register: Active, Version 1.24
+Read-Only Microsoft Graph Automation: Partially Validated
+Audit Logging: Implemented and Validated for selected activities
+B2B Guest Collaboration: Implemented and Validated for the documented states
+Application Access: Implemented and Validated for the documented settings
+Microsoft Authenticator Targeting: Implemented and Validated
+Microsoft Graph User.Read Permission: Implemented and Validated
+Native Microsoft Entra Access Reviews: Assessed, Not Deployed
+Privileged Identity Management: Assessed, Not Deployed
+Lifecycle Workflows: Assessed, Not Deployed
+Entitlement Management: Assessed, Not Deployed
+Conditional Access: Assessed and Designed, Not Deployed
+Tenant Modifications During Automation and Evidence Review: None
+```
+
+## 11. Updated Register Totals
+
+```text
+Total Evidence Items: 30
+Implemented and Validated Items: 21
+Manually Simulated Items: 1
+Partially Implemented Items: 2
+Design Validation Items: 0
+Designed, Not Implemented Items: 0
+Assessed, Not Deployed Items: 6
+Empty Templates Included: 0
+Items Approved for Public Repository: 30
+Items Pending Redaction: 0
+Items Not Approved for Publication: 0
+Missing Evidence Items: 0
+Corrected Evidence Items: 0
+Items with Known Limitations: 28
+```
+
+## 12. Register Update Record
+
+```text
+Document: Access Review and Automation Evidence Register
+Updated Version: 1.24
+Status: Active
+Updated By: Wisdom Kwame Djam
+Update Date: 2026-09-20
+Change Description: Rebuilt and reconciled the complete evidence register, restored missing entries, corrected numbering and Markdown structure, registered Microsoft Graph permission evidence, and aligned totals through the completed screenshot review.
+Publication Review: Completed
+Privacy Review: Passed
+Automation Status: Partially Validated
+Screenshot Files Reviewed: 26
+Distinct Evidence Screenshots: 25
+Duplicate Screenshots: 1
+Duplicate Item: Security Reader assignment
+Screenshots Remaining: 0
+Tenant Modifications: None
+Next Scheduled Review: 2027-09-17
+```
+
+## 13. Screenshot Review Progress
+
+```text
+Screenshot Files Reviewed: 26
+Distinct Evidence Screenshots: 25
+Duplicate Screenshots: 1
+Duplicate Item: Security Reader assignment
+Screenshots Remaining: 0
+Review Status: Completed
+```
 
 1. Helpdesk Administrator assignment
 2. Security Reader assignment
@@ -1746,186 +2053,20 @@ The overall automation remains partially validated because:
 24. Northstar application registration overview
 25. Microsoft Authenticator selected-group targeting
 
-
-## 7. Automation Evidence Traceability
-
-```text
-Tested Local PowerShell Script
-    ↓
-Interactive Delegated Microsoft Graph Authentication
-    ↓
-Users and Guests Export
-    ↓
-Security-Group Export
-    ↓
-External-Vendor Membership Export
-    ↓
-Public-Safe Redaction
-    ↓
-Sensitive-Column Review
-    ↓
-Validation-Summary Export
-    ↓
-GitHub Publication
-```
-
-Related evidence:
-
-```text
-Inventory Script: EVD-2026-AUTOMATION-001
-Public User and Guest Inventory: EVD-2026-AUTOMATION-002
-Security-Group Inventory: EVD-2026-AUTOMATION-003
-Public External-Vendor Membership: EVD-2026-AUTOMATION-004
-Validation Summary: EVD-2026-AUTOMATION-005
-```
-
-## 8. Automation Privacy Review
-
-The published automation evidence was reviewed for the following sensitive fields:
-
-```text
-Id
-ObjectId
-TenantId
-AppId
-ClientId
-UserPrincipalName
-Mail
-Email
-IPAddress
-RequestId
-CorrelationId
-HomeAccountId
-AccessToken
-```
-
-```text
-Privacy Review Result: Passed
-Sensitive Columns Found: None
-Raw User Export Published: No
-Raw External-Vendor Membership Export Published: No
-Public-Safe Copies Created: Yes
-Reviewed By: Wisdom Kwame Djam
-Review Date: 2026-09-18
-```
-
-The complete raw exports remain local and are not part of the public repository.
-
-## 9. Automation Outstanding Actions
-
-### Outstanding Action 1
-
-```text
-Action: Improve Northstar service-principal discovery without adding sensitive output
-Related Evidence: EVD-2026-AUTOMATION-001 and EVD-2026-AUTOMATION-005
-Risk: The short script does not currently validate Northstar service-principal discovery
-Action Owner: Wisdom Kwame Djam
-Target Date: Future automation phase
-Current Status: Planned
-Required Evidence: Sanitized service-principal export and updated validation summary
-```
-
-### Outstanding Action 2
-
-```text
-Action: Validate read-only administrative-role assignment inventory
-Related Evidence: EVD-2026-AUTOMATION-001 and EVD-2026-AUTOMATION-005
-Risk: Administrative-role automation remains unvalidated
-Action Owner: Wisdom Kwame Djam
-Target Date: Future automation phase
-Current Status: Planned
-Required Evidence: Sanitized output for Helpdesk Administrator and Security Reader assignments
-```
-
-### Outstanding Action 3
-
-```text
-Action: Validate read-only Northstar application-assignment inventory
-Related Evidence: EVD-2026-AUTOMATION-001 and EVD-2026-AUTOMATION-005
-Risk: Northstar direct assignment automation remains unvalidated
-Action Owner: Wisdom Kwame Djam
-Target Date: Future automation phase
-Current Status: Planned
-Required Evidence: Sanitized output showing validated fictional application assignments
-```
-
-## 10. Automation Control Status
-
-```text
-Selected Status: Partially Validated
-Status Justification: The tested short PowerShell script successfully authenticated through Microsoft Graph, exported users, guests, account status, security groups, and external-vendor membership, generated a validation summary, disconnected automatically, and made no tenant changes. Northstar discovery and two advanced assignment-inventory areas remain pending.
-Supporting Evidence: EVD-2026-AUTOMATION-001 through EVD-2026-AUTOMATION-005
-```
-
-This status does not mean that:
-
-- Every Microsoft Entra resource was inventoried.
-- Administrative-role assignment automation was completed.
-- Northstar application-assignment automation was completed.
-- Native Microsoft Entra Access Reviews were deployed.
-- Privileged Identity Management was deployed.
-- Conditional Access was deployed.
-- Write automation was implemented.
-- Any tenant object was changed.
-
-## 11. Updated Register Totals
-
-```text
-Total Evidence Items: 29
-Implemented and Validated Items: 20
-Manually Simulated Items: 1
-Partially Implemented Items: 2
-Design Validation Items: 0
-Designed, Not Implemented Items: 0
-Assessed, Not Deployed Items: 6
-Empty Templates Included: 0
-Items Approved for Public Repository: 28
-Items Pending Redaction: 0
-Items Not Approved for Publication: 0
-Missing Evidence Items: 0
-Corrected Evidence Items: 0
-Items with Known Limitations: 27
-```
-
-## 12. Register Update Record
-
-Document: Access Review and Automation Evidence Register
-Updated Version: 1.23
-Status: Active
-Updated By: Wisdom Kwame Djam
-Update Date: 2026-09-20
-Updated Version: 1.23
-Update Date: 2026-09-20
-Change Description: Completed review and registration of 24 sanitized screenshot evidence items, including the Northstar application registration and enterprise application evidence
-Screenshot Review Status: Completed
-Screenshots Reviewed: 25
-Screenshots Remaining: 0
-Tenant Modifications: None
-Next Scheduled Review: 2027-09-17
-
-
-
-## 13. Register Maintenance
+## 14. Register Maintenance
 
 Update this register when:
 
 - A new evidence item is added
-- An exact evidence path is identified
-- An evidence file is replaced or corrected
-- Redaction is completed or verified
-- Publication approval changes
-- A new manual review is performed
-- Remediation or verification evidence is created
-- An escalation or exception simulation is performed
+- An evidence path is changed
+- A file is replaced or corrected
+- Redaction or publication approval changes
+- A new review, remediation, verification, escalation, or exception is performed
+- Premium licensing becomes available and an assessed capability is validated
+- Automation validation status changes
 - Evidence reaches its retention-review date
 - Portfolio wording changes
-## Screenshot Review Progress
 
-```text
-Original Screenshot Package: Approximately 23 screenshots
-Screenshots Reviewed: 18
-Screenshots Remaining: Approximately 5
-Review Status: In Progress
 ## Author
 
 **Wisdom Kwame Djam**  
@@ -1934,19 +2075,21 @@ Information Security Management
 Toronto, Ontario, Canada
 
 ## Document Control
+
+```text
 Document: Access Review and Automation Evidence Register
 File: evidence/evidence-register.md
-Version: 1.20
+Version: 1.24
 Status: Active
 Owner: Wisdom Kwame Djam
 Created: 2026-09-17
 Last Updated: 2026-09-20
 Review Frequency: Annual and event-driven
 Next Scheduled Review: 2027-09-17
-
+```
 
 ## Disclaimer
 
 This register is an educational identity-governance artifact for a fictional Microsoft Entra environment.
 
-It does not contain production access-review evidence, real patient information, real employee records, real vendor records, security-incident evidence, regulatory evidence, or native Microsoft Entra access-review records.
+It does not contain production access-review evidence, real patient information, real employee records, real vendor records, security-incident evidence, regulatory evidence, access tokens, authentication secrets, or native Microsoft Entra access-review records.
