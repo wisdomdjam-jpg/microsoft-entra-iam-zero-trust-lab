@@ -1361,6 +1361,71 @@ Quality Review Date: 2026-09-20
 Issue Identified: The original screenshot exposed the target object identifier and account or tenant context.
 Corrective Action: Permanently remove the technical and account identifiers from the public screenshot while retaining the target type and fictional display name.
 ```
+### 5.25 Evidence Item: Northstar Direct User Assignments
+
+```text
+Evidence ID: EVD-2026-APP-001
+Evidence Title: Northstar Patient Records Portal Direct User Assignments
+Evidence Type: Application Assignment
+Evidence Status: Implemented and Validated
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: Northstar Patient Records Portal enterprise application
+Identity or Population: Avery Clinical and Casey IT Support
+Description: Sanitized Microsoft Entra screenshot showing Avery Clinical and Casey IT Support directly assigned to the Northstar Patient Records Portal enterprise application
+Control Demonstrated: Explicit direct user assignment and least-privilege enterprise-application access governance
+File Name: 21-entra-northstar-direct-user-assignments_2026-09-20.png
+File Format: PNG
+Capture Date: 2026-09-20
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Entra admin center
+Sensitivity Classification: Public after sanitization
+Redaction Status: Verified Redacted
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/application-access/21-entra-northstar-direct-user-assignments_2026-09-20.png
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-20
+Retention Review Date: 2029-09-20
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Validated
+Known Limitation: The screenshot confirms direct assignment records but does not independently demonstrate successful sign-in, effective in-application authorization, assignment-required configuration, group-based assignment, application-role enforcement, single sign-on, provisioning, Conditional Access, or production use.
+Outstanding Action: None
+Notes: The interface states that the application will not appear in My Apps unless the Visible to users property is enabled. The screenshot documents direct assignment only and does not claim group-based access.
+```
+
+#### Quality Review
+
+- [x] The Northstar Patient Records Portal name is visible.
+- [x] The Enterprise Application context is visible.
+- [x] The Users and groups page is visible.
+- [x] Avery Clinical is visible.
+- [x] Casey IT Support is visible.
+- [x] Object type `User` is visible for both assignments.
+- [x] The My Apps visibility notice is visible.
+- [x] Browser-address information was removed.
+- [x] Object and application identifiers were removed.
+- [x] Signed-in account and tenant information were removed.
+- [x] No user principal names or personal email addresses are visible.
+- [x] No passwords, secrets, tokens, or authentication codes are visible.
+- [x] Group-based assignment is not claimed.
+- [x] Successful application sign-in is not claimed.
+- [x] Assignment-required configuration is not claimed from this screenshot.
+- [x] The evidence limitation is documented.
+
+```text
+Quality Review Result: Approved for Public Repository
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-20
+Issue Identified: None
+Corrective Action: Not Applicable
+```
 ## 6. Automation Evidence Summary
 
 ```text
@@ -1391,7 +1456,7 @@ The overall automation remains partially validated because:
 - Northstar service-principal discovery returned `Object Not Found` in the tested short script.
 - Administrative-role assignment automation was excluded from the tested short script.
 - Northstar application-assignment automation was excluded from the tested short script.
-## Screenshots Reviewed: 19
+## Screenshots Reviewed: 21
 
 1. Helpdesk Administrator assignment
 2. Security Reader assignment
@@ -1412,6 +1477,8 @@ The overall automation remains partially validated because:
 17. B2B guest invitation accepted
 18. B2B guest invitation pending acceptance
 19. Northstar service-principal audit target
+20. Northstar service-principal update activity
+21. Northstar direct user assignments
 
 
 ## 7. Automation Evidence Traceability
@@ -1538,26 +1605,26 @@ This status does not mean that:
 ## 11. Updated Register Totals
 
 ```text
-Total Evidence Items: 23
-Implemented and Validated Items: 14
+Total Evidence Items: 25
+Implemented and Validated Items: 16
 Manually Simulated Items: 1
 Partially Implemented Items: 2
 Design Validation Items: 0
 Designed, Not Implemented Items: 0
 Assessed, Not Deployed Items: 6
 Empty Templates Included: 0
-Items Approved for Public Repository: 23
+Items Approved for Public Repository: 25
 Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 21
+Items with Known Limitations: 23
 ```
 
 ## 12. Register Update Record
 
 Document: Access Review and Automation Evidence Register
-Updated Version: 1.17
+Updated Version: 1.19
 Status: Active
 Updated By: Wisdom Kwame Djam
 Update Date: 2026-09-20
