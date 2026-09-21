@@ -1298,6 +1298,69 @@ Quality Review Date: 2026-09-20
 Issue Identified: The original screenshot exposed personal and tenant-related identity information.
 Corrective Action: Permanently remove personal and technical identifiers from the public screenshot and retain the complete source only in private storage.
 ```
+### 5.23 Evidence Item: Northstar Service-Principal Audit Target
+
+```text
+Evidence ID: EVD-2026-AUDIT-002
+Evidence Title: Northstar Service-Principal Audit Target
+Evidence Type: Audit Record
+Evidence Status: Implemented and Validated
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: Northstar Patient Records Portal service principal
+Identity or Population: Fictional enterprise-application service principal
+Description: Sanitized Microsoft Entra screenshot identifying the Northstar Patient Records Portal service principal as the target of a selected Core Directory audit event
+Control Demonstrated: Application-management audit traceability and service-principal target identification
+File Name: 19-entra-northstar-service-principal-audit-target_2026-09-14.png
+File Format: PNG
+Capture Date: 2026-09-14
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Entra audit logs
+Sensitivity Classification: Public after sanitization
+Redaction Status: Verified Redacted
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/audit-logs/19-entra-northstar-service-principal-audit-target_2026-09-14.png
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-20
+Retention Review Date: 2029-09-20
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Validated
+Known Limitation: The screenshot identifies the service-principal target but does not independently display the complete activity name, initiating identity, modified properties, token issuance, application sign-in, assignment activity, or complete audit coverage.
+Outstanding Action: None
+Notes: The screenshot demonstrates that the Northstar Patient Records Portal service principal was identified as the target of a selected Core Directory audit event. No security incident or Microsoft Sentinel integration is claimed.
+```
+
+#### Quality Review
+
+- [x] The Microsoft Entra audit-log context is visible.
+- [x] The Audit Log Details panel is visible.
+- [x] The `Target(s)` tab is visible.
+- [x] Target type `ServicePrincipal` is visible.
+- [x] Display name `Northstar Patient Records Portal` is visible.
+- [x] The Core Directory service context is visible.
+- [x] The target object ID was permanently removed or redacted.
+- [x] Personal account and tenant information were removed.
+- [x] The browser address was removed.
+- [x] No password, token, secret, or authentication code is visible.
+- [x] The complete activity is not inferred from the target tab.
+- [x] A security incident is not claimed.
+- [x] Microsoft Sentinel integration is not claimed.
+- [x] The evidence limitation is documented.
+
+```text
+Quality Review Result: Approved for Public Repository
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-20
+Issue Identified: The original screenshot exposed the target object identifier and account or tenant context.
+Corrective Action: Permanently remove the technical and account identifiers from the public screenshot while retaining the target type and fictional display name.
+```
 ## 6. Automation Evidence Summary
 
 ```text
@@ -1328,7 +1391,7 @@ The overall automation remains partially validated because:
 - Northstar service-principal discovery returned `Object Not Found` in the tested short script.
 - Administrative-role assignment automation was excluded from the tested short script.
 - Northstar application-assignment automation was excluded from the tested short script.
-## Screenshots Reviewed: 17
+## Screenshots Reviewed: 19
 
 1. Helpdesk Administrator assignment
 2. Security Reader assignment
@@ -1346,8 +1409,9 @@ The overall automation remains partially validated because:
 14. `GRP-HR-Users` direct membership
 15. `GRP-Finance-Users` direct membership
 16. `GRP-External-Vendors` public-safe direct membership
-17.  B2B guest invitation accepted
-18.  
+17. B2B guest invitation accepted
+18. B2B guest invitation pending acceptance
+19. Northstar service-principal audit target
 
 
 ## 7. Automation Evidence Traceability
@@ -1474,26 +1538,26 @@ This status does not mean that:
 ## 11. Updated Register Totals
 
 ```text
-Total Evidence Items: 22
-Implemented and Validated Items: 13
+Total Evidence Items: 23
+Implemented and Validated Items: 14
 Manually Simulated Items: 1
 Partially Implemented Items: 2
 Design Validation Items: 0
 Designed, Not Implemented Items: 0
 Assessed, Not Deployed Items: 6
 Empty Templates Included: 0
-Items Approved for Public Repository: 22
+Items Approved for Public Repository: 23
 Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 20
+Items with Known Limitations: 21
 ```
 
 ## 12. Register Update Record
 
 Document: Access Review and Automation Evidence Register
-Updated Version: 1.16
+Updated Version: 1.17
 Status: Active
 Updated By: Wisdom Kwame Djam
 Update Date: 2026-09-20
