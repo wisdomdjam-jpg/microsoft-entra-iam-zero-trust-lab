@@ -110,7 +110,98 @@ The registration created:
 
 1. An application object under **App registrations**
 2. A service principal under **Enterprise applications**
+## Northstar Application Registration Overview
 
+**Evidence ID:** `EVD-2026-APP-004`  
+**Application:** Northstar Patient Records Portal  
+**Resource type:** Application Registration  
+**Supported account type:** My organization only  
+**Managed application:** Northstar Patient Records Portal  
+**Displayed state:** Activated  
+**Status:** Implemented and Validated  
+
+The sanitized screenshot shows the Microsoft Entra application-registration overview for the fictional Northstar Patient Records Portal.
+
+The visible configuration includes:
+
+```text
+Display Name: Northstar Patient Records Portal
+Supported Account Types: My organization only
+Redirect URI: Not configured in the visible overview
+Application ID URI: Not configured in the visible overview
+Managed Application in Local Directory: Northstar Patient Records Portal
+State: Activated
+```
+
+## Control Purpose
+
+The evidence supports:
+
+- Single-tenant application registration
+- Application-object documentation
+- Corresponding enterprise-application creation
+- Workload-identity governance
+- Application-access evidence traceability
+- Separation between the application object and tenant-local service principal
+
+## Application Object and Service Principal
+
+The application registration represents the application definition.
+
+The corresponding managed application in the local directory represents the tenant-local enterprise application or service principal.
+
+Related evidence documents:
+
+```text
+EVD-2026-APP-001
+Two fictional users directly assigned to the enterprise application.
+
+EVD-2026-APP-002
+Assignment required configured as Yes.
+
+EVD-2026-APP-003
+Tenant-local enterprise-application overview.
+
+EVD-2026-APP-004
+Single-tenant application-registration overview.
+```
+
+## Evidence File
+
+```text
+24-entra-northstar-app-registration-overview_2026-09-20.png
+```
+
+## Known Limitations
+
+The screenshot does not independently demonstrate:
+
+- Whether a client secret or certificate exists outside the visible overview
+- Successful application authentication
+- Token issuance
+- Redirect-URI testing
+- Single sign-on
+- User provisioning
+- Conditional Access
+- Effective in-application authorization
+- Production use
+
+The public screenshot excludes the application client ID, object ID, and directory tenant ID.
+
+## Privacy Notice
+
+The published screenshot was sanitized to remove:
+
+- Application client ID
+- Object ID
+- Directory tenant ID
+- Signed-in account information
+- Tenant and directory details
+- Browser-address information
+- Account avatars
+- Unnecessary browser and device information
+
+The Northstar Patient Records Portal is a fictional educational portfolio application.
 The application object represents the application's definition. The service principal represents its identity and access configuration in the local tenant.
 
 ## Application Access Governance
