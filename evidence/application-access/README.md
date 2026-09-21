@@ -42,7 +42,86 @@ The evidence supports:
 ```text
 21-entra-northstar-direct-user-assignments_2026-09-20.png
 ```
+## Northstar Assignment-Required Configuration
 
+**Evidence ID:** `EVD-2026-APP-002`  
+**Application:** Northstar Patient Records Portal  
+**Resource type:** Enterprise Application  
+**Assignment required:** Yes  
+**Enabled for users to sign in:** Yes  
+**Activation status:** Activated  
+**Visible to users:** No  
+**Status:** Implemented and Validated  
+
+The sanitized screenshot shows the Properties page for the Northstar Patient Records Portal enterprise application.
+
+The visible settings are:
+
+```text
+Activation status: Activated
+Enabled for users to sign in: Yes
+Assignment required: Yes
+Visible to users: No
+```
+
+## Control Purpose
+
+The configuration supports:
+
+- Explicit application-access assignment
+- Prevention of unassigned user access through the enterprise-application assignment control
+- Least-privilege application governance
+- Application-access review readiness
+- Clear separation between access assignment and My Apps visibility
+
+## Related Evidence
+
+```text
+EVD-2026-APP-001
+Avery Clinical and Casey IT Support are directly assigned to the Northstar Patient Records Portal.
+
+EVD-2026-APP-002
+The Northstar Patient Records Portal is configured with Assignment required set to Yes.
+```
+
+Together, the two evidence items demonstrate explicit direct assignment and assignment-required application governance.
+
+## Evidence File
+
+```text
+22-entra-northstar-assignment-required-properties_2026-09-20.png
+```
+
+## Important Visibility Distinction
+
+The application is configured as:
+
+```text
+Visible to users: No
+```
+
+This means the application is not presented to assigned users through My Apps based on the visible property.
+
+The visibility setting does not independently invalidate the assignment records shown in the separate assignment evidence.
+
+## Known Limitations
+
+The screenshot does not independently demonstrate:
+
+- Successful application sign-in
+- In-application authorization
+- Single sign-on
+- Provisioning
+- Conditional Access
+- Group-based assignment
+- App-role enforcement
+- My Apps visibility
+- Production use
+- API-permission configuration
+
+## Privacy Notice
+
+The published screenshot was sanitized to remove signed-in account information, tenant details, browser-address information, application identifiers, object identifiers, and unnecessary device information.
 ## Configuration Notice
 
 The Microsoft Entra page displays a notice stating that the application will not appear to assigned users in My Apps unless the `Visible to users?` property is enabled.
