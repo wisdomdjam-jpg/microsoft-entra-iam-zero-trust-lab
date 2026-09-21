@@ -1622,6 +1622,72 @@ Quality Review Date: 2026-09-20
 Issue Identified: None
 Corrective Action: Not Applicable
 ```
+### 5.29 Evidence Item: Microsoft Authenticator Target Groups
+
+```text
+Evidence ID: EVD-2026-AUTH-001
+Evidence Title: Microsoft Authenticator Selected-Group Targeting
+Evidence Type: Authentication-Method Configuration
+Evidence Status: Implemented and Validated
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: Microsoft Entra Microsoft Authenticator settings
+Identity or Population: GRP-IT-Support and GRP-Security-Readers
+Description: Sanitized Microsoft Entra screenshot showing Microsoft Authenticator enabled and targeted to GRP-IT-Support and GRP-Security-Readers with optional registration and authentication mode set to Any
+Control Demonstrated: Selected-group authentication-method targeting and role-aligned authentication governance
+File Name: 25-entra-microsoft-authenticator-target-groups_2026-09-20.png
+File Format: PNG
+Capture Date: 2026-09-20
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Entra admin center
+Sensitivity Classification: Public after sanitization
+Redaction Status: Verified Redacted
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/authentication-methods/25-entra-microsoft-authenticator-target-groups_2026-09-20.png
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-20
+Retention Review Date: 2029-09-20
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Validated
+Known Limitation: The screenshot demonstrates authentication-method enablement and selected-group targeting but does not independently demonstrate completed registration, MFA enforcement, passwordless authentication, push-notification use, Authentication Strength, Conditional Access enforcement, registration-campaign deployment, or successful authentication events.
+Outstanding Action: None
+Notes: Microsoft Authenticator was targeted to GRP-IT-Support and GRP-Security-Readers with optional registration and authentication mode set to Any. Conditional Access remained assessed and designed but not deployed.
+```
+
+#### Quality Review
+
+- [x] The Microsoft Authenticator settings page is visible.
+- [x] The Enable and Target tab is visible.
+- [x] Microsoft Authenticator is visibly enabled.
+- [x] Selected-group targeting is visible.
+- [x] `GRP-IT-Support` is visible.
+- [x] `GRP-Security-Readers` is visible.
+- [x] Object type `Group` is visible.
+- [x] Registration `Optional` is visible.
+- [x] Authentication mode `Any` is visible.
+- [x] Browser-address information was removed.
+- [x] Signed-in account and tenant information were removed.
+- [x] The Windows taskbar was removed.
+- [x] No passwords, tokens, secrets, or authentication codes are visible.
+- [x] Completed Authenticator registration is not claimed.
+- [x] MFA enforcement is not claimed.
+- [x] Conditional Access implementation is not claimed.
+- [x] The enforcement limitation is documented.
+
+```text
+Quality Review Result: Approved for Public Repository
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-20
+Issue Identified: None
+Corrective Action: Not Applicable
+```
 ## 6. Automation Evidence Summary
 
 ```text
@@ -1652,7 +1718,7 @@ The overall automation remains partially validated because:
 - Northstar service-principal discovery returned `Object Not Found` in the tested short script.
 - Administrative-role assignment automation was excluded from the tested short script.
 - Northstar application-assignment automation was excluded from the tested short script.
-## Screenshots Reviewed: 24
+## Screenshots Reviewed: 25
 
 1. Helpdesk Administrator assignment
 2. Security Reader assignment
@@ -1678,6 +1744,7 @@ The overall automation remains partially validated because:
 22. Northstar assignment-required configuration
 23. Northstar enterprise application overview
 24. Northstar application registration overview
+25. Microsoft Authenticator selected-group targeting
 
 
 ## 7. Automation Evidence Traceability
@@ -1804,8 +1871,8 @@ This status does not mean that:
 ## 11. Updated Register Totals
 
 ```text
-Total Evidence Items: 28
-Implemented and Validated Items: 19
+Total Evidence Items: 29
+Implemented and Validated Items: 20
 Manually Simulated Items: 1
 Partially Implemented Items: 2
 Design Validation Items: 0
@@ -1817,21 +1884,21 @@ Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 26
+Items with Known Limitations: 27
 ```
 
 ## 12. Register Update Record
 
 Document: Access Review and Automation Evidence Register
-Updated Version: 1.22
+Updated Version: 1.23
 Status: Active
 Updated By: Wisdom Kwame Djam
 Update Date: 2026-09-20
-Updated Version: 1.22
+Updated Version: 1.23
 Update Date: 2026-09-20
 Change Description: Completed review and registration of 24 sanitized screenshot evidence items, including the Northstar application registration and enterprise application evidence
 Screenshot Review Status: Completed
-Screenshots Reviewed: 24
+Screenshots Reviewed: 25
 Screenshots Remaining: 0
 Tenant Modifications: None
 Next Scheduled Review: 2027-09-17
