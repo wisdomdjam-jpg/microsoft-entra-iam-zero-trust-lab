@@ -75,6 +75,32 @@ Account disablement
 ```
 
 This sequence must not be represented as fully validated unless the relevant removal event, audit record, or reliable before-and-after timing is available.
+## External-Vendor Group Membership
+
+**Evidence ID:** `EVD-2026-GROUP-003`  
+**Group:** `GRP-External-Vendors`  
+**Membership type:** Direct  
+**Published fictional member:** Vendor Support  
+**Implementation status:** Implemented and Validated  
+
+The sanitized screenshot shows the fictional `Vendor Support` identity as a direct member of `GRP-External-Vendors`.
+
+The complete local membership state contained an additional personal guest identity. That identity and the associated email address were removed from the public screenshot and public CSV export.
+
+## Control Purpose
+
+The evidence supports:
+
+- External-identity access organization
+- Direct vendor-group membership
+- B2B and external-access governance
+- Membership review and evidence traceability
+- Privacy-conscious publication of identity evidence
+
+## Evidence File
+
+```text
+entra-grp-external-vendors-public-membership_2026-09-20.png
 
 ## Limitation
 
