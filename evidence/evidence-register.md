@@ -1556,6 +1556,72 @@ Quality Review Date: 2026-09-20
 Issue Identified: None
 Corrective Action: Not Applicable
 ```
+### 5.28 Evidence Item: Northstar Application Registration Overview
+
+```text
+Evidence ID: EVD-2026-APP-004
+Evidence Title: Northstar Patient Records Portal Application Registration Overview
+Evidence Type: Application Registration
+Evidence Status: Implemented and Validated
+Related Review ID: Not Applicable
+Related Review Item ID: Not Applicable
+Related Escalation ID: Not Applicable
+Related Exception ID: Not Applicable
+Related Remediation ID: Not Applicable
+Related Verification ID: Not Applicable
+Resource: Northstar Patient Records Portal application registration
+Identity or Population: Fictional single-tenant application object
+Description: Sanitized Microsoft Entra screenshot confirming the single-tenant application registration for the fictional Northstar Patient Records Portal and its corresponding managed application in the local directory
+Control Demonstrated: Application-object registration, single-tenant scope, workload-identity documentation, and application-governance traceability
+File Name: 24-entra-northstar-app-registration-overview_2026-09-20.png
+File Format: PNG
+Capture Date: 2026-09-20
+Captured By: Wisdom Kwame Djam
+Source: Microsoft Entra admin center
+Sensitivity Classification: Public after sanitization
+Redaction Status: Verified Redacted
+Redaction Verified By: Wisdom Kwame Djam
+Publication Status: Published
+Repository Location: evidence/application-access/24-entra-northstar-app-registration-overview_2026-09-20.png
+Version: 1.0
+Integrity Check: Git commit history
+Retention Start Date: 2026-09-20
+Retention Review Date: 2029-09-20
+Disposal Date: Not Applicable
+Evidence Owner: Wisdom Kwame Djam
+Verification Status: Validated
+Known Limitation: The screenshot confirms the visible application-registration overview but does not independently demonstrate credential absence outside the visible overview, successful authentication, token issuance, redirect-URI testing, single sign-on, provisioning, Conditional Access, effective authorization, or production use.
+Outstanding Action: None
+Notes: The application client ID, object ID, and directory tenant ID were excluded from the public version. The visible account type is My organization only, and the overview links to the corresponding Northstar managed application in the local directory.
+```
+
+#### Quality Review
+
+- [x] The Northstar Patient Records Portal display name is visible.
+- [x] The App registrations context is visible.
+- [x] The application overview is visible.
+- [x] Supported account type `My organization only` is visible.
+- [x] The corresponding managed application is visible.
+- [x] State `Activated` is visible.
+- [x] The Application client ID was permanently removed or redacted.
+- [x] The Object ID was permanently removed or redacted.
+- [x] The Directory tenant ID was permanently removed or redacted.
+- [x] Browser-address information was removed.
+- [x] Signed-in account and directory information were removed.
+- [x] The Windows taskbar was removed.
+- [x] No password, token, secret, or authentication code is visible.
+- [x] Successful application authentication is not claimed.
+- [x] Credential absence outside the visible overview is not claimed.
+- [x] Production application use is not claimed.
+- [x] The evidence limitation is documented.
+
+```text
+Quality Review Result: Approved for Public Repository
+Quality Reviewed By: Wisdom Kwame Djam
+Quality Review Date: 2026-09-20
+Issue Identified: None
+Corrective Action: Not Applicable
+```
 ## 6. Automation Evidence Summary
 
 ```text
@@ -1586,7 +1652,7 @@ The overall automation remains partially validated because:
 - Northstar service-principal discovery returned `Object Not Found` in the tested short script.
 - Administrative-role assignment automation was excluded from the tested short script.
 - Northstar application-assignment automation was excluded from the tested short script.
-## Screenshots Reviewed: 23
+## Screenshots Reviewed: 24
 
 1. Helpdesk Administrator assignment
 2. Security Reader assignment
@@ -1611,6 +1677,7 @@ The overall automation remains partially validated because:
 21. Northstar direct user assignments
 22. Northstar assignment-required configuration
 23. Northstar enterprise application overview
+24. Northstar application registration overview
 
 
 ## 7. Automation Evidence Traceability
@@ -1737,34 +1804,35 @@ This status does not mean that:
 ## 11. Updated Register Totals
 
 ```text
-Total Evidence Items: 27
-Implemented and Validated Items: 18
+Total Evidence Items: 28
+Implemented and Validated Items: 19
 Manually Simulated Items: 1
 Partially Implemented Items: 2
 Design Validation Items: 0
 Designed, Not Implemented Items: 0
 Assessed, Not Deployed Items: 6
 Empty Templates Included: 0
-Items Approved for Public Repository: 27
+Items Approved for Public Repository: 28
 Items Pending Redaction: 0
 Items Not Approved for Publication: 0
 Missing Evidence Items: 0
 Corrected Evidence Items: 0
-Items with Known Limitations: 25
+Items with Known Limitations: 26
 ```
 
 ## 12. Register Update Record
 
 Document: Access Review and Automation Evidence Register
-Updated Version: 1.21
+Updated Version: 1.22
 Status: Active
 Updated By: Wisdom Kwame Djam
 Update Date: 2026-09-20
-Change Description: Reconciled the active evidence register through 22 evidence items, including access-review evidence, read-only Microsoft Graph automation, audit logs, licensing assessments, identity lifecycle, security-group memberships, and B2B invitation states
-Publication Review: Completed
-Privacy Review: Passed
-Automation Status: Partially Validated
-Screenshot Review Status: 18 screenshots reviewed
+Updated Version: 1.22
+Update Date: 2026-09-20
+Change Description: Completed review and registration of 24 sanitized screenshot evidence items, including the Northstar application registration and enterprise application evidence
+Screenshot Review Status: Completed
+Screenshots Reviewed: 24
+Screenshots Remaining: 0
 Tenant Modifications: None
 Next Scheduled Review: 2027-09-17
 
