@@ -392,32 +392,9 @@ Pending automation areas:
 - Lifecycle Workflows
 - Automated identity-governance processes
 - Group-based enterprise-application assignment
-
 ## Evidence Package Status
 
-The repository includes a sanitized, traceable evidence package covering administrative roles, manual access review, automation, audit logs, licensing assessments, identity lifecycle, group memberships, B2B collaboration, application access, authentication-method targeting, and Microsoft Graph permission configuration.
-
-```text
-Registered Evidence Items: 30
-Implemented and Validated Items: 21
-Manually Simulated Items: 1
-Partially Implemented Items: 2
-Assessed, Not Deployed Items: 6
-Evidence Register Version: 1.24
-Screenshot Files Reviewed: 26
-Distinct Evidence Screenshots: 25
-Duplicate Screenshots: 1
-Screenshots Remaining: 0
-Privacy Review: Passed
-Tenant Modifications During Automation and Evidence Review: None
-```
-The complete evidence index is available in the evidence/evidence-register.md.
-```
-So the corrected section should look exactly like:
-````markdown
-## Evidence Package Status
-
-The repository includes a sanitized, traceable evidence package covering administrative roles, manual access review, automation, audit logs, licensing assessments, identity lifecycle, group memberships, B2B collaboration, application access, authentication-method targeting, and Microsoft Graph permission configuration.
+The repository includes a sanitized, traceable evidence package covering administrative roles, manual access review, Microsoft Graph automation, audit logs, licensing assessments, identity lifecycle, group memberships, B2B collaboration, application access, authentication-method targeting, and Microsoft Graph permission configuration.
 
 ```text
 Registered Evidence Items: 30
@@ -435,7 +412,6 @@ Tenant Modifications During Automation and Evidence Review: None
 ```
 
 The complete evidence index is available in the evidence/evidence-register.md.
-
 ## Evidence Organization
 
 ```text
