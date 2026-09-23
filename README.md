@@ -411,12 +411,30 @@ Screenshots Remaining: 0
 Privacy Review: Passed
 Tenant Modifications During Automation and Evidence Review: None
 ```
+The complete evidence index is available in the evidence/evidence-register.md.
+```
+So the corrected section should look exactly like:
+````markdown
+## Evidence Package Status
 
-The complete evidence index is available at:
+The repository includes a sanitized, traceable evidence package covering administrative roles, manual access review, automation, audit logs, licensing assessments, identity lifecycle, group memberships, B2B collaboration, application access, authentication-method targeting, and Microsoft Graph permission configuration.
 
 ```text
-evidence/evidence-register.md
+Registered Evidence Items: 30
+Implemented and Validated Items: 21
+Manually Simulated Items: 1
+Partially Implemented Items: 2
+Assessed, Not Deployed Items: 6
+Evidence Register Version: 1.24
+Screenshot Files Reviewed: 26
+Distinct Evidence Screenshots: 25
+Duplicate Screenshots: 1
+Screenshots Remaining: 0
+Privacy Review: Passed
+Tenant Modifications During Automation and Evidence Review: None
 ```
+
+The complete evidence index is available in the evidence/evidence-register.md.
 
 ## Evidence Organization
 
@@ -542,8 +560,8 @@ This repository is an educational and portfolio project. It does not represent a
 Graduate Informatics Student, Information Security Management  
 Toronto, Ontario, Canada
 
-- GitHub: <https://github.com/wisdomdjam-jpg>
-- LinkedIn: <https://www.linkedin.com/in/wisdom-kwame-djam-680711266>
+- [GitHub Profile](https://github.com/wisdomdjam-jpg)
+- [LinkedIn Profile](https://www.linkedin.com/in/wisdom-kwame-djam-680711266)
 
 ## Licence
 
